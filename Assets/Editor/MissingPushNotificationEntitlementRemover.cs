@@ -5,36 +5,40 @@ using UnityEditor.Callbacks;
 using System.IO;
 using System.Text.RegularExpressions;
 
-public class MissingPushNotificationEntitlementRemover {
+public class MissingPushNotificationEntitlementRemover
+{
 
-	public static string appControllerFile = "UnityAppController.mm";
-	// this matches (void)application:did..something..Notification..something... methods declaration
-	private static string regexpForNotificationMethods = "-\\s?\\(void\\)application:\\(UIApplication\\s?\\*\\)application\\sdid.+RemoteNotification.+\\n?{[^-|#.+]+";
-	
-	[PostProcessBuild]
-	public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject) {
-		if (target != BuildTarget.iOS) {
-			return;
-		}
+    public static string appControllerFile = "UnityAppController.mm";
+    // this matches (void)application:did..something..Notification..something... methods declaration
+    private static string regexpForNotificationMethods = "-\\s?\\(void\\)application:\\(UIApplication\\s?\\*\\)application\\sdid.+RemoteNotification.+\\n?{[^-|#.+]+";
 
-		Debug.Log("Running Push Notification Entitlement Warning Remover...");
+    [PostProcessBuild]
+    public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject)
+    {
+        if (target != BuildTarget.iOS)
+        {
+            return;
+        }
 
-		// check if app controller file exists
-		string classesDirectory = Path.Combine(pathToBuiltProject, "Classes");
-		string pathToAppController = Path.Combine(classesDirectory, appControllerFile);
+        Debug.Log("Running Push Notification Entitlement Warning Remover...");
 
-		bool fileExists = File.Exists(pathToAppController);
+        // check if app controller file exists
+        string classesDirectory = Path.Combine(pathToBuiltProject, "Classes");
+        string pathToAppController = Path.Combine(classesDirectory, appControllerFile);
 
-		if (!fileExists) {
-			Debug.Log("App Controller file doesn't exist.");
-			return;
-		}
+        bool fileExists = File.Exists(pathToAppController);
 
-		string code = File.ReadAllText(pathToAppController);
-		string codeWithDeletedNotificationsMethod = Regex.Replace(code, regexpForNotificationMethods, "");
+        if (!fileExists)
+        {
+            Debug.Log("App Controller file doesn't exist.");
+            return;
+        }
 
-		File.WriteAllText(pathToAppController, codeWithDeletedNotificationsMethod);
-		Debug.Log("Push Notification Entitlement Warning Remover Completed");
-	}
-		
+        string code = File.ReadAllText(pathToAppController);
+        string codeWithDeletedNotificationsMethod = Regex.Replace(code, regexpForNotificationMethods, "");
+
+        File.WriteAllText(pathToAppController, codeWithDeletedNotificationsMethod);
+        Debug.Log("Push Notification Entitlement Warning Remover Completed");
+    }
+
 }

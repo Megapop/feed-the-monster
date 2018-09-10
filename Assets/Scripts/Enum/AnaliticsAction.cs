@@ -2,19 +2,19 @@
 
 public enum AnaliticsAction
 {
-	LevelStart,
-	LevelSuccess,
-	LevelFail,
+    LevelStart,
+    LevelSuccess,
+    LevelFail,
 
-	SegmentStart,
-	SegmentSuccess,
-	SegmentFail,
+    SegmentStart,
+    SegmentSuccess,
+    SegmentFail,
 
-	SelectMonster,
+    SelectMonster,
 
-	Start,
-	End,
-	Open
+    Start,
+    End,
+    Open
 
 
 

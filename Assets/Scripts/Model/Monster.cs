@@ -4,269 +4,284 @@ using System.Collections.Generic;
 
 
 [System.Serializable]
-public class Monster : ScriptableObject {
-	public Booster.BoosterType booster = Booster.BoosterType.NONE;
-	public MonsterType MonsterType;
-	public MiniGameController.GameType MiniGame;
+public class Monster : ScriptableObject
+{
+    public Booster.BoosterType booster = Booster.BoosterType.NONE;
+    public MonsterType MonsterType;
+    public MiniGameController.GameType MiniGame;
 
 
 
-	public string AssetId;
+    public string AssetId;
 
-	public GameObject MonsterPrefab;
+    public GameObject MonsterPrefab;
 
-	static int NumGages = 4;
-	public int[] GageCost = new int[NumGages];
-//	public GameObject[] PlayGameObjects = new GameObject[NumGages];
+    static int NumGages = 4;
+    public int[] GageCost = new int[NumGages];
+    //public GameObject[] PlayGameObjects = new GameObject[NumGages];
 
-	public List<int> IdleStates;
-	public List<int> EatStates;
-	public List<int> NoEatStates;
+    public List<int> IdleStates;
+    public List<int> EatStates;
+    public List<int> NoEatStates;
 
-	public List<int> HappyStates;
-	public List<int> SadStates;
-	public List<int> ImpatientStates;
+    public List<int> HappyStates;
+    public List<int> SadStates;
+    public List<int> ImpatientStates;
 
-	public float Pitch = 1;
+    public float Pitch = 1;
 
-	bool _isReady = false;
-	int _gage = -1;
-	float _gageValue = -1;
+    bool _isReady = false;
+    int _gage = -1;
+    float _gageValue = -1;
 
-	int _lastUse = -1;
-	int _levelFaled = -1;
-	MonsterEmotionTypes _emotionType = MonsterEmotionTypes.NONE;
-
-
-
-	public void reset()
-	{
-		_isReady = false;
-		_gage = -1;
-		_gageValue = -1;
-
-		_lastUse = -1;
-		_levelFaled = -1;
-		_emotionType = MonsterEmotionTypes.NONE;
-	}
+    int _lastUse = -1;
+    int _levelFaled = -1;
+    MonsterEmotionTypes _emotionType = MonsterEmotionTypes.NONE;
 
 
-	public bool AddGageValue(float addedCost)
-	{
-		bool isGageChanged = false;
 
-		float costToValue = (100f / currentGageCost);
-		float valueToCost = (currentGageCost / 100f);
-		float neededValue = (100f - _gageValue);
-		float neededCost = neededValue * valueToCost;
+    public void reset()
+    {
+        _isReady = false;
+        _gage = -1;
+        _gageValue = -1;
 
-		if (addedCost < neededCost) {
-			_gageValue += costToValue * addedCost;
-		} else {
-			_gage++;
-			_gageValue = 0;
-			isGageChanged = true;
-		}
+        _lastUse = -1;
+        _levelFaled = -1;
+        _emotionType = MonsterEmotionTypes.NONE;
+    }
 
-		UsersController.Instance.userData().setMonsterGage (this);
-		UsersController.Instance.userData().setMonsterGageValue (this);
-		if (_gage >= NumGages - 1) {
-			IsReady = true;
-		}
 
-		return isGageChanged;
-	}
+    public bool AddGageValue(float addedCost)
+    {
+        bool isGageChanged = false;
 
-	public bool IsReady
-	{
-		get { 
-			if (Gage >= NumGages - 1) {
-				return true;
-			}
-			return _isReady;
-		}
-		set { 
-			_isReady = value;
-			UsersController.Instance.userData().setMonsterStatus (this);
-		}
-	}
+        float costToValue = (100f / currentGageCost);
+        float valueToCost = (currentGageCost / 100f);
+        float neededValue = (100f - _gageValue);
+        float neededCost = neededValue * valueToCost;
 
-	public int Gage
-	{
-		get {
-			if (_gage == -1) {
-				_gage = UsersController.Instance.userData().getMonsterGage (this);
-			}
-			if (_gage < 0) {
-				return 0;
-			} else if(_gage > TotalGages){
-				return TotalGages;			
-			}
-			return _gage;
-		}
-		set { 
-			_gage = value;
-			UsersController.Instance.userData().setMonsterGage (this);
-		}
-	}
+        if (addedCost < neededCost)
+        {
+            _gageValue += costToValue * addedCost;
+        }
+        else
+        {
+            _gage++;
+            _gageValue = 0;
+            isGageChanged = true;
+        }
 
-	public float GageValue
-	{
-		get { 
-			if (_gageValue == -1) {
-				_gageValue = UsersController.Instance.userData().getMonsterGageValue (this);
-			}
+        UsersController.Instance.userData().setMonsterGage(this);
+        UsersController.Instance.userData().setMonsterGageValue(this);
+        if (_gage >= NumGages - 1)
+        {
+            IsReady = true;
+        }
 
-			if (_gageValue < 0) {
-				return 0;
-			} else if(_gageValue > 100){
-				return 100;
-			}
-			return _gageValue;
-		}
-		set { 
-			_gageValue = value;
-			UsersController.Instance.userData().setMonsterGageValue (this);
-		}
-	}
+        return isGageChanged;
+    }
 
-	public int LastUse
-	{
-		set { 
-			_lastUse = value;
-		}
-		get { 
-			if (_lastUse == -1) {
-				_lastUse = UsersController.Instance.userData().getMonsterLastUsed (MonsterType);
-			}
-			return _lastUse;
-		}
-	}
+    public bool IsReady {
+        get {
+            if (Gage >= NumGages - 1)
+            {
+                return true;
+            }
+            return _isReady;
+        }
+        set {
+            _isReady = value;
+            UsersController.Instance.userData().setMonsterStatus(this);
+        }
+    }
 
-	public int LevelFaled
-	{
-		set { 
-			_levelFaled = value;
-		}
-		get { 
-			if (_levelFaled == -1) {
-				_levelFaled = UsersController.Instance.userData().getMonsterLevelFaled(this);
-			}
-			return _levelFaled;
-		}
-	}
+    public int Gage {
+        get {
+            if (_gage == -1)
+            {
+                _gage = UsersController.Instance.userData().getMonsterGage(this);
+            }
+            if (_gage < 0)
+            {
+                return 0;
+            }
+            else if (_gage > TotalGages)
+            {
+                return TotalGages;
+            }
+            return _gage;
+        }
+        set {
+            _gage = value;
+            UsersController.Instance.userData().setMonsterGage(this);
+        }
+    }
 
-	public int TotalGages
-	{
-		get {
-			//return Mathf.Min(new int[3]{GageCost.Length, UIGameObject.Length, GageCost.Length});
-			return Mathf.Min(new int[2]{GageCost.Length, GageCost.Length});
-		}
-	}
+    public float GageValue {
+        get {
+            if (_gageValue == -1)
+            {
+                _gageValue = UsersController.Instance.userData().getMonsterGageValue(this);
+            }
 
-	public int currentGageCost
-	{
-		get {
-			if (GageCost.Length > Gage) {
-				return GageCost [Gage];
-			} else {
-				return GageCost [GageCost.Length - 1];
-			}
-		}
-	}
+            if (_gageValue < 0)
+            {
+                return 0;
+            }
+            else if (_gageValue > 100)
+            {
+                return 100;
+            }
+            return _gageValue;
+        }
+        set {
+            _gageValue = value;
+            UsersController.Instance.userData().setMonsterGageValue(this);
+        }
+    }
 
-	public GameObject currentPlayGO
-	{
-		get {
-			string fileName;
-			if (IsReady == false && Gage < GageCost.Length) {
-				fileName = "Monster_"+ AssetId + "_" + (Gage + 1).ToString();
-//				return PlayGameObjects [Gage];
-			} else {
-				fileName = "Monster_"+ AssetId + "_" + GageCost.Length.ToString();
-//				return PlayGameObjects [PlayGameObjects.Length - 1];
-			}
-			return Resources.Load ("Gameplay/MonstersGO/" + fileName) as GameObject;
-		}
-	}
+    public int LastUse {
+        set {
+            _lastUse = value;
+        }
+        get {
+            if (_lastUse == -1)
+            {
+                _lastUse = UsersController.Instance.userData().getMonsterLastUsed(MonsterType);
+            }
+            return _lastUse;
+        }
+    }
 
-	public GameObject firstPlayGO
-	{
-		get {
-			string fileName = "Monster_"+ AssetId + "_1";
-			return Resources.Load ("Gameplay/MonstersGO/" + fileName) as GameObject;
-		}
-	}
+    public int LevelFaled {
+        set {
+            _levelFaled = value;
+        }
+        get {
+            if (_levelFaled == -1)
+            {
+                _levelFaled = UsersController.Instance.userData().getMonsterLevelFaled(this);
+            }
+            return _levelFaled;
+        }
+    }
 
-	public void ResetEmotion()
-	{
-//		EmotionType = MonsterEmotionTypes.Happy;
+    public int TotalGages {
+        get {
+            //return Mathf.Min(new int[3]{GageCost.Length, UIGameObject.Length, GageCost.Length});
+            return Mathf.Min(new int[2] { GageCost.Length, GageCost.Length });
+        }
+    }
 
-		_lastUse = UsersController.Instance.userData().setMonsterLastUsed (this);
+    public int currentGageCost {
+        get {
+            if (GageCost.Length > Gage)
+            {
+                return GageCost[Gage];
+            }
+            else
+            {
+                return GageCost[GageCost.Length - 1];
+            }
+        }
+    }
 
-		UsersController.Instance.userData().setMonsterLevelFaled (this, 0);
+    public GameObject currentPlayGO {
+        get {
+            string fileName;
+            if (IsReady == false && Gage < GageCost.Length)
+            {
+                fileName = "Monster_" + AssetId + "_" + (Gage + 1).ToString();
+                //return PlayGameObjects [Gage];
+            }
+            else
+            {
+                fileName = "Monster_" + AssetId + "_" + GageCost.Length.ToString();
+                //return PlayGameObjects [PlayGameObjects.Length - 1];
+            }
+            return Resources.Load("Gameplay/MonstersGO/" + fileName) as GameObject;
+        }
+    }
 
-		_levelFaled = 0;
-		updateEmotionType ();
-	}
+    public GameObject firstPlayGO {
+        get {
+            string fileName = "Monster_" + AssetId + "_1";
+            return Resources.Load("Gameplay/MonstersGO/" + fileName) as GameObject;
+        }
+    }
 
-	public MonsterEmotionTypes EmotionType
-	{
-		get {
+    public void ResetEmotion()
+    {
+        //EmotionType = MonsterEmotionTypes.Happy;
 
-			if (_emotionType == MonsterEmotionTypes.NONE) {
-				_emotionType = UsersController.Instance.userData().getMonsterEmotionType (this);
-			}
-			return _emotionType;
-		}
-//		set {
-//			_emotionType = value;
-//			UserInfo.Instance.SetEmotionType (this, _emotionType);
-//		}
-	}
+        _lastUse = UsersController.Instance.userData().setMonsterLastUsed(this);
 
-	public void setLevelComplite (int stars) {
-		_lastUse = UsersController.Instance.userData().setMonsterLastUsed (this);
-		if (stars == 0 && IsReady == true) {
-			UsersController.Instance.userData().setMonsterLevelFaled (this);
-		}
-		updateEmotionType ();
-	}
+        UsersController.Instance.userData().setMonsterLevelFaled(this, 0);
 
-	public void updateEmotionType()
-	{
-		_emotionType = MonsterEmotionTypes.Happy;
-/*
+        _levelFaled = 0;
+        updateEmotionType();
+    }
 
-		if (!IsReady|| MiniGame == MiniGameController.GameType.None) {
-//			_emotionType = MonsterEmotionTypes.Happy;
-		} else {
-			if (_levelFaled >= GameplaySettings.MonsterAngryLevelFaledValue && (_emotionType == MonsterEmotionTypes.Happy || _emotionType == MonsterEmotionTypes.NONE)) {
-				_emotionType = MonsterEmotionTypes.Angry;
-			} else if (_lastUse >= GameplaySettings.MonsterBoredDaysValue && (_emotionType == MonsterEmotionTypes.Happy || _emotionType == MonsterEmotionTypes.NONE)) {
-				_emotionType = MonsterEmotionTypes.Bored;
-			}
-			if (
-				_levelFaled > GameplaySettings.MonsterAngryLevelFaledValue + GameplaySettings.MonsterSadLevelFaledValue
-				||
-				_lastUse > GameplaySettings.MonsterBoredDaysValue + GameplaySettings.MonsterSadDaysValue
-				&&
-				(
-				    _emotionType == MonsterEmotionTypes.Happy
-				    ||
-				    _emotionType == MonsterEmotionTypes.Angry
-				    ||
-				    _emotionType == MonsterEmotionTypes.Bored
-				    ||
-				    _emotionType == MonsterEmotionTypes.NONE
-				)) {
-				_emotionType = MonsterEmotionTypes.Sad;
-			}
-		}
-*/
-		UsersController.Instance.userData().setMonsterEmotionType (this, _emotionType);
-	}
+    public MonsterEmotionTypes EmotionType {
+        get {
 
-	// End Tzahi
+            if (_emotionType == MonsterEmotionTypes.NONE)
+            {
+                _emotionType = UsersController.Instance.userData().getMonsterEmotionType(this);
+            }
+            return _emotionType;
+        }
+        //set {
+        //_emotionType = value;
+        //UserInfo.Instance.SetEmotionType (this, _emotionType);
+        //}
+    }
+
+    public void setLevelComplite(int stars)
+    {
+        _lastUse = UsersController.Instance.userData().setMonsterLastUsed(this);
+        if (stars == 0 && IsReady == true)
+        {
+            UsersController.Instance.userData().setMonsterLevelFaled(this);
+        }
+        updateEmotionType();
+    }
+
+    public void updateEmotionType()
+    {
+        _emotionType = MonsterEmotionTypes.Happy;
+        /*
+
+                if (!IsReady|| MiniGame == MiniGameController.GameType.None) {
+        //_emotionType = MonsterEmotionTypes.Happy;
+                } else {
+                    if (_levelFaled >= GameplaySettings.MonsterAngryLevelFaledValue && (_emotionType == MonsterEmotionTypes.Happy || _emotionType == MonsterEmotionTypes.NONE)) {
+                        _emotionType = MonsterEmotionTypes.Angry;
+                    } else if (_lastUse >= GameplaySettings.MonsterBoredDaysValue && (_emotionType == MonsterEmotionTypes.Happy || _emotionType == MonsterEmotionTypes.NONE)) {
+                        _emotionType = MonsterEmotionTypes.Bored;
+                    }
+                    if (
+                        _levelFaled > GameplaySettings.MonsterAngryLevelFaledValue + GameplaySettings.MonsterSadLevelFaledValue
+                        ||
+                        _lastUse > GameplaySettings.MonsterBoredDaysValue + GameplaySettings.MonsterSadDaysValue
+                        &&
+                        (
+                            _emotionType == MonsterEmotionTypes.Happy
+                            ||
+                            _emotionType == MonsterEmotionTypes.Angry
+                            ||
+                            _emotionType == MonsterEmotionTypes.Bored
+                            ||
+                            _emotionType == MonsterEmotionTypes.NONE
+                        )) {
+                        _emotionType = MonsterEmotionTypes.Sad;
+                    }
+                }
+        */
+        UsersController.Instance.userData().setMonsterEmotionType(this, _emotionType);
+    }
+
+    // End Tzahi
 
 }

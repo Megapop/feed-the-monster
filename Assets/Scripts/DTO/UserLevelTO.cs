@@ -4,23 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class UserLevelTO {
+public class UserLevelTO
+{
 
-	public int levelId;
-	public int levelScore;
-	public int levelStars;
+    public int levelId;
+    public int levelScore;
+    public int levelStars;
 
 
 
 
-	public static UserLevelTO create(int levelId, int score, int stars)
-	{
-		UserLevelTO level = new UserLevelTO ();
-		level.levelId = levelId;
-		level.levelScore = score;
-		level.levelStars = stars;
+    public static UserLevelTO create(int levelId, int score, int stars)
+    {
+        UserLevelTO level = new UserLevelTO();
+        level.levelId = levelId;
+        level.levelScore = score;
+        level.levelStars = stars;
 
-		return level;
-	}
+        return level;
+    }
 
 }

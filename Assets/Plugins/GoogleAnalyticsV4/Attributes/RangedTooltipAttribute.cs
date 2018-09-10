@@ -20,14 +20,16 @@ using UnityEngine;
   Ranged Tooltip attribute for displaying properties with range and
   a tooltip in the inspector.
 */
-public class RangedTooltipAttribute : PropertyAttribute {
-  public readonly float min;
-  public readonly float max;
-  public readonly string text;
+public class RangedTooltipAttribute : PropertyAttribute
+{
+    public readonly float min;
+    public readonly float max;
+    public readonly string text;
 
-  public RangedTooltipAttribute(string text, float min, float max) {
-    this.text = text;
-    this.min = min;
-    this.max = max;
-  }
+    public RangedTooltipAttribute(string text, float min, float max)
+    {
+        this.text = text;
+        this.min = min;
+        this.max = max;
+    }
 }

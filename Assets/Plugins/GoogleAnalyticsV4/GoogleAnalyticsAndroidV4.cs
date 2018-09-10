@@ -24,7 +24,8 @@ using System.Collections.Generic;
   Developers should call the methods in GoogleAnalyticsV4, which will call the
   appropriate methods in this class if the application is built for Android.
 */
-public class GoogleAnalyticsAndroidV4 : IDisposable {
+public class GoogleAnalyticsAndroidV4 : IDisposable
+{
 #if UNITY_ANDROID && !UNITY_EDITOR
   private string trackingCode;
   private string appVersion;
@@ -188,10 +189,11 @@ public class GoogleAnalyticsAndroidV4 : IDisposable {
   }
 
 #endif
-  public void Dispose() {
+    public void Dispose()
+    {
 #if UNITY_ANDROID && !UNITY_EDITOR
     googleAnalyticsSingleton.Dispose();
     tracker.Dispose();
 #endif
-  }
+    }
 }

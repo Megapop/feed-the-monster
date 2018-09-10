@@ -6,20 +6,20 @@ public class MiniGameBubble : MonoBehaviour
 //,IPointerClickHandler
 {
 
-/*
-	void Start () {
-	
-	}
-	
-	void Update () {
-	
-	}
+    /*
+        void Start () {
 
-	public void OnPointerClick (PointerEventData eventData)
-	{
-		if (! UIMiniGame.Instance.IsDraged) {
-			UIMiniGame.Instance.Done ();
-		}
-	}
-*/
+        }
+
+        void Update () {
+
+        }
+
+        public void OnPointerClick (PointerEventData eventData)
+        {
+            if (! UIMiniGame.Instance.IsDraged) {
+                UIMiniGame.Instance.Done ();
+            }
+        }
+    */
 }

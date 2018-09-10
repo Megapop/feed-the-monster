@@ -1,48 +1,58 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MouseFollower : MonoBehaviour {
-	// Use this for initialization
+public class MouseFollower : MonoBehaviour
+{
+    // Use this for initialization
 
-	[Range(0.1f,5f)]
-	public float HideAfter = 1f;
+    [Range(0.1f, 5f)]
+    public float HideAfter = 1f;
 
-	float Counter;
+    float Counter;
 
-	Vector3 LastPosition;
+    Vector3 LastPosition;
 
-	void Start () {
-		Counter = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		Vector3 newPosition;
+    void Start()
+    {
+        Counter = 0;
+    }
 
-		Rect rect = GameObject.Find ("Canvas").GetComponent<RectTransform> ().rect;
+    // Update is called once per frame
+    void Update()
+    {
+        Vector3 newPosition;
 
-		if (GameplayController.Instance && (GameplayController.Instance.IsPause || GameplayController.Instance.IsPausePopup)) {
-			newPosition = transform.position;
-			newPosition.z = -11;
-		} else {
-			var mousePosition = Input.mousePosition; 
-			mousePosition = Camera.main.ScreenToViewportPoint (mousePosition);
-			mousePosition.x = mousePosition.x * rect.width - rect.width / 2;
-			mousePosition.y = mousePosition.y * rect.height - rect.height / 2;
+        Rect rect = GameObject.Find("Canvas").GetComponent<RectTransform>().rect;
 
-			newPosition = new Vector3 (mousePosition.x, mousePosition.y, -9);
+        if (GameplayController.Instance && (GameplayController.Instance.IsPause || GameplayController.Instance.IsPausePopup))
+        {
+            newPosition = transform.position;
+            newPosition.z = -11;
+        }
+        else
+        {
+            var mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToViewportPoint(mousePosition);
+            mousePosition.x = mousePosition.x * rect.width - rect.width / 2;
+            mousePosition.y = mousePosition.y * rect.height - rect.height / 2;
 
-			if (!newPosition.Equals (LastPosition)) {
-				LastPosition = newPosition;
-				Counter = 0f;
-			} else {
-				Counter += Time.deltaTime;
-			}
+            newPosition = new Vector3(mousePosition.x, mousePosition.y, -9);
 
-			if (Counter >= HideAfter) {
-				newPosition.z = -11;
-			}
-		}
-		transform.position = newPosition;
+            if (!newPosition.Equals(LastPosition))
+            {
+                LastPosition = newPosition;
+                Counter = 0f;
+            }
+            else
+            {
+                Counter += Time.deltaTime;
+            }
+
+            if (Counter >= HideAfter)
+            {
+                newPosition.z = -11;
+            }
+        }
+        transform.position = newPosition;
     }
 }

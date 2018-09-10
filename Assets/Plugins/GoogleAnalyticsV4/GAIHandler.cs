@@ -22,7 +22,8 @@ using System.Runtime.InteropServices;
 /*
   Wrapper for Objective-C iOS SDK
 */
-public class GAIHandler {
+public class GAIHandler
+{
 #if UNITY_IPHONE && !UNITY_EDITOR
   [DllImport("__Internal")]
   private static extern void setOptOut(bool optOut);
@@ -218,5 +219,5 @@ public class GAIHandler {
       Debug.Log("A required parameter (campaign source) is null or empty. No campaign parameters will be added to hit.");
     }
   }
-  #endif
+#endif
 }

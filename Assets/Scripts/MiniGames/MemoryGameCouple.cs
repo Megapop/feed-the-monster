@@ -6,8 +6,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class MemoryGameCouple : ScriptableObject
 {
-	public Sprite image1;
-	public Sprite image2;
-	public AudioClip matchClip;
+    public Sprite image1;
+    public Sprite image2;
+    public AudioClip matchClip;
 
 }

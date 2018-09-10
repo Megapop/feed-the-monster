@@ -2,9 +2,9 @@
 
 public enum AnaliticsCategory
 {
-	GamePlay,
-	Sel,
-	TracingGame,
-	Profiles
+    GamePlay,
+    Sel,
+    TracingGame,
+    Profiles
 }
 

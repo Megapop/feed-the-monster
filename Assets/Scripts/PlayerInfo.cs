@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 [System.Serializable]
-public class PlayerInfo {
-	
+public class PlayerInfo
+{
+
 
 
 }

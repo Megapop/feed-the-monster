@@ -10,26 +10,29 @@ using System.Collections;
 [DisallowMultipleComponent]
 public class TR_OSCursorManager : MonoBehaviour
 {
-	/// <summary>
-	/// The status of the OS cursor.
-	/// </summary>
-	public CursorStatus status = CursorStatus.ENABLED;
+    /// <summary>
+    /// The status of the OS cursor.
+    /// </summary>
+    public CursorStatus status = CursorStatus.ENABLED;
 
-	// Update is called once per frame
-	void Start ()
-	{
-		#if (!(UNITY_ANDROID || UNITY_IPHONE) || UNITY_EDITOR)
-			if (status == CursorStatus.ENABLED) {
-				Cursor.visible = true;
-			} else if (status == CursorStatus.DISABLED) {
-				Cursor.visible = false;
-			}
-		#endif
-	}
+    // Update is called once per frame
+    void Start()
+    {
+#if (!(UNITY_ANDROID || UNITY_IPHONE) || UNITY_EDITOR)
+        if (status == CursorStatus.ENABLED)
+        {
+            Cursor.visible = true;
+        }
+        else if (status == CursorStatus.DISABLED)
+        {
+            Cursor.visible = false;
+        }
+#endif
+    }
 
-	public enum CursorStatus
-	{
-		ENABLED,
-		DISABLED
-	};
+    public enum CursorStatus
+    {
+        ENABLED,
+        DISABLED
+    };
 }

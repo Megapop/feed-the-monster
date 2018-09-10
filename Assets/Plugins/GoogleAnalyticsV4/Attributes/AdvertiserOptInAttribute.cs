@@ -16,7 +16,9 @@
 
 using UnityEngine;
 
-public class AdvertiserOptInAttribute : PropertyAttribute {
-	public AdvertiserOptInAttribute() {
-	}
+public class AdvertiserOptInAttribute : PropertyAttribute
+{
+    public AdvertiserOptInAttribute()
+    {
+    }
 }

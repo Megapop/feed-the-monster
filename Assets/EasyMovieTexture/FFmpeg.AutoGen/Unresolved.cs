@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FFmpeg.AutoGen
 {
- 
+
     public struct pp_mode
     {
     }

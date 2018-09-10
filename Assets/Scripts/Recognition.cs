@@ -6,10 +6,11 @@ using System;
 using System.Collections;
 
 [System.Serializable]
-public class Recognition  {
+public class Recognition
+{
 
-	[XmlAttribute("Letter")]
-	public string Letter;
-	[XmlAttribute("Variants")]
-	public string Variants;
+    [XmlAttribute("Letter")]
+    public string Letter;
+    [XmlAttribute("Variants")]
+    public string Variants;
 }

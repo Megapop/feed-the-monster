@@ -2,165 +2,198 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterDressingBar : MonoBehaviour {
+public class MonsterDressingBar : MonoBehaviour
+{
 
-	public Transform monsterHolder;
+    public Transform monsterHolder;
 
-	public GameObject[] Categories;
+    public GameObject[] Categories;
 
-	public Dictionary<MonsterType, Vector3> monsterPos = new Dictionary<MonsterType, Vector3> ();
-
-
-	public Dictionary<MonsterType, List<MonsterDressingItem>> monstersItems = new Dictionary<MonsterType, List<MonsterDressingItem>>();
+    public Dictionary<MonsterType, Vector3> monsterPos = new Dictionary<MonsterType, Vector3>();
 
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		transform.position = monsterHolder.position;
-	}
+    public Dictionary<MonsterType, List<MonsterDressingItem>> monstersItems = new Dictionary<MonsterType, List<MonsterDressingItem>>();
 
-	public void clean ()
-	{
-		monsterPos.Clear ();
-		monstersItems.Clear ();
 
-		foreach (GameObject cat in Categories) {
-			foreach (Transform child in cat.transform) {
-				Destroy (child.gameObject);
-			}
-		}
-	}
+    // Use this for initialization
+    void Start()
+    {
+    }
 
-	void addPos(MonsterType type, Vector3 pos) {
-		if (monsterPos == null) {
-			monsterPos = new Dictionary<MonsterType, Vector3> ();
-		}
-		if (monsterPos.ContainsKey (type)) {
-			monsterPos [type] = pos;
-		} else {
-			monsterPos.Add(type, pos);
-		}
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = monsterHolder.position;
+    }
 
-	public IEnumerator addMonster(Monster monster, Vector3 pos) {
-//		bool isReady = (DressingController.Instance != null && DressingController.Instance.Dressing != null);
+    public void clean()
+    {
+        monsterPos.Clear();
+        monstersItems.Clear();
 
-		addPos (monster.MonsterType, pos);
+        foreach (GameObject cat in Categories)
+        {
+            foreach (Transform child in cat.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
 
-		yield return new WaitUntil(() => (DressingController.Instance != null && DressingController.Instance.Dressing != null) == true);
+    void addPos(MonsterType type, Vector3 pos)
+    {
+        if (monsterPos == null)
+        {
+            monsterPos = new Dictionary<MonsterType, Vector3>();
+        }
+        if (monsterPos.ContainsKey(type))
+        {
+            monsterPos[type] = pos;
+        }
+        else
+        {
+            monsterPos.Add(type, pos);
+        }
+    }
 
-		add_Monster(monster);
-	}
+    public IEnumerator addMonster(Monster monster, Vector3 pos)
+    {
+        //bool isReady = (DressingController.Instance != null && DressingController.Instance.Dressing != null);
 
-	void add_Monster(Monster monster) {
-		if (monstersItems == null) {
-			monstersItems = new Dictionary<MonsterType, List<MonsterDressingItem>> ();
-		}
-		if (!monstersItems.ContainsKey (monster.MonsterType)) {
-			monstersItems.Add (monster.MonsterType, new List<MonsterDressingItem> ());
-		}
+        addPos(monster.MonsterType, pos);
 
-		foreach (DressingCategoriesTO cat in DressingController.Instance.Dressing.Values ) {
+        yield return new WaitUntil(() => (DressingController.Instance != null && DressingController.Instance.Dressing != null) == true);
 
-			MonsterAccessoryTO monsterItem = UsersController.Instance.userData ().getMonsterAccessory (monster, cat.id);
-			if (monsterItem != null) {
+        add_Monster(monster);
+    }
 
-				Transform parent = Categories [cat.id - 1].transform;
+    void add_Monster(Monster monster)
+    {
+        if (monstersItems == null)
+        {
+            monstersItems = new Dictionary<MonsterType, List<MonsterDressingItem>>();
+        }
+        if (!monstersItems.ContainsKey(monster.MonsterType))
+        {
+            monstersItems.Add(monster.MonsterType, new List<MonsterDressingItem>());
+        }
 
-				Vector3 v = parent.localPosition;
-				v.z = cat.zOrder;
-				parent.localPosition = v;
+        foreach (DressingCategoriesTO cat in DressingController.Instance.Dressing.Values)
+        {
 
-				addItem (parent, monster.MonsterType, monsterItem, cat);
-			}
-		}
-	}
+            MonsterAccessoryTO monsterItem = UsersController.Instance.userData().getMonsterAccessory(monster, cat.id);
+            if (monsterItem != null)
+            {
 
-	public void updateMonsterItem (Monster monster) {
+                Transform parent = Categories[cat.id - 1].transform;
 
-		MonsterDressingItem[] items = monstersItems [monster.MonsterType].ToArray();
+                Vector3 v = parent.localPosition;
+                v.z = cat.zOrder;
+                parent.localPosition = v;
 
-		monstersItems [monster.MonsterType].Clear ();
+                addItem(parent, monster.MonsterType, monsterItem, cat);
+            }
+        }
+    }
 
-		foreach (DressingCategoriesTO cat in DressingController.Instance.Dressing.Values) {
-			bool isTreated = false;
-			MonsterAccessoryTO monsterItem = UsersController.Instance.userData ().getMonsterAccessory (monster, cat.id);
+    public void updateMonsterItem(Monster monster)
+    {
 
-			foreach (MonsterDressingItem item in items) {
-				if (item.cat.id == cat.id) {
-					isTreated = true;
-					if (monsterItem == null) {
-						item.gameObject.GetComponent<GOInOut> ().PopOut ();	
-					} else if (monsterItem.id == item.item.id) {
-						monstersItems [monster.MonsterType].Add (item);
-					} else {
-						item.gameObject.GetComponent<GOInOut> ().PopOut ();	
+        MonsterDressingItem[] items = monstersItems[monster.MonsterType].ToArray();
 
-						Transform parent = Categories [cat.id - 1].transform;
-						addItem (parent, monster.MonsterType, monsterItem, cat);
-					}
-				}
-			}
-			if (isTreated == false) {
-				Transform parent = Categories [cat.id - 1].transform;
-				addItem (parent, monster.MonsterType, monsterItem, cat);
-			}
+        monstersItems[monster.MonsterType].Clear();
 
-		}
-/*
-		return;
+        foreach (DressingCategoriesTO cat in DressingController.Instance.Dressing.Values)
+        {
+            bool isTreated = false;
+            MonsterAccessoryTO monsterItem = UsersController.Instance.userData().getMonsterAccessory(monster, cat.id);
 
-		foreach(MonsterDressingItem item in monstersItems [monster.MonsterType]) {
-			item.gameObject.GetComponent<GOInOut> ().PopOut ();
-		}
-		monstersItems [monster.MonsterType].Clear();
-		add_Monster(monster);
-*/
-	}
+            foreach (MonsterDressingItem item in items)
+            {
+                if (item.cat.id == cat.id)
+                {
+                    isTreated = true;
+                    if (monsterItem == null)
+                    {
+                        item.gameObject.GetComponent<GOInOut>().PopOut();
+                    }
+                    else if (monsterItem.id == item.item.id)
+                    {
+                        monstersItems[monster.MonsterType].Add(item);
+                    }
+                    else
+                    {
+                        item.gameObject.GetComponent<GOInOut>().PopOut();
 
-	void addItem (Transform parent, MonsterType monsterType, MonsterAccessoryTO monsterItem, DressingCategoriesTO cat) {
-		var copy = Resources.Load<GameObject> ("Gameplay/Dressing/Items/" + monsterItem.id.ToString ());
-		if (copy != null) {
-			GameObject go = GameObject.Instantiate (copy);
+                        Transform parent = Categories[cat.id - 1].transform;
+                        addItem(parent, monster.MonsterType, monsterItem, cat);
+                    }
+                }
+            }
+            if (isTreated == false)
+            {
+                Transform parent = Categories[cat.id - 1].transform;
+                addItem(parent, monster.MonsterType, monsterItem, cat);
+            }
 
-			if (go != null) {
-				go.transform.SetParent (parent, false);
+        }
+        /*
+                return;
 
-				Vector3 v = go.transform.localPosition + monsterPos[monsterType];
-				v.z = cat.zOrder;
-				go.transform.localPosition = v;
+                foreach(MonsterDressingItem item in monstersItems [monster.MonsterType]) {
+                    item.gameObject.GetComponent<GOInOut> ().PopOut ();
+                }
+                monstersItems [monster.MonsterType].Clear();
+                add_Monster(monster);
+        */
+    }
 
-				MonsterDressingItem mdi = go.AddComponent<MonsterDressingItem> ();
-				mdi.item = monsterItem;
-				mdi.cat = cat;
+    void addItem(Transform parent, MonsterType monsterType, MonsterAccessoryTO monsterItem, DressingCategoriesTO cat)
+    {
+        var copy = Resources.Load<GameObject>("Gameplay/Dressing/Items/" + monsterItem.id.ToString());
+        if (copy != null)
+        {
+            GameObject go = GameObject.Instantiate(copy);
 
-				monstersItems [monsterType].Add (mdi);
-			}
-		}
-	}
+            if (go != null)
+            {
+                go.transform.SetParent(parent, false);
 
-	public void hideAllItems()
-	{
-		foreach (List<MonsterDressingItem> lgo in monstersItems.Values) {
-			foreach (MonsterDressingItem go in lgo) {
-				go.gameObject.SetActive (false);
-			}
-		}
-	}
+                Vector3 v = go.transform.localPosition + monsterPos[monsterType];
+                v.z = cat.zOrder;
+                go.transform.localPosition = v;
 
-	public void showCurrentMonsterItems(MonsterType currentType)
-	{
-		foreach (MonsterType type in monstersItems.Keys) {
-			bool isActive = type.Equals (currentType);
-			foreach (MonsterDressingItem go in monstersItems[type]) {
-				go.gameObject.SetActive (isActive);
-			}
-		}
-	}
+                MonsterDressingItem mdi = go.AddComponent<MonsterDressingItem>();
+                mdi.item = monsterItem;
+                mdi.cat = cat;
+
+                monstersItems[monsterType].Add(mdi);
+            }
+        }
+    }
+
+    public void hideAllItems()
+    {
+        foreach (List<MonsterDressingItem> lgo in monstersItems.Values)
+        {
+            foreach (MonsterDressingItem go in lgo)
+            {
+                go.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void showCurrentMonsterItems(MonsterType currentType)
+    {
+        foreach (MonsterType type in monstersItems.Keys)
+        {
+            bool isActive = type.Equals(currentType);
+            foreach (MonsterDressingItem go in monstersItems[type])
+            {
+                go.gameObject.SetActive(isActive);
+            }
+        }
+    }
 
 
 }

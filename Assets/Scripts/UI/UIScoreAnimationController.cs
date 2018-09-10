@@ -2,61 +2,69 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class UIScoreAnimationController : MonoBehaviour {
-	public Image ScoreBg;
-	public Text text;
-	public ParticleSystem Particles;
-	public AudioClip SoundSwish;
+public class UIScoreAnimationController : MonoBehaviour
+{
+    public Image ScoreBg;
+    public Text text;
+    public ParticleSystem Particles;
+    public AudioClip SoundSwish;
 
 
-	bool isSegmentAnimation = true;
+    bool isSegmentAnimation = true;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		//ScoreBg.color -= new Color (0, 0, 0, Time.deltaTime);
-	}
+    // Use this for initialization
+    void Start()
+    {
 
-	public void ShowBgEffect()
-	{
-		//ScoreBg.color = Color.white;
-		Particles.Play ();
+    }
 
-		if (GameplayController.Instance != null) {
-			GameplayController.Instance.FlushLevelScore ();
-		}
+    // Update is called once per frame
+    void Update()
+    {
+        //ScoreBg.color -= new Color (0, 0, 0, Time.deltaTime);
+    }
 
-		if (AudioController.Instance != null) {
-			AudioController.Instance.PlaySound (SoundSwish, .5f);
-		}
-	}
+    public void ShowBgEffect()
+    {
+        //ScoreBg.color = Color.white;
+        Particles.Play();
 
-	public void EndAnimation()
-	{
-		if (isSegmentAnimation) {
-//			GameplayController.Instance.EndSegmentWinAnimation ();
-		} else {
-			Destroy (gameObject);
-		}
-	}
+        if (GameplayController.Instance != null)
+        {
+            GameplayController.Instance.FlushLevelScore();
+        }
 
-	public void Play()
-	{
-		isSegmentAnimation = true;
-		GetComponent<Animation>().Play("AddScoreAnimation");
-		text.text = GameplayController.Instance.AddLevelScoreToFlush.ToString ();
-	}
+        if (AudioController.Instance != null)
+        {
+            AudioController.Instance.PlaySound(SoundSwish, .5f);
+        }
+    }
 
-	public void Play(int sum)
-	{
-		isSegmentAnimation = false;
-		GetComponent<Animation>().Play("AddScoreAnimation");
-		text.text = sum.ToString ();
-	}
+    public void EndAnimation()
+    {
+        if (isSegmentAnimation)
+        {
+            //GameplayController.Instance.EndSegmentWinAnimation ();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Play()
+    {
+        isSegmentAnimation = true;
+        GetComponent<Animation>().Play("AddScoreAnimation");
+        text.text = GameplayController.Instance.AddLevelScoreToFlush.ToString();
+    }
+
+    public void Play(int sum)
+    {
+        isSegmentAnimation = false;
+        GetComponent<Animation>().Play("AddScoreAnimation");
+        text.text = sum.ToString();
+    }
 
 
 }

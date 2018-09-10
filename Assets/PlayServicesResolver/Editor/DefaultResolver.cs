@@ -34,7 +34,7 @@ namespace GooglePlayServices
     /// </remarks>
     public  abstract class DefaultResolver : IResolver
     {
-        #region IResolver implementation
+#region IResolver implementation
 
         /// <summary>
         /// Version of the resolver - 1.0.0
@@ -133,7 +133,7 @@ namespace GooglePlayServices
             string destinationDirectory,
             PlayServicesSupport.OverwriteConfirmation handleOverwriteConfirmation);
 
-        #endregion
+#endregion
 
         /// <summary>
         /// Makes the version number.
@@ -164,11 +164,11 @@ namespace GooglePlayServices
                 int ver;
                 if (!int.TryParse(majorVersion, out ver))
                 {
-                    #if UNITY_4
+#if UNITY_4
                         ver = 4;
-                    #else
+#else
                         ver = 5;
-                    #endif
+#endif
                 }
                 return ver >= 5;
             }

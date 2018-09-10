@@ -35,7 +35,7 @@ namespace GooglePlayServices
             PlayServicesResolver.RegisterResolver(new ResolverVer1_1());
         }
 
-        #region IResolver implementation
+#region IResolver implementation
 
         /// <summary>
         /// Version of the resolver. - 1.1.0
@@ -71,7 +71,7 @@ namespace GooglePlayServices
             ProcessAars(destinationDirectory);
         }
 
-        #endregion
+#endregion
 
         /// <summary>
         /// Processes the aars.

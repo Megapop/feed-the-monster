@@ -2,122 +2,134 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIProfileSelectionController : MonoBehaviour {
-	public static UIProfileSelectionController Instance;
+public class UIProfileSelectionController : MonoBehaviour
+{
+    public static UIProfileSelectionController Instance;
 
 
-	public AudioClip TitleSound;
+    public AudioClip TitleSound;
 
-	public UIProfileSelectionButton[] profiles;
+    public UIProfileSelectionButton[] profiles;
 
-//	[HideInInspector]
-//	public GameObject NextScreen;
+    //[HideInInspector]
+    //public GameObject NextScreen;
 
-	[HideInInspector]
-	public string NextScene;
+    [HideInInspector]
+    public string NextScene;
 
-	[HideInInspector]
-	public bool skipConfirmationPopup;
+    [HideInInspector]
+    public bool skipConfirmationPopup;
 
-	[HideInInspector]
-	public bool allowToSelectCurrentProfile = false;
+    [HideInInspector]
+    public bool allowToSelectCurrentProfile = false;
 
-	[HideInInspector]
-	public Transform popupsHolder;
-
-
-	UIProfileSelectionButton currentButton;
-
-//	bool isFirstUse = true;
-
-	void Awake()
-	{
-		Instance = this;
-	}
+    [HideInInspector]
+    public Transform popupsHolder;
 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    UIProfileSelectionButton currentButton;
+
+    //bool isFirstUse = true;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 
-	void  OnDisable()
-	{
-//		NextScreen = null;
-		allowToSelectCurrentProfile = false;
-	}
+    // Use this for initialization
+    void Start()
+    {
 
-	void OnEnable()
-	{
-		if (AudioController.Instance) {
-			AudioController.Instance.PlaySound (TitleSound);
-		}
-		UpdateAllProfiles ();
-	}	
+    }
 
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void OnDisable()
+    {
+        //NextScreen = null;
+        allowToSelectCurrentProfile = false;
+    }
 
-	void UpdateAllProfiles()
-	{
-		foreach (UIProfileSelectionButton profile in profiles) {
-			if (profile != null) {
-				if (profile.ProfileId.Equals (UsersController.Instance.CurrentProfileId) && allowToSelectCurrentProfile) {
-					profile.MarkSelected ();
-				} else {
-					profile.MarkUnSelected ();
-				}
-			}
-		}
-
-//		isFirstUse = false;
-	}
+    void OnEnable()
+    {
+        if (AudioController.Instance)
+        {
+            AudioController.Instance.PlaySound(TitleSound);
+        }
+        UpdateAllProfiles();
+    }
 
 
+    // Update is called once per frame
+    void Update()
+    {
 
-	public void OnCloseClick()
-	{
-		Destroy (gameObject);
-	}
+    }
 
-	public void OnChangeProfile(UIProfileSelectionButton button)
-	{
-		currentButton = button;
+    void UpdateAllProfiles()
+    {
+        foreach (UIProfileSelectionButton profile in profiles)
+        {
+            if (profile != null)
+            {
+                if (profile.ProfileId.Equals(UsersController.Instance.CurrentProfileId) && allowToSelectCurrentProfile)
+                {
+                    profile.MarkSelected();
+                }
+                else
+                {
+                    profile.MarkUnSelected();
+                }
+            }
+        }
 
-		if (UsersController.Instance.CurrentProfileId.Equals (button.ProfileId) || skipConfirmationPopup) {
-			ChangeProfile ();
-		} else {
-			showConfirmaction ();
-		} 
-		skipConfirmationPopup = false;
-	}
-
-	void ChangeProfile()
-	{
-		UsersController.Instance.CurrentProfileId = currentButton.ProfileId;
-
-		UsersController.Instance.userData ().addFirstFriendsToCollection ();
-
-		Analitics.Instance.treckEvent (AnaliticsCategory.Profiles, "Select Profile_" + currentButton.ProfileId.ToString(), currentButton.ProfileId.ToString ());
-
-		SceneController.Instance.LoadScene (NextScene);
-	}
-
-	void showConfirmaction ()
-	{
-//		UIController.Instance.ConfirmationPopup.onConfirm = ChangeProfile;
-//		UIController.Instance.ShowPopup (UIController.Instance.ConfirmationPopup.gameObject);
-
-		GameObject popup = Instantiate(Resources.Load ("Gameplay/Popups/Popup Panel - Confirmation") as GameObject, popupsHolder);
+        //isFirstUse = false;
+    }
 
 
-		UIConfirmationPopup psc = popup.GetComponent<UIConfirmationPopup> ();
-		psc.onConfirm = ChangeProfile;
-	}
+
+    public void OnCloseClick()
+    {
+        Destroy(gameObject);
+    }
+
+    public void OnChangeProfile(UIProfileSelectionButton button)
+    {
+        currentButton = button;
+
+        if (UsersController.Instance.CurrentProfileId.Equals(button.ProfileId) || skipConfirmationPopup)
+        {
+            ChangeProfile();
+        }
+        else
+        {
+            showConfirmaction();
+        }
+        skipConfirmationPopup = false;
+    }
+
+    void ChangeProfile()
+    {
+        UsersController.Instance.CurrentProfileId = currentButton.ProfileId;
+
+        UsersController.Instance.userData().addFirstFriendsToCollection();
+
+        Analitics.Instance.treckEvent(AnaliticsCategory.Profiles, "Select Profile_" + currentButton.ProfileId.ToString(), currentButton.ProfileId.ToString());
+
+        SceneController.Instance.LoadScene(NextScene);
+    }
+
+    void showConfirmaction()
+    {
+        //UIController.Instance.ConfirmationPopup.onConfirm = ChangeProfile;
+        //UIController.Instance.ShowPopup (UIController.Instance.ConfirmationPopup.gameObject);
+
+        GameObject popup = Instantiate(Resources.Load("Gameplay/Popups/Popup Panel - Confirmation") as GameObject, popupsHolder);
+
+
+        UIConfirmationPopup psc = popup.GetComponent<UIConfirmationPopup>();
+        psc.onConfirm = ChangeProfile;
+    }
 
 
 

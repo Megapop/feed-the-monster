@@ -1,4 +1,5 @@
 ﻿
-public static class ArabicLetterInfo {
+public static class ArabicLetterInfo
+{
 
 }

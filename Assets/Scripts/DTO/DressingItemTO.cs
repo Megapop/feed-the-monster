@@ -4,12 +4,13 @@ using System.Xml;
 using System.Xml.Serialization;
 
 [System.Serializable]
-public class DressingItemTO {
+public class DressingItemTO
+{
 
-	[XmlAttribute("id")]
-	public int id;
+    [XmlAttribute("id")]
+    public int id;
 
-	[XmlAttribute("openInLevel")]
-	public int openInLevel;
+    [XmlAttribute("openInLevel")]
+    public int openInLevel;
 
 }

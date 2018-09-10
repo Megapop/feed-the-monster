@@ -30,28 +30,28 @@ public static class SampleDependencies
     /// which contains the dependencies specific to your plugin.
     /// </summary>
 
-/*
-    private static readonly string PluginName = "your_plugin_name";
-    public static PlayServicesSupport svcSupport;
+    /*
+        private static readonly string PluginName = "your_plugin_name";
+        public static PlayServicesSupport svcSupport;
 
-    /// <summary>
-    /// Initializes static members of the <see cref="SampleDependencies"/> class.
-    /// </summary>
-    static SampleDependencies()
-    {
+        /// <summary>
+        /// Initializes static members of the <see cref="SampleDependencies"/> class.
+        /// </summary>
+        static SampleDependencies()
+        {
 
-        PlayServicesSupport svcSupport = PlayServicesSupport.CreateInstance(
-                                             PluginName,
-                                             EditorPrefs.GetString("AndroidSdkRoot"),
-                                             "ProjectSettings");
-        RegisterDependencies();
-    }
+            PlayServicesSupport svcSupport = PlayServicesSupport.CreateInstance(
+                                                 PluginName,
+                                                 EditorPrefs.GetString("AndroidSdkRoot"),
+                                                 "ProjectSettings");
+            RegisterDependencies();
+        }
 
-    public static void RegisterDependencies()
-    {
-        // add your dependencies here
+        public static void RegisterDependencies()
+        {
+            // add your dependencies here
 
-        // svcSupport.DependOn("com.google.android.gms", "play-services-base", "8.1+");
-    }
-*/
+            // svcSupport.DependOn("com.google.android.gms", "play-services-base", "8.1+");
+        }
+    */
 }

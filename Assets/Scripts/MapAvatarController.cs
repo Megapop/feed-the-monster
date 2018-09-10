@@ -3,92 +3,108 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MapAvatarController : MonoBehaviour {
+public class MapAvatarController : MonoBehaviour
+{
 
-	[HideInInspector]
-	public Vector2[] ColliderPoints;
+    [HideInInspector]
+    public Vector2[] ColliderPoints;
 
-	Image mProfileIcon;
-
-
-	int mCurrentPointId = -1;
-	int mNextPointId = -1;
-	int mTargetPointId = -1;
-	LevelButtonController mTargetLevelController = null;
-	float mDelay = 0;
+    Image mProfileIcon;
 
 
-	void Awake () {
-		mProfileIcon = GetComponent<Image> ();
-	}
+    int mCurrentPointId = -1;
+    int mNextPointId = -1;
+    int mTargetPointId = -1;
+    LevelButtonController mTargetLevelController = null;
+    float mDelay = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 
-	void OnEnable() {
+    void Awake()
+    {
+        mProfileIcon = GetComponent<Image>();
+    }
 
-		if(mProfileIcon != null && UsersController.Instance != null) {
-			Sprite sp = UsersController.Instance.CurrentProfileSprite;
-			if (sp != null) {
-				mProfileIcon.sprite = sp;
-			}
-		}
-	}
+    // Use this for initialization
+    void Start()
+    {
 
-	// Update is called once per frame
-	void Update () {
-		if (mTargetPointId != -1) {
+    }
 
-			if (mDelay > 0f) {
-				mDelay -= Time.deltaTime;
-			} else { 
-				Vector2 nextPoint = ColliderPoints[mNextPointId];
-				if (Vector2.Distance (transform.localPosition, nextPoint) == 0f) {
-					mNextPointId++;
-					if (mNextPointId > mTargetPointId) {
-						onDone ();
-					} else {
-						nextPoint = ColliderPoints [mNextPointId];
-					}
-				}
-				transform.localPosition = Vector2.MoveTowards (transform.localPosition, nextPoint, Time.deltaTime * 50f);
-			} 
-		}
-	}
+    void OnEnable()
+    {
 
-	void onDone()
-	{
-		GameAssets.CurrentLevelIndex = mTargetLevelController.levelIndex;
-		GoToGame ();
+        if (mProfileIcon != null && UsersController.Instance != null)
+        {
+            Sprite sp = UsersController.Instance.CurrentProfileSprite;
+            if (sp != null)
+            {
+                mProfileIcon.sprite = sp;
+            }
+        }
+    }
 
-		mTargetLevelController = null;
-		mTargetPointId = -1;
-		mNextPointId = -1;
+    // Update is called once per frame
+    void Update()
+    {
+        if (mTargetPointId != -1)
+        {
 
-//		UIController.Instance.GoToLevel (mTargetLevel);
-	}
+            if (mDelay > 0f)
+            {
+                mDelay -= Time.deltaTime;
+            }
+            else
+            {
+                Vector2 nextPoint = ColliderPoints[mNextPointId];
+                if (Vector2.Distance(transform.localPosition, nextPoint) == 0f)
+                {
+                    mNextPointId++;
+                    if (mNextPointId > mTargetPointId)
+                    {
+                        onDone();
+                    }
+                    else
+                    {
+                        nextPoint = ColliderPoints[mNextPointId];
+                    }
+                }
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, nextPoint, Time.deltaTime * 50f);
+            }
+        }
+    }
 
-	public void jumpToPointId(int PointId)
-	{
-		Vector2 v = ColliderPoints[PointId];
-		transform.localPosition = v;
-		mCurrentPointId = PointId;
-	}
+    void onDone()
+    {
+        GameAssets.CurrentLevelIndex = mTargetLevelController.levelIndex;
+        GoToGame();
 
-	public void goToPointId(int targetPointId, LevelButtonController targetLevelController, float delay = 0)
-	{
-		mTargetPointId = targetPointId;
-		mTargetLevelController = targetLevelController;
-		mNextPointId = mCurrentPointId + 1;
-		mDelay = delay;
-	}
+        mTargetLevelController = null;
+        mTargetPointId = -1;
+        mNextPointId = -1;
 
-	public void GoToGame() {
-		mTargetLevelController.onClick ();
-//		SceneController.Instance.LoadScene("GameScreen");
-	}
+        //UIController.Instance.GoToLevel (mTargetLevel);
+    }
+
+    public void jumpToPointId(int PointId)
+    {
+        Vector2 v = ColliderPoints[PointId];
+        transform.localPosition = v;
+        mCurrentPointId = PointId;
+    }
+
+    public void goToPointId(int targetPointId, LevelButtonController targetLevelController, float delay = 0)
+    {
+        mTargetPointId = targetPointId;
+        mTargetLevelController = targetLevelController;
+        mNextPointId = mCurrentPointId + 1;
+        mDelay = delay;
+    }
+
+    public void GoToGame()
+    {
+        mTargetLevelController.onClick();
+        //SceneController.Instance.LoadScene("GameScreen");
+    }
 
 
 }

@@ -23,7 +23,8 @@ using System.Collections.Generic;
   Developers should call the methods in GoogleAnalyticsV4, which will call the
   appropriate methods in this class if the application is built for iOS.
 */
-public class GoogleAnalyticsiOSV3 {
+public class GoogleAnalyticsiOSV3
+{
 
 #if UNITY_IPHONE && !UNITY_EDITOR
   private string trackingCode;

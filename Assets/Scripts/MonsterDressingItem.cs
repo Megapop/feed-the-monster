@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterDressingItem : MonoBehaviour {
-	public MonsterAccessoryTO item;
-	public DressingCategoriesTO cat;
+public class MonsterDressingItem : MonoBehaviour
+{
+    public MonsterAccessoryTO item;
+    public DressingCategoriesTO cat;
 }

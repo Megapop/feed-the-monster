@@ -5,149 +5,173 @@ using UnityEngine;
 
 public class UsersController : MonoBehaviour
 {
-	public static string LocalUserPrefix = "Local_";
+    public static string LocalUserPrefix = "Local_";
 
-	public Action OnLoadData;
+    public Action OnLoadData;
 
-	public static UsersController Instance = null;
+    public static UsersController Instance = null;
 
-	public static float saveEverySeconds = 10f;
+    public static float saveEverySeconds = 10f;
 
-	int currentProfileId = -1;
-	float passedTime = 0;
+    int currentProfileId = -1;
+    float passedTime = 0;
 
-	Dictionary<string, UserDataTO> usersData = new Dictionary<string, UserDataTO>();
-	Dictionary<string, UserDataTO> dataToSave = new Dictionary<string, UserDataTO>();
-
-
+    Dictionary<string, UserDataTO> usersData = new Dictionary<string, UserDataTO>();
+    Dictionary<string, UserDataTO> dataToSave = new Dictionary<string, UserDataTO>();
 
 
 
 
-	public UserDataTO userData() {
-		return userData (currentProfileId);
-	}
-
-	public UserDataTO userData(int ProfileId) {
-		string key = UsersController.LocalUserPrefix + ProfileId.ToString();
-		if (!usersData.ContainsKey (key)) {
-			loadData (key);
-		}
-		return usersData [key];
-	}
 
 
-	public void setUserData(UserDataTO userData) {
+    public UserDataTO userData()
+    {
+        return userData(currentProfileId);
+    }
 
-		if (usersData.ContainsKey (userData.UserId)) {
-			usersData [userData.UserId] = userData;
-		} else {
-			usersData.Add (userData.UserId, userData);
-		}
-	}
-
-	public void clearUserData() {
-		setUserData(UserDataTO.create ("{}", userData().UserId));
-		save (userData(), true);
-	}
-
-	public void clearAllUsersData() {
-
-		for (int i = 0; i < 4; i++) {
-			string key = UsersController.LocalUserPrefix + i.ToString();
-			setUserData(UserDataTO.create ("{}", key));
-			save (userData(), true);
-		}
-	}
+    public UserDataTO userData(int ProfileId)
+    {
+        string key = UsersController.LocalUserPrefix + ProfileId.ToString();
+        if (!usersData.ContainsKey(key))
+        {
+            loadData(key);
+        }
+        return usersData[key];
+    }
 
 
+    public void setUserData(UserDataTO userData)
+    {
 
-	public int CurrentProfileId
-	{
-		set {
-			currentProfileId = value;
-			SaveStatConnector.Instance.ProfileId = currentProfileId;
-		}
-		get {
-			if (currentProfileId == -1) {
-				currentProfileId = SaveStatConnector.Instance.ProfileId;
-			}
-			return (currentProfileId == -1) ? 0 : currentProfileId;
-		}
-	}
+        if (usersData.ContainsKey(userData.UserId))
+        {
+            usersData[userData.UserId] = userData;
+        }
+        else
+        {
+            usersData.Add(userData.UserId, userData);
+        }
+    }
 
-	public Sprite CurrentProfileSprite
-	{
-		get {
-			if (GameAssets.Instance != null) {
-				return GameAssets.Instance.ProfileSprites [CurrentProfileId];
-			} 
-			return null;
-		}
-	}
+    public void clearUserData()
+    {
+        setUserData(UserDataTO.create("{}", userData().UserId));
+        save(userData(), true);
+    }
 
+    public void clearAllUsersData()
+    {
 
-	// Use this for initialization
-	void Awake () {
-		if (Instance == null) {
-			Instance = this;
-			DontDestroyOnLoad (gameObject);
-			SingletonLoader.CheckSingleton();
-		} else if (Instance != this) {
-			Destroy (gameObject);
-		}
-	}
-
-/*
-	void Start () {
-	}
-*/	
-	void Update () {
-		passedTime += Time.deltaTime;
-
-		if (passedTime >= UsersController.saveEverySeconds) {
-			SaveAllData ();
-		}
-	}
-
-	public void init()
-	{
-		loadData ("");
-	}
+        for (int i = 0; i < 4; i++)
+        {
+            string key = UsersController.LocalUserPrefix + i.ToString();
+            setUserData(UserDataTO.create("{}", key));
+            save(userData(), true);
+        }
+    }
 
 
-	void loadData(string userId)
-	{
-		setUserData(SaveStatConnector.Instance.StartLoadLocal (userId));
-	}
 
-	void saveData (UserDataTO userData) {
-		SaveStatConnector.Instance.StartSaveLocal (userData);
-	}
+    public int CurrentProfileId {
+        set {
+            currentProfileId = value;
+            SaveStatConnector.Instance.ProfileId = currentProfileId;
+        }
+        get {
+            if (currentProfileId == -1)
+            {
+                currentProfileId = SaveStatConnector.Instance.ProfileId;
+            }
+            return (currentProfileId == -1) ? 0 : currentProfileId;
+        }
+    }
 
-	
-	public void SaveAllData() {
-		passedTime = 0;
+    public Sprite CurrentProfileSprite {
+        get {
+            if (GameAssets.Instance != null)
+            {
+                return GameAssets.Instance.ProfileSprites[CurrentProfileId];
+            }
+            return null;
+        }
+    }
 
-		foreach (UserDataTO ud in dataToSave.Values) {
-			saveData (ud);
-		}
-		dataToSave.Clear ();
-	}
 
-	
-	public void save(UserDataTO userDataToSave, bool replace = false) {
+    // Use this for initialization
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SingletonLoader.CheckSingleton();
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
-		string userId = (string.IsNullOrEmpty(userDataToSave.UserId)) ? "guest" : userDataToSave.UserId;
+    /*
+        void Start () {
+        }
+    */
+    void Update()
+    {
+        passedTime += Time.deltaTime;
 
-		if (userDataToSave != null) {
-			if (!dataToSave.ContainsKey (userId)) {
-				dataToSave.Add (userId, userDataToSave);
-			} else if (replace) {
-				dataToSave[userId] = userDataToSave;
-			}
-		}
-	}
+        if (passedTime >= UsersController.saveEverySeconds)
+        {
+            SaveAllData();
+        }
+    }
+
+    public void init()
+    {
+        loadData("");
+    }
+
+
+    void loadData(string userId)
+    {
+        setUserData(SaveStatConnector.Instance.StartLoadLocal(userId));
+    }
+
+    void saveData(UserDataTO userData)
+    {
+        SaveStatConnector.Instance.StartSaveLocal(userData);
+    }
+
+
+    public void SaveAllData()
+    {
+        passedTime = 0;
+
+        foreach (UserDataTO ud in dataToSave.Values)
+        {
+            saveData(ud);
+        }
+        dataToSave.Clear();
+    }
+
+
+    public void save(UserDataTO userDataToSave, bool replace = false)
+    {
+
+        string userId = (string.IsNullOrEmpty(userDataToSave.UserId)) ? "guest" : userDataToSave.UserId;
+
+        if (userDataToSave != null)
+        {
+            if (!dataToSave.ContainsKey(userId))
+            {
+                dataToSave.Add(userId, userDataToSave);
+            }
+            else if (replace)
+            {
+                dataToSave[userId] = userDataToSave;
+            }
+        }
+    }
 
 
 
