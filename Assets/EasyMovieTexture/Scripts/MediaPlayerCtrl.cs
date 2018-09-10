@@ -451,7 +451,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 
 
-#if UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_5
+#if UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_5 || UNITY_2018
 				Call_SetUnityTexture((int)m_texPtr);
 #else
                 Call_SetUnityTexture(m_VideoTexture.GetNativeTextureID());
