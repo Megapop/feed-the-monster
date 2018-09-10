@@ -340,8 +340,10 @@ public class LegacyParticleUpdater : ScriptableWizard
             emission.burstCount = 1;
 #endif
 
-            ParticleSystem.Burst burst = new ParticleSystem.Burst();
-            burst.cycleCount = 1;
+            ParticleSystem.Burst burst = new ParticleSystem.Burst
+            {
+                cycleCount = 1
+            };
             burst.cycleCount = int.MaxValue;
             burst.repeatInterval = main.startLifetime.constantMax;
 
@@ -444,24 +446,25 @@ public class LegacyParticleUpdater : ScriptableWizard
             SerializedObject serializedObjectAnimator = new SerializedObject(animator);
             if (serializedObjectAnimator.FindProperty("Does Animate Color?").boolValue)
             {
-                Gradient gradient = new Gradient();
-
-                gradient.colorKeys = new GradientColorKey[]
+                Gradient gradient = new Gradient
+                {
+                    colorKeys = new GradientColorKey[]
                 {
                     new GradientColorKey(serializedObjectAnimator.FindProperty("colorAnimation[0]").colorValue, 0.0f),
                     new GradientColorKey(serializedObjectAnimator.FindProperty("colorAnimation[1]").colorValue, 0.25f),
                     new GradientColorKey(serializedObjectAnimator.FindProperty("colorAnimation[2]").colorValue, 0.5f),
                     new GradientColorKey(serializedObjectAnimator.FindProperty("colorAnimation[3]").colorValue, 0.75f),
                     new GradientColorKey(serializedObjectAnimator.FindProperty("colorAnimation[4]").colorValue, 1.0f)
-                };
+                },
 
-                gradient.alphaKeys = new GradientAlphaKey[]
+                    alphaKeys = new GradientAlphaKey[]
                 {
                     new GradientAlphaKey(serializedObjectAnimator.FindProperty("colorAnimation[0]").colorValue.a, 0.0f),
                     new GradientAlphaKey(serializedObjectAnimator.FindProperty("colorAnimation[1]").colorValue.a, 0.25f),
                     new GradientAlphaKey(serializedObjectAnimator.FindProperty("colorAnimation[2]").colorValue.a, 0.5f),
                     new GradientAlphaKey(serializedObjectAnimator.FindProperty("colorAnimation[3]").colorValue.a, 0.75f),
                     new GradientAlphaKey(serializedObjectAnimator.FindProperty("colorAnimation[4]").colorValue.a, 1.0f)
+                }
                 };
 
                 colorOverLifetime.enabled = true;
