@@ -5,17 +5,6 @@ using UnityEngine;
 public class DefaultAnalitics : MonoBehaviour, IAnalitics
 {
 
-    GoogleAnalyticsV4 mGoogleAnalytics;
-    GoogleAnalyticsV4 GoogleAnalytics {
-        get {
-            if (mGoogleAnalytics == null)
-            {
-                mGoogleAnalytics = GameObject.FindObjectOfType<GoogleAnalyticsV4>();
-            }
-            return mGoogleAnalytics;
-        }
-    }
-
     public void init()
     {
         //GameObject goLoader = Instantiate (Resources.Load ("Gameplay/GAv4") as GameObject);
@@ -24,34 +13,22 @@ public class DefaultAnalitics : MonoBehaviour, IAnalitics
 
     public void StopSession()
     {
-        if (GoogleAnalytics != null)
-        {
-            GoogleAnalytics.StopSession();
-        }
+        Debug.LogWarning("Implement StopSession() in Firebase.");
     }
 
     public void StartSession()
     {
-        if (GoogleAnalytics != null)
-        {
-            GoogleAnalytics.StartSession();
-        }
+        Debug.LogWarning("Implement StartSession() in Firebase.");
     }
 
     public void TreckScreen(string screenName)
     {
-        if (GoogleAnalytics != null)
-        {
-            GoogleAnalytics.LogScreen(screenName);
-        }
+        Debug.LogWarning("Implement TreckScreen() in Firebase.");
     }
 
     public void TreckEvent(string category, string action, string label, long value)
     {
-        if (GoogleAnalytics != null)
-        {
-            GoogleAnalytics.LogEvent(category.ToString(), action, label, value);
-        }
+        Debug.LogWarning("Implement TrackWarning() in Firebase.");
     }
 
 }
