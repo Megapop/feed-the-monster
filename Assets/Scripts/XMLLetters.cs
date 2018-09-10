@@ -26,7 +26,7 @@ public class XMLLetters
 
     [XmlArray("reaplace")]
     [XmlArrayItem("letter")]
-    public RTLLetterReaplce[] letterReaplace;
+    public RTLLetterReplace[] letterReaplace;
 
 
 

@@ -7,7 +7,7 @@ public class RTL
 {
 
     public static Dictionary<char, RTLLetter> letters;
-    public static RTLLetterReaplce[] letterReaplace;
+    public static RTLLetterReplace[] letterReaplace;
 
     public static char[] exceptions;
     public static char[] superExceptions;
@@ -45,7 +45,7 @@ public class RTL
     {
         if (RTL.letterReaplace != null)
         {
-            foreach (RTLLetterReaplce re in RTL.letterReaplace)
+            foreach (RTLLetterReplace re in RTL.letterReaplace)
             {
                 text = text.Replace(re.from, re.to);
             }

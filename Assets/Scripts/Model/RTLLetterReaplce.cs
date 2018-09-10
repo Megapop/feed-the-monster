@@ -2,9 +2,8 @@
 using System.Collections;
 
 [System.Serializable]
-public class RTLLetterReaplce : ScriptableObject
+public class RTLLetterReplace
 {
-
     public string from;
     public string to;
 }
