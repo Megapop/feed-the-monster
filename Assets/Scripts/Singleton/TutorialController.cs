@@ -33,7 +33,6 @@ public class TutorialController : MonoBehaviour
     }
 
 
-    // Use this for initialization
     void Awake()
     {
         if (Instance == null)
@@ -53,6 +52,7 @@ public class TutorialController : MonoBehaviour
         }
 
         void Update () {
+
         }
     */
     public void init()
@@ -73,9 +73,6 @@ public class TutorialController : MonoBehaviour
             }
         }
     }
-
-
-
 
 
     public Tutorial StartTutorial(Transform holder)
@@ -108,7 +105,6 @@ public class TutorialController : MonoBehaviour
 
         currentTutorial = gameObject.AddComponent<Tutorial>();
         currentTutorial.tutorialHandImage = tutorialHandImage;
-
     }
 
     public void StartTutorial(GameObject go)
@@ -187,7 +183,5 @@ public class TutorialController : MonoBehaviour
             voiceTutorial.dataToLoad = dataToLoad;
             voiceTutorial.onDone = onDoneDelegate;
         }
-
     }
-
 }

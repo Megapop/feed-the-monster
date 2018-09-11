@@ -3,24 +3,15 @@ using System.Collections;
 
 public class MonsterCollectionController : MonoBehaviour
 {
-
-
     Animator animController;
     float idleStateTimer = 0;
     public Monster monster;
 
 
-    // Use this for initialization
     void Start()
     {
         //animController = GameObject.Find ("monster").GetComponentInChildren<Animator> ();
         animController = gameObject.GetComponentInChildren<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -45,7 +36,4 @@ public class MonsterCollectionController : MonoBehaviour
             }
         }
     }
-
-
-
 }

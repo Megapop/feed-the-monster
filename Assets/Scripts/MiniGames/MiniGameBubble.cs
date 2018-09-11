@@ -5,7 +5,6 @@ using System.Collections;
 public class MiniGameBubble : MonoBehaviour
 //,IPointerClickHandler
 {
-
     /*
         void Start () {
 

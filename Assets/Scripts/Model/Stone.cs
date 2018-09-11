@@ -7,7 +7,6 @@ using System.Xml.Serialization;
 [System.Serializable]
 public class Stone
 {
-
     [XmlAttribute("spawnId")]
     public string spawnId;
 
@@ -37,7 +36,6 @@ public class Stone
 
     [XmlText()]
     public string value;
-
 
 
     int[] _spawnIds;
@@ -97,7 +95,6 @@ public class Stone
     }
 
 
-
     public static Stone CreateBooster(Stone origStone)
     {
         Stone stone = new Stone();
@@ -114,12 +111,6 @@ public class Stone
         stone.hideAfterBlinks = origStone.hideAfterBlinks;
 
 
-
-
         return stone;
     }
-
-
-
-
 }

@@ -9,7 +9,6 @@ using System;
 [XmlRoot("XMLLetters")]
 public class XMLLetters
 {
-
     [XmlArray("letters")]
     [XmlArrayItem("letter")]
     public RTLLetter[] letters;
@@ -27,9 +26,6 @@ public class XMLLetters
     [XmlArray("reaplace")]
     [XmlArrayItem("letter")]
     public RTLLetterReplace[] letterReaplace;
-
-
-
 
 
     public IEnumerator LoadFromResources(string path)
@@ -70,7 +66,5 @@ public class XMLLetters
         {
             RTL.superExceptions[i] = xmlLevel.superExceptions[i][0];
         }
-
-
     }
 }

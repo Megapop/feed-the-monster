@@ -67,6 +67,4 @@ public class MultiImageButton : UnityEngine.UI.Button
             g.CrossFadeColor(targetColor, (!instant) ? this.colors.fadeDuration : 0f, true, true);
         }
     }
-
-
 }

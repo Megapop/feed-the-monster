@@ -40,16 +40,10 @@ public class MiniGameController : MonoBehaviour
         Instance = this;
     }
 
-    // Use this for initialization
+
     void Start()
     {
         hideAllGames();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void hideAllGames()

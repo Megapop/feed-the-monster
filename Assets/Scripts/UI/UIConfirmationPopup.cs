@@ -3,9 +3,7 @@ using System.Collections;
 
 public class UIConfirmationPopup : MonoBehaviour
 {
-
     public GameObject mNextPanelToShow;
-    // Use this for initialization
 
 
     public delegate void ConfirmDelegate();

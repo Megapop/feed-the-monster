@@ -5,11 +5,9 @@ using System.Collections;
 
 public class LetterSpawn : MonoBehaviour
 {
-
     public int id;
 
 
-    // Use this for initialization
     void Start()
     {
         Image img = gameObject.GetComponent<Image>();
@@ -25,5 +23,4 @@ public class LetterSpawn : MonoBehaviour
             Destroy(t.gameObject);
         }
     }
-
 }

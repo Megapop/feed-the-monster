@@ -1,5 +1,4 @@
 ﻿Shader "Masked/Mask" {
- 
          // by moffatjason.
      Properties 
      {

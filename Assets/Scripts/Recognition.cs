@@ -8,7 +8,6 @@ using System.Collections;
 [System.Serializable]
 public class Recognition
 {
-
     [XmlAttribute("Letter")]
     public string Letter;
     [XmlAttribute("Variants")]

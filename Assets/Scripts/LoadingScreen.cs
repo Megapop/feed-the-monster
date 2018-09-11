@@ -7,5 +7,4 @@ public class LoadingScreen
     public bool Show;
     public Sprite BackgroundSprite;
     public float ShowLength;
-
 }

@@ -23,10 +23,8 @@ public class Timer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (GameplayController.Instance == null || GameplayController.Instance.IsPause || GameplayController.Instance.IsPausePopup)
             return;
 
@@ -48,6 +46,7 @@ public class Timer : MonoBehaviour
 
     public void init()
     {
+
     }
 
     public void Create(TimerCommand command)

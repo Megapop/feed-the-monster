@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GOInOut : MonoBehaviour
 {
-
     static float speed = 5f;
 
 
@@ -20,28 +19,10 @@ public class GOInOut : MonoBehaviour
         transform.localScale = Vector3.zero;
     }
 
-    // Use this for initialization
-    void Start()
-    {
-
-
-    }
-
     void OnEnable()
     {
         PopIn();
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-
-
 
     public void PopIn()
     {
@@ -54,10 +35,8 @@ public class GOInOut : MonoBehaviour
     }
 
 
-
     IEnumerator PopInElement()
     {
-
         transform.localScale = Vector3.zero;
         if (delay > 0)
         {
@@ -82,10 +61,8 @@ public class GOInOut : MonoBehaviour
     }
 
 
-
     IEnumerator PopOutElement()
     {
-
         transform.localScale = initScale;
 
         Vector3[] scales = new Vector3[] { initScale * 0.9f, initScale * 1.1f, Vector3.zero };
@@ -108,5 +85,4 @@ public class GOInOut : MonoBehaviour
 
         yield return true;
     }
-
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DressingController : MonoBehaviour
 {
-
     public static DressingController Instance = null;
 
     Dictionary<int, DressingCategoriesTO> _dressing = new Dictionary<int, DressingCategoriesTO>();
@@ -25,7 +24,6 @@ public class DressingController : MonoBehaviour
             }
         }
     }
-
 
 
     void Awake()
@@ -49,7 +47,6 @@ public class DressingController : MonoBehaviour
 
     public void onInit(Action callBack)
     {
-
         if (_isReady && callBack != null)
         {
             callBack();
@@ -75,7 +72,4 @@ public class DressingController : MonoBehaviour
         }
         return -1;
     }
-
-
-
 }

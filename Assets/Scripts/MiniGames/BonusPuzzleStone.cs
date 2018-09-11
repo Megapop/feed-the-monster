@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class BonusPuzzleStone : MonoBehaviour
 , IPointerDownHandler
 {
-
     public delegate void OnClickDelegate(BonusPuzzleStone stone);
     public OnClickDelegate OnClick;
     public OnClickDelegate OnDestroy;
@@ -28,7 +27,6 @@ public class BonusPuzzleStone : MonoBehaviour
     bool isClicked;
 
 
-
     int ScoreForBubble;
 
 
@@ -39,7 +37,6 @@ public class BonusPuzzleStone : MonoBehaviour
         //if (HideParticles != null) {
         //HideParticles.SetActive (false);
         //}
-
     }
 
     void OnDisable()
@@ -48,10 +45,8 @@ public class BonusPuzzleStone : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-
         Vector2 v;
 
         if (isClicked)
@@ -148,5 +143,4 @@ public class BonusPuzzleStone : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
 }

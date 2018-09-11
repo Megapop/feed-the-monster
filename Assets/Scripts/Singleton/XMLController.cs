@@ -12,10 +12,7 @@ public class XMLController : MonoBehaviour
     public bool isDressingLoaded = false;
 
 
-
-
     Level[] _levels;
-
 
 
     void Awake()
@@ -34,7 +31,6 @@ public class XMLController : MonoBehaviour
 
     public void init()
     {
-
         if (!isLevelLoaded)
         {
             StartCoroutine(XMLTool.LoadLevelsXML());
@@ -47,13 +43,7 @@ public class XMLController : MonoBehaviour
         {
             StartCoroutine(XMLTool.LoadDressingXML());
         }
-
-
-
     }
-
-
-
 
 
     Level[] levels {
@@ -65,9 +55,6 @@ public class XMLController : MonoBehaviour
             return _levels;
         }
     }
-
-
-
 
 
     public Level[] getLevelList()
@@ -134,7 +121,6 @@ public class XMLController : MonoBehaviour
                     Segment s = l.Segments[sId];
                     if (s != null)
                     {
-
                         usedSegment.Add(sKey);
 
                         level.Segments[i] = s;
@@ -167,5 +153,4 @@ public class XMLController : MonoBehaviour
         }
         return filtedLevels.ToArray();
     }
-
 }

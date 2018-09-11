@@ -31,17 +31,12 @@ public class UIParentsReportSlider : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void updateColor()
     {
@@ -85,6 +80,4 @@ public class UIParentsReportSlider : MonoBehaviour
             }
         }
     }
-
-
 }

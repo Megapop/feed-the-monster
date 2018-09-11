@@ -5,12 +5,10 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 
-
 #if !UNITY_WEBGL
 
 public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
 {
-
     public MediaPlayerCtrl m_srcVideo;
     public Slider m_srcSlider;
     public float m_fDragTime = 0.2f;
@@ -23,17 +21,8 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     float m_fLastValue = 0.0f;
     float m_fLastSetValue = 0.0f;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
-
         if (m_bActiveDrag == false)
         {
             m_fDeltaTime += Time.deltaTime;
@@ -43,10 +32,8 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 m_fDeltaTime = 0.0f;
                 //if(m_fLastSetValue != m_fLastValue)
                 //m_srcVideo.SetSeekBarValue (m_fLastValue);
-
             }
         }
-
 
 
         if (m_bUpdate == false)
@@ -54,15 +41,11 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (m_srcVideo != null)
         {
-
             if (m_srcSlider != null)
             {
                 m_srcSlider.value = m_srcVideo.GetSeekBarValue();
-
             }
-
         }
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -70,9 +53,6 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Debug.Log("OnPointerEnter:");
 
         m_bUpdate = false;
-
-
-
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -80,26 +60,16 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Debug.Log("OnPointerExit:");
 
         m_bUpdate = true;
-
-
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
 
-
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-
         m_srcVideo.SetSeekBarValue(m_srcSlider.value);
-
-
-
-
-
-
     }
 
 
@@ -116,8 +86,6 @@ public class SeekBarCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         m_srcVideo.SetSeekBarValue(m_srcSlider.value);
         m_fLastSetValue = m_srcSlider.value;
         m_bActiveDrag = false;
-
     }
-
 }
 #endif

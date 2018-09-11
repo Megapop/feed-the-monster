@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SaveStatConnector : MonoBehaviour
 {
-
     public static SaveStatConnector Instance = null;
 
     void Awake()
@@ -46,7 +45,6 @@ public class SaveStatConnector : MonoBehaviour
     {
         try
         {
-
             if (www.error != null)
             {
                 Debug.Log("SaveStatConnector.createUserData - Fail\n" + www.error);
@@ -146,7 +144,6 @@ public class SaveStatConnector : MonoBehaviour
     }
 
 
-
     public int ProfileId {
         get {
             return PlayerPrefs.GetInt(Keys.LastProfileId.ToString(), -1);
@@ -159,8 +156,6 @@ public class SaveStatConnector : MonoBehaviour
     #endregion
 
 
-
-
     public int DataVersion {
         get {
             return PlayerPrefs.GetInt(Keys.DataVersion.ToString(), 0);
@@ -169,9 +164,6 @@ public class SaveStatConnector : MonoBehaviour
             PlayerPrefs.SetInt(Keys.DataVersion.ToString(), value);
         }
     }
-
-
-
 }
 
 public enum Keys

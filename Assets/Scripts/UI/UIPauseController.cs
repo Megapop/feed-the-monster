@@ -15,13 +15,7 @@ public class UIPauseController : MonoBehaviour
 
     public Transform popupsHolder;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -47,7 +41,6 @@ public class UIPauseController : MonoBehaviour
     {
         SoundButtonImage.color = SaveStatConnector.Instance.SoundState ? SoundOnColor : SoundOffColor;
     }
-
 
 
     public void SoundButtonClick()
@@ -96,6 +89,4 @@ public class UIPauseController : MonoBehaviour
     {
         SceneController.Instance.LoadScene("GameScreen");
     }
-
-
 }

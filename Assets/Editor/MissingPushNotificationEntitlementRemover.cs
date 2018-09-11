@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 
 public class MissingPushNotificationEntitlementRemover
 {
-
     public static string appControllerFile = "UnityAppController.mm";
     // this matches (void)application:did..something..Notification..something... methods declaration
     private static string regexpForNotificationMethods = "-\\s?\\(void\\)application:\\(UIApplication\\s?\\*\\)application\\sdid.+RemoteNotification.+\\n?{[^-|#.+]+";

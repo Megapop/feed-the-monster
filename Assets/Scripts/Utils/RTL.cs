@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class RTL
 {
-
     public static Dictionary<char, RTLLetter> letters;
     public static RTLLetterReplace[] letterReaplace;
 
@@ -90,7 +89,6 @@ public class RTL
         if (charIndex == 0)
         {
             return false;
-
         }
         else if (
           Array.IndexOf(RTL.exceptions, text[charIndex - 1]) != -1

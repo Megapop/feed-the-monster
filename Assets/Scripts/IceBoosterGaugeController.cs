@@ -21,13 +21,6 @@ public class IceBoosterGaugeController : MonoBehaviour
         }
     }
 
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isRun)
@@ -38,11 +31,6 @@ public class IceBoosterGaugeController : MonoBehaviour
                 stopFrezz();
             }
         }
-    }
-
-    void OnEnable()
-    {
-
     }
 
     void OnDisable()
@@ -73,7 +61,5 @@ public class IceBoosterGaugeController : MonoBehaviour
     {
         GameplayController.Instance.isFreezeTimer = false;
     }
-
-
 }
 

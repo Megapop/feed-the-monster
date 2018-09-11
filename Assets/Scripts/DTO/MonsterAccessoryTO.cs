@@ -4,11 +4,9 @@ using UnityEngine;
 [Serializable]
 public class MonsterAccessoryTO
 {
-
     public int id;
     //public Vector2 pos; 
-    //public Vector2 rot; 
-
+    //public Vector2 rot;
 
 
     public static MonsterAccessoryTO create(DressingItemTO item)

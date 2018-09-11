@@ -14,7 +14,6 @@ HideCallout: int, '-1' not hide, '0' hide, <'1' hide after ? blinks
 LettersGroup: מספר מקבץ
 
 
-
 Segment
 **************************
 spawnIds: put letters only  in locations from the list (split by comma)

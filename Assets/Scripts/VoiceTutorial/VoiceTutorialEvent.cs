@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class VoiceTutorialEvent : MonoBehaviour
 {
-
-
     public delegate void EventDelegate();
     public EventDelegate onOut;
     public EventDelegate onIn;
@@ -24,7 +22,5 @@ public class VoiceTutorialEvent : MonoBehaviour
         {
             onIn();
         }
-
     }
-
 }

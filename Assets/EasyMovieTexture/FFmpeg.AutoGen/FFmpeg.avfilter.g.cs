@@ -6,30 +6,37 @@ namespace FFmpeg.AutoGen
 {
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVFilterContext
     {
+
     }
 
     public unsafe partial struct AVFilterLink
     {
+
     }
 
     public unsafe partial struct AVFilterPad
     {
+
     }
 
     public unsafe partial struct AVFilterFormats
     {
+
     }
 
     public unsafe partial struct AVFilter
@@ -52,6 +59,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVFilterInternal
     {
+
     }
 
     public unsafe partial struct AVFilterContext
@@ -78,10 +86,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVFilterCommand
     {
+
     }
 
     public unsafe partial struct AVFilterGraph
     {
+
     }
 
     public unsafe partial struct AVFilterLink
@@ -126,10 +136,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVFilterChannelLayouts
     {
+
     }
 
     public unsafe partial struct AVFilterGraphInternal
     {
+
     }
 
     public unsafe partial struct AVFilterGraph
@@ -160,82 +172,102 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVCodecInternal
     {
+
     }
 
     public unsafe partial struct AVCodecDefault
     {
+
     }
 
     public unsafe partial struct MpegEncContext
     {
+
     }
 
     public unsafe partial struct ReSampleContext
     {
+
     }
 
     public unsafe partial struct AVResampleContext
     {
+
     }
 
     public unsafe partial struct AVFilterPad
     {
+
     }
 
     public unsafe partial struct AVFilterFormats
     {
+
     }
 
     public unsafe partial struct AVFilterInternal
     {
+
     }
 
     public unsafe partial struct AVFilterGraphInternal
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVFilterPad
     {
+
     }
 
     public unsafe partial struct AVFilterFormats
     {
+
     }
 
     public unsafe partial struct AVFilterInternal
     {
+
     }
 
     public unsafe partial struct AVFilterGraphInternal
     {
+
     }
 
     public unsafe partial struct AVBufferSinkParams
@@ -454,7 +486,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libavfilter, EntryPoint = "av_buffersink_get_samples", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_buffersink_get_samples(AVFilterContext* @ctx, AVFrame* @frame, int @nb_samples);
-
     }
 }
 #endif

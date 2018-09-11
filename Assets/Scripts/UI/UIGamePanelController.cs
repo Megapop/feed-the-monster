@@ -3,26 +3,11 @@ using System.Collections;
 
 public class UIGamePanelController : MonoBehaviour
 {
-
-
     void Awake()
     {
 
     }
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -84,6 +69,4 @@ public class UIGamePanelController : MonoBehaviour
         newMonster.transform.localScale = MonsterBar.Instance.transform.localScale;
         newMonster.transform.position = newMonster.GetComponent<MonsterPosition>().GameScreen;
     }
-
-
 }

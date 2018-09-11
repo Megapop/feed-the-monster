@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MiniGameButton : MonoBehaviour
 {
-
     public MonsterType monsterType;
 
     Monster _monster;
@@ -53,7 +52,5 @@ public class MiniGameButton : MonoBehaviour
 
             SceneController.Instance.LoadScene("MiniGamesScreen");
         }
-
     }
-
 }

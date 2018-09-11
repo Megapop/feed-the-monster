@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class XMLTool
 {
-
     public static IEnumerator LoadLettersXML()
     {
         XMLLetters xmlLetters = new XMLLetters();

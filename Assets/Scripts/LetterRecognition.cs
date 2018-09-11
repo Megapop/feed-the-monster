@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 [System.Serializable]
 public class LetterRecognition
 {
-
     [XmlAttribute("Letter")]
     public string Letter;
 

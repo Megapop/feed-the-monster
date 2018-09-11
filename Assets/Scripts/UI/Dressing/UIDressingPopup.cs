@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class UIDressingPopup : MonoBehaviour
 {
-
     public UIDressingItem[] items;
 
     public int _categoryId;
 
     public string defaultOutlineFile = string.Empty;
-
 
 
     [HideInInspector]
@@ -43,11 +41,10 @@ public class UIDressingPopup : MonoBehaviour
         transform.localPosition = outPosition;
     }
 
-    // Use this for initialization
+
     void Start()
     {
         Invoke("requestInit", 0.1f);
-
     }
 
 
@@ -57,7 +54,6 @@ public class UIDressingPopup : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * 10f);
@@ -138,9 +134,6 @@ public class UIDressingPopup : MonoBehaviour
     {
         isOpen = false;
         targetPosition = outPosition;
-
-
-
     }
 
 

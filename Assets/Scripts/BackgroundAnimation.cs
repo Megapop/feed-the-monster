@@ -3,26 +3,8 @@ using System.Collections;
 
 public class BackgroundAnimation : MonoBehaviour
 {
-
-
     public GameObject ElementsGO;
-
-
     Vector3 currentRotate;
-
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
     void OnEnable()
     {
@@ -60,14 +42,9 @@ public class BackgroundAnimation : MonoBehaviour
         }
     }
 
-
     void setRotate(Vector3 v)
     {
         currentRotate = v;
         ElementsGO.transform.rotation = Quaternion.Euler(v);
     }
-
-
-
-
 }

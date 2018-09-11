@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MonsterAnimation : MonoBehaviour
 {
-
     public void EndEat()
     {
         if (GameplayController.Instance != null)
@@ -28,7 +27,4 @@ public class MonsterAnimation : MonoBehaviour
             GameplayController.Instance.SpitsMeal();
         }
     }
-
-
-
 }

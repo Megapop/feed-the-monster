@@ -29,20 +29,7 @@ public class Feedback : MonoBehaviour
             }
         }
     }
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    
     void OnEnable()
     {
         //init ("Feedback_v01");
@@ -78,6 +65,4 @@ public class Feedback : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-
 }

@@ -76,7 +76,6 @@ public class CountTo10Game : BaseMiniGame
             CurrentDigit++;
 
 
-
             if (CurrentDigit >= 11)
             {
                 Complete();
@@ -85,10 +84,6 @@ public class CountTo10Game : BaseMiniGame
             {
                 EnableCurrentDigit();
             }
-
-
-
-
         }
     }
 
@@ -105,6 +100,7 @@ public class CountTo10Game : BaseMiniGame
     {
         if (CurrentDigit - 2 >= 0)
         {
+
         }
         letters[CurrentDigit - 1].gameObject.SetActive(true);
     }
@@ -115,13 +111,6 @@ public class CountTo10Game : BaseMiniGame
     }
 
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (endingMonster != null)
@@ -138,7 +127,6 @@ public class CountTo10Game : BaseMiniGame
                 startHappyEvolution();
             }
         }
-
     }
 
     void OnEnable()
@@ -227,7 +215,5 @@ public class CountTo10Game : BaseMiniGame
     }
 
 
-
     // end added by Tzahi
-
 }

@@ -21,8 +21,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #endif
 
 
-
-
     public string m_strFileName;
     public GameObject[] m_TargetMaterial = null;
     private Texture2D m_VideoTexture = null;
@@ -61,9 +59,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #endif
 
 
-
-
-
 #if UNITY_ANDROID && !UNITY_EDITOR && UNITY_5
 	[DllImport ("BlueDoveMediaRender")]
 	private static extern void InitNDK();
@@ -91,7 +86,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     private static extern IntPtr GetRenderEventFunc();
 
 
-
 #endif
 
 #if (UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX)
@@ -109,9 +103,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 
 #endif
-
-
-
 
 
     private int m_iAndroidMgrID;
@@ -162,7 +153,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     private bool m_bInit = false;
 
 
-
 #if !UNITY_WEBPLAYER && !UNITY_WEBGL && !UNITY_WP8 && !UNITY_WP8_1
 
     static MediaPlayerCtrl()
@@ -196,8 +186,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     void Awake()
     {
-
-
 #if UNITY_STANDALONE
         String currentPath = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Process);
 
@@ -224,7 +212,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         if (m_TargetMaterial != null)
         {
-
             for (int iIndex = 0; iIndex < m_TargetMaterial.Length; iIndex++)
             {
                 if (m_TargetMaterial[iIndex] != null)
@@ -246,12 +233,8 @@ public class MediaPlayerCtrl : MonoBehaviour
                         m_TargetMaterial[iIndex].GetComponent<RawImage>().uvRect = new Rect(0, 1, 1, -1);
                     }
                 }
-
             }
-
-
         }
-
 
 
 #endif
@@ -272,24 +255,10 @@ public class MediaPlayerCtrl : MonoBehaviour
 #endif
 
         Call_SetUnityActivity();
-
-
-
-
-
-
     }
-    // Use this for initialization
+
     void Start()
     {
-
-
-
-
-
-
-
-
 #if UNITY_ANDROID
 		if (Application.dataPath.Contains(".obb")) {
 			
@@ -302,13 +271,11 @@ public class MediaPlayerCtrl : MonoBehaviour
 #endif
 
         m_bInit = true;
-
     }
 
 
     void OnApplicationQuit()
     {
-
         //if (System.IO.Directory.Exists(Application.persistentDataPath + "/Data") == true)
         //    System.IO.Directory.Delete(Application.persistentDataPath + "/Data", true);
     }
@@ -334,8 +301,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     void Update()
     {
-
-
         if (string.IsNullOrEmpty(m_strFileName))
         {
             return;
@@ -349,11 +314,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         if (m_bFirst == false)
         {
-
-
-
-
-
             string strName = m_strFileName.Trim();
 
 #if UNITY_IPHONE || UNITY_TVOS
@@ -395,8 +355,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             Call_SetLooping(m_bLoop);
             m_bFirst = true;
-
-
         }
 
 
@@ -404,8 +362,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         {
             if (m_bCheckFBO == false)
             {
-
-
                 if (Call_GetVideoWidth() <= 0 || Call_GetVideoHeight() <= 0)
                 {
                     return;
@@ -418,7 +374,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                 if (m_VideoTexture != null)
                 {
-
                     //Destroy(m_VideoTexture);
 
                     if (m_VideoTextureDummy != null)
@@ -429,15 +384,12 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                     m_VideoTextureDummy = m_VideoTexture;
                     m_VideoTexture = null;
-
-
                 }
 
 #if UNITY_ANDROID || UNITY_EDITOR || UNITY_STANDALONE
                 if (m_bSupportRockchip)
                 {
                     m_VideoTexture = new Texture2D(Call_GetVideoWidth(), Call_GetVideoHeight(), TextureFormat.RGB565, false);
-
                 }
                 else
                 {
@@ -448,7 +400,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                 m_VideoTexture.wrapMode = TextureWrapMode.Clamp;
 
                 m_texPtr = m_VideoTexture.GetNativeTexturePtr();
-
 
 
 #if UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_5
@@ -481,26 +432,17 @@ public class MediaPlayerCtrl : MonoBehaviour
             Call_UpdateVideoTexture();
 
 
-
             m_iCurrentSeekPosition = Call_GetSeekPosition();
-
-
-
-
         }
-
 
 
         if (m_CurrentState != Call_GetStatus())
         {
-
             m_CurrentState = Call_GetStatus();
-
 
 
             if (m_CurrentState == MEDIAPLAYER_STATE.READY)
             {
-
                 if (OnReady != null)
                     OnReady();
 
@@ -514,9 +456,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                 }
 
                 SetVolume(m_fVolume);
-
-
-
             }
             else if (m_CurrentState == MEDIAPLAYER_STATE.END)
             {
@@ -532,12 +471,9 @@ public class MediaPlayerCtrl : MonoBehaviour
             {
                 OnError((MEDIAPLAYER_ERROR)Call_GetError(), (MEDIAPLAYER_ERROR)Call_GetErrorExtra());
             }
-
         }
 
         GL.InvalidateState();
-
-
     }
 
     public void DeleteVideoTexture()
@@ -564,7 +500,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         if (m_VideoTexture != null)
         {
-
             //Destroy(m_VideoTexture);
 
             if (m_VideoTextureDummy != null)
@@ -575,8 +510,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             m_VideoTextureDummy = m_VideoTexture;
             m_VideoTexture = null;
-
-
         }
 
 #if UNITY_IPHONE && !UNITY_EDITOR
@@ -588,7 +521,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         if (m_bSupportRockchip)
         {
             m_VideoTexture = new Texture2D(Call_GetVideoWidth(), Call_GetVideoHeight(), TextureFormat.RGB565, false);
-
         }
         else
         {
@@ -639,9 +571,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                 if (m_bFullScreen)
                 {
-
-
-
                     m_objResize[i].transform.localScale = new Vector3(20.0f / fRatioScreen, 20.0f / fRatioScreen, 1.0f);
                     if (fRatio < 1.0f)
                     {
@@ -661,20 +590,17 @@ public class MediaPlayerCtrl : MonoBehaviour
                         {
                             if (fRatio >= fRatioScreen)
                             {
-
                                 m_objResize[i].transform.localScale *= fRatioResult;
                             }
                         }
                         else
                         {
                             m_objResize[i].transform.localScale *= fRatioResult;
-
                         }
 
                         m_ScaleValue = MEDIA_SCALE.SCALE_X_TO_Y;
                     }
                 }
-
 
 
                 if (m_ScaleValue == MEDIA_SCALE.SCALE_X_TO_Y)
@@ -732,10 +658,8 @@ public class MediaPlayerCtrl : MonoBehaviour
                         = new Vector3(m_objResize[i].transform.localScale.x, m_objResize[i].transform.localScale.y, m_objResize[i].transform.localScale.z);
                 }
             }
-
         }
     }
-
 
 
     //The error code is the following sites related documents.
@@ -782,7 +706,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         }
 
 
-
         Debug.LogError(strError);
 
         if (OnVideoError != null)
@@ -794,8 +717,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     void OnDestroy()
     {
-
-
 #if UNITY_ANDROID
 		
 		//Call_Reset();
@@ -813,8 +734,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             Destroy(m_VideoTexture);
 
         Call_Destroy();
-
-
     }
 
     bool m_bPause = false;
@@ -837,8 +756,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #else
             Call_Pause();
 #endif
-
-
         }
         else
         {
@@ -854,9 +771,7 @@ public class MediaPlayerCtrl : MonoBehaviour
                 Call_Pause();
                 m_bPause = false;
             }
-
         }
-
     }
 
 
@@ -893,7 +808,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         {
             m_bReadyPlay = true;
         }
-
     }
 
     public void Stop()
@@ -937,7 +851,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     }
 
 
-
     public void SetVolume(float fVolume)
     {
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING || m_CurrentState == MEDIAPLAYER_STATE.PAUSED || m_CurrentState == MEDIAPLAYER_STATE.END || m_CurrentState == MEDIAPLAYER_STATE.READY || m_CurrentState == MEDIAPLAYER_STATE.STOPPED)
@@ -950,7 +863,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     //return milisecond  
     public int GetSeekPosition()
     {
-
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING || m_CurrentState == MEDIAPLAYER_STATE.PAUSED || m_CurrentState == MEDIAPLAYER_STATE.END)
             return m_iCurrentSeekPosition;
         else
@@ -961,7 +873,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     {
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING || m_CurrentState == MEDIAPLAYER_STATE.READY || m_CurrentState == MEDIAPLAYER_STATE.PAUSED || m_CurrentState == MEDIAPLAYER_STATE.END || m_CurrentState == MEDIAPLAYER_STATE.STOPPED)
             Call_SetSeekPosition(iSeek);
-
     }
 
 
@@ -972,7 +883,6 @@ public class MediaPlayerCtrl : MonoBehaviour
     /// <param name="fSpeed">video playback speed.</param>
     public void SetSpeed(float fSpeed)
     {
-
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING || m_CurrentState == MEDIAPLAYER_STATE.READY || m_CurrentState == MEDIAPLAYER_STATE.PAUSED || m_CurrentState == MEDIAPLAYER_STATE.END || m_CurrentState == MEDIAPLAYER_STATE.STOPPED)
         {
             m_fSpeed = fSpeed;
@@ -1055,9 +965,7 @@ public class MediaPlayerCtrl : MonoBehaviour
         Call_UnLoad();
 
         m_CurrentState = MEDIAPLAYER_STATE.NOT_READY;
-
     }
-
 
 
 #if !UNITY_EDITOR && !UNITY_STANDALONE && !UNITY_WEBGL
@@ -1107,8 +1015,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #if UNITY_5
 		if( SystemInfo.graphicsMultiThreaded == true)
 		{
-
-
 #if UNITY_5_2
 			GL.IssuePluginEvent(EasyMovieTextureRender(), 4 + m_iAndroidMgrID * 10 + 7000);
 #else
@@ -1313,8 +1219,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #if UNITY_5
 		if( SystemInfo.graphicsMultiThreaded == true)
 		{
-
-
 #if UNITY_5_2
 			GL.IssuePluginEvent(EasyMovieTextureRender(), 2 + m_iAndroidMgrID * 10 + 7000);
 #else
@@ -1404,14 +1308,12 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 	private void Call_SetSpeed(float fSpeed)
 	{
-
 	using (AndroidJavaClass buildVersion = new AndroidJavaClass("android.os.Build$VERSION"))
 	{
 		int sdkVersion = buildVersion.GetStatic<int>("SDK_INT");
 
 		if(sdkVersion >= 23 ) //Android 6.0
 		{
-
 			GetJavaObject().Call("SetSpeed",fSpeed);
 
 		}
@@ -1632,7 +1534,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 		
 		if( m_CurrentState == MEDIAPLAYER_STATE.PLAYING || m_CurrentState == MEDIAPLAYER_STATE.PAUSED)
 		{
-
 			if( videoTexture == null)
 				return;
 
@@ -1874,7 +1775,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     private void Call_Destroy()
     {
-
         if (loader != null)
         {
             while (loader.IsAlive == true)
@@ -1923,10 +1823,8 @@ public class MediaPlayerCtrl : MonoBehaviour
             }
 
 
-
             threadVideo = null;
         }
-
 
 
         if (listAudio != null)
@@ -1950,7 +1848,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         if (listAudioPtsTime != null)
         {
-
             listAudioPtsTime.Clear();
             listAudioPtsTime = null;
         }
@@ -1960,8 +1857,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             listVideoPts.Clear();
             listVideoPts = null;
         }
-
-
 
 
         fCurrentSeekTime = 0.0f;
@@ -2034,16 +1929,12 @@ public class MediaPlayerCtrl : MonoBehaviour
             Destroy(audioClip);
             audioClip = null;
         }
-
-
-
     }
 
     Thread loader = null;
 
     private unsafe bool Call_Load(string strFileName, int iSeek)
     {
-
         fCurrentSeekTime = 0.0f;
         fLastFrameTime = 0.0f;
         iSoundCount = 0;
@@ -2078,8 +1969,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         loader = new Thread(() =>
         {
-
-
             AVFormatContext* ppFomatContext = null;
             if (ffmpeg.avformat_open_input(&ppFomatContext, strFileName, null, null) != 0)
             {
@@ -2093,7 +1982,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             pFormatContext = ppFomatContext;
 
 
-
             if (ffmpeg.avformat_find_stream_info(pFormatContext, null) != 0)
             {
                 m_CurrentState = MEDIAPLAYER_STATE.ERROR;
@@ -2104,7 +1992,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             {
                 LoadVideoPart2();
             });
-
         });
 
         loader.Priority = System.Threading.ThreadPriority.AboveNormal;
@@ -2117,7 +2004,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     void LoadVideoPart2()
     {
-
         pStream = null;
         pStreamAudio = null;
 
@@ -2134,13 +2020,11 @@ public class MediaPlayerCtrl : MonoBehaviour
                     pStream = (pFormatContext)->streams[i];
                     iStreamIndex = i;
                 }
-
             }
             else if ((pFormatContext)->streams[i]->codec->codec_type == AVMediaType.AVMEDIA_TYPE_AUDIO)
             {
                 pStreamAudio = (pFormatContext)->streams[i];
                 iStreamAudioIndex = i;
-
             }
         }
 
@@ -2230,9 +2114,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                 m_CurrentState = MEDIAPLAYER_STATE.ERROR;
                 throw new ApplicationException(@"Could not open codec");
             }
-
-
-
         }
 
         pDecodedFrame = ffmpeg.av_frame_alloc();
@@ -2246,9 +2127,9 @@ public class MediaPlayerCtrl : MonoBehaviour
         listVideoPts = new Queue<float>();
 
 
-
         if (m_strFileName.StartsWith("rtsp", StringComparison.OrdinalIgnoreCase) == true)
         {
+
         }
         else
         {
@@ -2268,18 +2149,14 @@ public class MediaPlayerCtrl : MonoBehaviour
             if (OnReady != null)
                 OnReady();
             m_CurrentState = MEDIAPLAYER_STATE.PLAYING;
-
         }
         else
         {
-
             m_CurrentState = MEDIAPLAYER_STATE.READY;
 
             if (OnReady != null)
                 OnReady();
-
         }
-
     }
 
     AVHWAccel* ff_find_hwaccel(AVCodecID codec_id, AVPixelFormat pix_fmt)
@@ -2309,8 +2186,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 
         //Call_Pause ();
-
-
     }
 
 
@@ -2344,9 +2219,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     private void ThreadUpdate()
     {
-
-
-
         /*lock (listVideo)
         {
             if (listVideo != null)
@@ -2366,8 +2238,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         while (true)
         {
-
-
             if (listVideo != null)
             {
                 while (listVideo.Count > 30 || bEnd == true)
@@ -2377,18 +2247,11 @@ public class MediaPlayerCtrl : MonoBehaviour
             }
 
 
-
-
             // if( m_CurrentState == MEDIAPLAYER_STATE.PLAYING)
-
-
-
-
 
 
             UpdateVideo();
             Thread.Sleep(1);
-
 
 
             //Thread.Sleep(5);
@@ -2402,22 +2265,17 @@ public class MediaPlayerCtrl : MonoBehaviour
         var gotSound = 0;
 
 
-
         if (m_CurrentState != MEDIAPLAYER_STATE.PAUSED)
         {
             if (pPacket != null)
             {
                 if (pPacket->stream_index == iStreamIndex)
                 {
-
-
                     var size = ffmpeg.avcodec_decode_video2(pCodecContext, pDecodedFrame, &gotPicture, pPacket);
                     if (size < 0)
                     {
                         throw new ApplicationException(string.Format(@"Error while decoding frame "));
                     }
-
-
 
 
                     if ((ulong)pPacket->dts != ffmpeg.AV_NOPTS_VALUE)
@@ -2432,12 +2290,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                     pts *= av_q2d(pStream->time_base);
 
 
-
-
-
-
-
-
                     if (gotPicture == 1)
                     {
                         if (pts > 0)
@@ -2446,16 +2298,13 @@ public class MediaPlayerCtrl : MonoBehaviour
                             {
                                 if (!m_bIsFirstFrameReady)
                                 {
-
                                     //Debug.Log("FistReady"  + listVideo.Count);
                                     m_bIsFirstFrameReady = true;
 
 
                                     bVideoFirstFrameReady = true;
-
                                 }
                             }
-
                         }
 
                         //Debug.Log ("Video " + pts);
@@ -2485,14 +2334,7 @@ public class MediaPlayerCtrl : MonoBehaviour
                             {
                                 listVideoPts.Enqueue((float)pts);
                             }
-
-
-
                         }
-
-
-
-
                     }
                 }
             }
@@ -2504,12 +2346,8 @@ public class MediaPlayerCtrl : MonoBehaviour
             }
 
 
-
-
-
             do
             {
-
                 if (pPacket != null)
                 {
                     ffmpeg.av_free_packet(pPacket);
@@ -2526,10 +2364,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                 if (ret < 0)
                 {
-
                     if (ret == -541478725)
                     {
-
                         if (listVideo.Count < 3)
                         {
                             bEnd = true;
@@ -2543,12 +2379,7 @@ public class MediaPlayerCtrl : MonoBehaviour
                     {
                         throw new ApplicationException(@"Could not read frame");
                     }
-
-
-
                 }
-
-
 
 
                 // Debug.Log(pPacket->pts + " " + pCodecContext->pts_correction_last_pts );
@@ -2563,12 +2394,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                         {
                             if (gotSound == 1)
                             {
-
-
-
-
-
-
                                 int iDataSize = ffmpeg.av_samples_get_buffer_size(null, pAudioCodecContext->channels, pDecodedAudioFrame->nb_samples, pAudioCodecContext->sample_fmt, 1);
                                 int iDataSize2 = ffmpeg.av_samples_get_buffer_size(null, pAudioCodecContext->channels, pDecodedAudioFrame->nb_samples, AVSampleFormat.AV_SAMPLE_FMT_FLT, 1);
 
@@ -2591,12 +2416,7 @@ public class MediaPlayerCtrl : MonoBehaviour
                                         }
 
 
-
                                         ffmpeg.swr_convert(pAudioCvtContext, &outData, iDataSize2, pDecodedAudioFrame->extended_data, pDecodedAudioFrame->nb_samples);
-
-
-
-
 
 
                                         sbyte* soundFrameAddress = outData;
@@ -2606,7 +2426,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                                         byte[] buffer = new byte[iDataSize2];
                                         Marshal.Copy(soundBufferPtr, buffer, 0, iDataSize2);
-
 
 
                                         if ((ulong)pPacket->dts != ffmpeg.AV_NOPTS_VALUE)
@@ -2645,8 +2464,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                                         Buffer.BlockCopy(buffer, 0, fAudioData, 0, buffer.Length);
 
 
-
-
                                         lock (listAudio)
                                         {
                                             listAudio.Add(fAudioData);
@@ -2668,10 +2485,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                                                     listAudioPtsTime.Add(pts);
                                                 }
-
                                             }
                                         }
-
 
 
                                         //Debug.Log ( iDataSize + " "+ pts + " " + pAudioCodecContext->sample_rate + " " + pDecodedAudioFrame->sample_rate + " "+ pDecodedAudioFrame->nb_samples + " " + pDecodedAudioFrame->pkt_pts + " " + pDecodedAudioFrame->pkt_pos);
@@ -2684,11 +2499,9 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                                         Marshal.FreeCoTaskMem((IntPtr)outData);
                                     }
-
                                 }
                                 else
                                 {
-
                                     sbyte* soundFrameAddress = pDecodedAudioFrame->extended_data[0];
 
                                     var soundBufferPtr = new IntPtr(soundFrameAddress);
@@ -2696,7 +2509,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                                     byte[] buffer = new byte[iDataSize];
                                     Marshal.Copy(soundBufferPtr, buffer, 0, iDataSize);
-
 
 
                                     if ((ulong)pPacket->dts != ffmpeg.AV_NOPTS_VALUE)
@@ -2709,7 +2521,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                                     }
 
                                     pts *= av_q2d(pStreamAudio->time_base);
-
 
 
                                     //Debug.Log (pDecodedAudioFrame->pkt_dts + " " +pDecodedAudioFrame->pkt_duration + " "  + pDecodedAudioFrame->pkt_pos + " " + pDecodedAudioFrame->pkt_pts + " " + pts);
@@ -2728,34 +2539,19 @@ public class MediaPlayerCtrl : MonoBehaviour
                                                 listAudioPts.Add(pts);
                                                 listAudioPtsTime.Add(pts);
                                             }
-
                                         }
                                     }
 
 
                                     //Debug.Log ( pDecodedAudioFrame->channels + " "+buffer.Length / 4 + " " + pDecodedAudioFrame->pkt_pts + " " + pDecodedAudioFrame->pkt_pos);
                                     //Debug.Log ("sound decode time " + pts);
-
                                 }
-
                             }
                         }
                     }
                 }
-
-
-
             } while (pPacket->stream_index != iStreamIndex);
-
-
-
-
-
         }
-
-
-
-
     }
 
     int iSoundBufferCount = 0;
@@ -2797,7 +2593,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                 listAudio.RemoveAt(0);
                 listAudioPts.RemoveAt(0);
                 listAudioPtsTime.RemoveAt(0);
-
             }
             else
             {
@@ -2809,9 +2604,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             listAudio.RemoveAt(0);
             listAudioPts.RemoveAt(0);
             listAudioPtsTime.RemoveAt(0);
-
-
-
         }
         else
         {
@@ -2827,18 +2619,13 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             iSoundBufferCount = listAudio[0].Length;
         }
-
     }
-
-
 
 
     private void Call_UpdateVideoTexture()
     {
-
         if (bEnd == true && listVideo.Count == 0)
         {
-
             m_CurrentState = MEDIAPLAYER_STATE.END;
 
             if (OnEnd != null)
@@ -2859,7 +2646,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             }
 
             bEnd = false;
-
 
 
             return;
@@ -2883,19 +2669,11 @@ public class MediaPlayerCtrl : MonoBehaviour
         }
 
 
-
-
-
-
-
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING && m_bIsFirstFrameReady == true && bInterrupt == false)
         {
             if (listVideo.Count > 0)
                 fCurrentSeekTime += Time.deltaTime * m_fSpeed;
         }
-
-
-
 
 
         //Debug.Log("last " + fLastFrameTime + " " + fCurrentSeekTime + " " + listVideo.Count);
@@ -2908,15 +2686,10 @@ public class MediaPlayerCtrl : MonoBehaviour
         }
 
 
-
-
         if (fLastFrameTime > fCurrentSeekTime - 0.1f)
         {
-
-
             for (int i = 0; i < listAudio.Count; i++)
             {
-
                 if (listAudioPtsTime.Count > i)
                 {
                     if (audioSource == null && (int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime[i] + ((float)Call_GetDuration() / 1000.0f))) > 0)
@@ -2928,14 +2701,12 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                 if (audioClip == null && audioSource != null)
                 {
-
                     /*if ((float)Call_GetDuration() <= 0)
                     {
 						audioClip = AudioClip.Create("videoAudio",(int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime[i] + 600.0f)),pAudioCodecContext->channels,pAudioCodecContext->sample_rate,true,OnAudioRead);
                     }
                     else*/
                     {
-
 #if UNITY_5
 							audioClip = AudioClip.Create("videoAudio",(int)((float)pAudioCodecContext->sample_rate * 600.0f),pAudioCodecContext->channels,pAudioCodecContext->sample_rate,false);
 							
@@ -2948,20 +2719,15 @@ public class MediaPlayerCtrl : MonoBehaviour
                     }
 
 
-
-
                     audioSource.clip = audioClip;
                 }
 
                 if (audioSource != null && Call_GetDuration() > 0)
                 {
-
-
                     if (listAudioPts.Count > i)
                     {
                         if (listAudioPts[i] >= 0)
                         {
-
                             {
                                 /*if( listAudioPts[i] > (int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime[i] + ((float)Call_GetDuration() / 1000.0f))))
 								{
@@ -2972,18 +2738,11 @@ public class MediaPlayerCtrl : MonoBehaviour
                                     //Debug.Log(audioSource.time  + " " + (float)listAudioPtsTime[i]  + " " +listAudioPts [i]   +" " +  fLastFrameTime);
 
                                     audioClip.SetData(listAudio[i], (int)(listAudioPts[i] % (pAudioCodecContext->sample_rate * 600.0f)));
-
                                 }
                             }
                         }
                     }
-
-
-
                 }
-
-
-
             }
 
             if (audioSource != null && audioSource.isPlaying && Call_GetDuration() > 0)
@@ -2992,14 +2751,9 @@ public class MediaPlayerCtrl : MonoBehaviour
                 listAudioPts.Clear();
                 listAudioPtsTime.Clear();
             }
-
-
-
         }
         else
         {
-
-
             //do
             {
 #if (UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_5)
@@ -3008,8 +2762,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             {
 				SetTextureFromUnity (m_iID,m_VideoTexture.GetNativeTexturePtr (), m_iWidth, m_iHeight, listVideo.Dequeue());
 				GL.IssuePluginEvent (GetRenderEventFunc (), 7000 + m_iID);
-
-
             }
             if( listVideoPts.Count > 0)
             {
@@ -3050,7 +2802,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 					else
                     	fLastFrameTime = fpts;
                 }
-
             }
 
 			if( audioSource != null &&  Call_GetDuration() > 0)
@@ -3065,8 +2816,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                     //Debug.Log("sync2");
 					audioSource.time = fLastFrameTime%600.0f;
                 }
-
-
             }
 
 #else
@@ -3092,7 +2841,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                     {
                         fLastFrameTime = fpts;
                     }
-
                 }
 
                 if (audioSource != null)
@@ -3109,8 +2857,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                     }*/
                 }
 #endif
-
-
 
 
                 if (m_TargetMaterial != null)
@@ -3135,7 +2881,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                                 m_TargetMaterial[i].GetComponent<RawImage>().texture = m_VideoTexture;
                             }
                         }
-
                     }
                 }
 
@@ -3150,8 +2895,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                     for (int i = 0; i < listAudio.Count; i++)
                     {
-
-
                         if (audioSource == null /*&& (int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime[i] + ((float)Call_GetDuration() / 1000.0f))) > 0*/)
                         {
                             audioSource = gameObject.AddComponent<AudioSource>();
@@ -3159,7 +2902,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                         if (audioClip == null && audioSource != null)
                         {
-
                             /*if ((float)Call_GetDuration() <= 0)
 					{
 						audioClip = AudioClip.Create("videoAudio",(int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime[i] + 600.0f)),pAudioCodecContext->channels,pAudioCodecContext->sample_rate,true,OnAudioRead);
@@ -3181,10 +2923,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
 
 #endif
-
                             }
-
-
 
 
                             audioSource.clip = audioClip;
@@ -3195,13 +2934,10 @@ public class MediaPlayerCtrl : MonoBehaviour
 
                         if (audioSource != null && Call_GetDuration() > 0)
                         {
-
-
                             if (listAudioPts.Count > i)
                             {
                                 if (listAudioPts[i] >= 0)
                                 {
-
                                     {
                                         /*if (listAudioPts [i] > (int)((float)pAudioCodecContext->sample_rate * ((float)listAudioPtsTime [i] + ((float)Call_GetDuration () / 1000.0f)))) {
 									audioClip.SetData (listAudio [i], (int)(((double)pAudioCodecContext->sample_rate) * listAudioPtsTime [i]));
@@ -3210,7 +2946,6 @@ public class MediaPlayerCtrl : MonoBehaviour
                                             //Debug.Log(audioSource.time  + " " + (float)listAudioPtsTime[i]  + " " +listAudioPts [i]   +" " +  fLastFrameTime);
 
                                             audioClip.SetData(listAudio[i], (int)(listAudioPts[i] % (pAudioCodecContext->sample_rate * 600.0f)));
-
                                         }
                                     }
                                 }
@@ -3219,39 +2954,13 @@ public class MediaPlayerCtrl : MonoBehaviour
                             //if(audioSource.isPlaying == false)
                             //audioSource.Play();
                         }
-
-
-
                     }
-
-
-
                 }
-
-
-
-
-
             }//while(fLastFrameTime < fCurrentSeekTime );
 
 
-
-
-
-
             //Debug.Log(listAudio.Count);
-
-
-
-
-
-
         }
-
-
-
-
-
     }
 
     private void Call_SetVolume(float fVolume)
@@ -3266,8 +2975,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     private void Call_SetSeekPosition(int iSeek)
     {
-
-
         if (threadVideo != null)
         {
             while (threadVideo.IsAlive == true)
@@ -3285,7 +2992,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         long seek_target = (long)iSeek * 1000;
 
 
-
         Debug.Log(seek_target);
         seek_target = ffmpeg.av_rescale_q(seek_target, ffmpeg.av_get_time_base_q(), pStream->time_base);
 
@@ -3298,12 +3004,10 @@ public class MediaPlayerCtrl : MonoBehaviour
                                     seek_target, ffmpeg.AVSEEK_FLAG_BACKWARD) < 0)
         {
             //error
-
         }
         else
         {
             /* handle packet queues... more later... */
-
         }
 
 
@@ -3314,15 +3018,10 @@ public class MediaPlayerCtrl : MonoBehaviour
         listVideoPts.Clear();
 
 
-
-
         ffmpeg.avcodec_flush_buffers(pCodecContext);
 
 
-
-
         //Debug.Log (fLastFrameTime + " " + fCurrentSeekTime);
-
     }
 
     private int Call_GetSeekPosition()
@@ -3332,7 +3031,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     private void Call_Play(int iSeek)
     {
-
         if (m_CurrentState == MEDIAPLAYER_STATE.READY || m_CurrentState == MEDIAPLAYER_STATE.STOPPED || m_CurrentState == MEDIAPLAYER_STATE.END || m_CurrentState == MEDIAPLAYER_STATE.PAUSED)
         {
             SeekTo(iSeek);
@@ -3344,7 +3042,6 @@ public class MediaPlayerCtrl : MonoBehaviour
             }
             m_CurrentState = MEDIAPLAYER_STATE.PLAYING;
         }
-
     }
 
     private void Call_Reset()
@@ -3370,7 +3067,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         {
             if (audioSource.isPlaying == false)
                 audioSource.Play();
-
         }
 
         m_CurrentState = MEDIAPLAYER_STATE.PLAYING;
@@ -3382,7 +3078,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         {
             audioSource.Pause();
         }
-
 
 
         m_CurrentState = MEDIAPLAYER_STATE.PAUSED;
@@ -3427,9 +3122,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         ffmpeg.avformat_network_init();
 
         m_iID = SetTexture();
-
-
-
     }
 
     private int Call_GetError()
@@ -3459,6 +3151,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     private void Call_SetSplitOBB(bool bValue, string strOBBName)
     {
+
     }
 
     private void Call_SetSpeed(float fSpeed)
@@ -3477,7 +3170,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 #endif // !UNITY_EDITOR
 
 
-
     public IEnumerator DownloadStreamingVideoAndLoad(string strURL)
     {
         strURL = strURL.Trim();
@@ -3491,7 +3183,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         if (string.IsNullOrEmpty(www.error))
         {
-
             if (System.IO.Directory.Exists(Application.persistentDataPath + "/Data") == false)
                 System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/Data");
 
@@ -3510,7 +3201,6 @@ public class MediaPlayerCtrl : MonoBehaviour
         else
         {
             Debug.Log(www.error);
-
         }
 
         www.Dispose();
@@ -3536,7 +3226,6 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             if (string.IsNullOrEmpty(www.error))
             {
-
                 if (System.IO.Directory.Exists(Application.persistentDataPath + "/Data") == false)
                     System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/Data");
 
@@ -3548,15 +3237,12 @@ public class MediaPlayerCtrl : MonoBehaviour
             else
             {
                 Debug.Log(www.error);
-
             }
 
             www.Dispose();
             www = null;
             Resources.UnloadUnusedAssets();
         }
-
-
     }
 
 
@@ -3576,20 +3262,14 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             if (string.IsNullOrEmpty(www.error))
             {
-
-
-
                 Debug.Log(write_path);
                 System.IO.File.WriteAllBytes(write_path, www.bytes);
 
                 Load("file://" + write_path);
-
-
             }
             else
             {
                 Debug.Log(www.error);
-
             }
 
             www.Dispose();
@@ -3599,10 +3279,8 @@ public class MediaPlayerCtrl : MonoBehaviour
         {
             Load("file://" + write_path);
         }
-
     }
 #endif
-
 
 
     #region UnityMainThread adapter
@@ -3643,6 +3321,4 @@ public class MediaPlayerCtrl : MonoBehaviour
     }
 
     #endregion
-
-
 }

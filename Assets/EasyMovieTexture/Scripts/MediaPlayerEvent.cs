@@ -3,11 +3,8 @@ using System.Collections;
 
 public class MediaPlayerEvent : MonoBehaviour
 {
-
-
     public MediaPlayerCtrl m_srcVideo;
 
-    // Use this for initialization
     void Start()
     {
         m_srcVideo.OnReady += OnReady;
@@ -15,19 +12,10 @@ public class MediaPlayerEvent : MonoBehaviour
         m_srcVideo.OnVideoError += OnError;
         m_srcVideo.OnEnd += OnEnd;
         m_srcVideo.OnResize += OnResize;
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnReady()
     {
-
         Debug.Log("OnReady");
     }
 

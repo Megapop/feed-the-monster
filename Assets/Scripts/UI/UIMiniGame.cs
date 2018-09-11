@@ -41,7 +41,6 @@ public class UIMiniGame : MonoBehaviour
     float noSelectedMonsterTime = 0f;
 
 
-
     Monster _currentMonster;
 
     public Monster CurrentMonster {
@@ -57,7 +56,6 @@ public class UIMiniGame : MonoBehaviour
     }
 
 
-    // Use this for initialization
     void Start()
     {
         if (CheatButton != null)
@@ -74,7 +72,6 @@ public class UIMiniGame : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && MiniGameController.Instance.CurrentGame == null)
@@ -174,8 +171,6 @@ public class UIMiniGame : MonoBehaviour
 
         if (GameAssets.Instance != null && GameAssets.Instance.ForceMiniGame != MiniGameController.GameType.None)
         {
-
-
             removeButtons();
 
             Invoke("GoToMiniGame", 0.03f);
@@ -230,10 +225,6 @@ public class UIMiniGame : MonoBehaviour
         StatusBubble.SetActive(false);
 
         hideButtons();
-
-
-
-
 
 
     }
@@ -357,12 +348,9 @@ public class UIMiniGame : MonoBehaviour
     }
 
 
-
-
     /*
         public void OnPointerClick (PointerEventData eventData)
         {
-
             if (!isDraged && !UIDressing.Instance.isPopuoOpen) {
                 Done ();
             }
@@ -374,7 +362,6 @@ public class UIMiniGame : MonoBehaviour
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-
 
 
     int lastMonsterIndex = -1;
@@ -415,14 +402,10 @@ public class UIMiniGame : MonoBehaviour
     }
 
 
-
-
     public void showStatusIcon(Monster monster)
     {
-
         switch (monster.EmotionType)
         {
-
             case MonsterEmotionTypes.Happy:
             case MonsterEmotionTypes.NONE:
                 StatusBubble.SetActive(false);

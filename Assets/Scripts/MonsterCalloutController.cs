@@ -77,14 +77,13 @@ public class MonsterCalloutController : MonoBehaviour
         get {
             if (_monster == null && GameplayController.Instance != null)
             {
-
                 _monster = GameplayController.Instance.CurrentMonster;
             }
             return _monster;
         }
     }
 
-    // Use this for initialization
+
     void Start()
     {
         GameObject go = GameObject.Find("monster");
@@ -114,13 +113,9 @@ public class MonsterCalloutController : MonoBehaviour
         {
             animController.SetInteger("EatState", 0);
         }
-
     }
 
 
-
-
-    // Update is called once per frame
     void Update()
     {
         if (GameplayController.Instance && GameplayController.Instance.CurrentActive == this && !GameplayController.Instance.IsPause && !GameplayController.Instance.IsPausePopup)
@@ -259,8 +254,6 @@ public class MonsterCalloutController : MonoBehaviour
 
         switch (GameplayController.Instance.CurrentLevel.monsterInputType)
         {
-
-
             case MonsterInputType.LetterName:
             case MonsterInputType.SoundLetterName:
                 url = "Sounds/Voice/LettersName/" + RTL.Clean(GameplayController.Instance.CurrentSegment.MonsterRequiredLetters[0]);
@@ -325,7 +318,6 @@ public class MonsterCalloutController : MonoBehaviour
                 }
                 break;
         }
-
     }
     /*Jonathan - thought bubble*/
     void ThoughtBubbleAnimation()
@@ -444,7 +436,6 @@ public class MonsterCalloutController : MonoBehaviour
     }
 
 
-
     public void StartPlay(float t)
     {
         SetMonsterState(MonsterState.Idle);
@@ -510,7 +501,6 @@ public class MonsterCalloutController : MonoBehaviour
         List<LetterController> selectedLettersToCollectList = new List<LetterController>();
         foreach (LetterController letter in letters)
         {
-
             if (letter.State == LetterController.LetterState.Selected)
             {
                 selectedLettersToCollectList.Add(letter);
@@ -575,7 +565,6 @@ public class MonsterCalloutController : MonoBehaviour
 
     void BadBooster()
     {
-
         GameplayController.Instance.SetState(GameplayController.GameState.SegmentIdle);
 
         GameplayController.Instance.BadBooster();
@@ -594,8 +583,6 @@ public class MonsterCalloutController : MonoBehaviour
     {
         GameplayController.Instance.SegmentLose();
     }
-
-
 
 
     public void Eat(LetterController letter)
@@ -754,7 +741,6 @@ public class MonsterCalloutController : MonoBehaviour
                 //GameplayController.Instance.CurrentLevelScoreToFlush = 100;
             }
             GameplayController.Instance.isSegmentComplete = true;
-
         }
 
         GameplayController.Instance.AddLevelScoreToFlush = scoreToadd;
@@ -857,7 +843,6 @@ public class MonsterCalloutController : MonoBehaviour
                 //animController.SetInteger ("EatState", 0);
                 //animController.SetInteger ("IdleState", 0);
                 break;
-
         }
     }
 
@@ -889,8 +874,6 @@ public class MonsterCalloutController : MonoBehaviour
     }
 
 
-
-
     void hide2()
     {
         if (bubbleImage != null && bubbleImage.gameObject != null)
@@ -899,7 +882,6 @@ public class MonsterCalloutController : MonoBehaviour
             {
                 bubbleImage.gameObject.SetActive(false);
                 getCanvasGroup.interactable = false;
-
             }
             else if (GameplayController.Instance.CurrentLevel.hideCallout > 0)
             {
@@ -957,5 +939,4 @@ public class MonsterCalloutController : MonoBehaviour
         getCanvasGroup.interactable = false;
         getCanvasGroup.alpha = 1;
     }
-
 }

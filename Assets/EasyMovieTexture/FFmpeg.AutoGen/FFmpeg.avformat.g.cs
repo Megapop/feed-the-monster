@@ -8,38 +8,47 @@ namespace FFmpeg.AutoGen
 {
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVCodecInternal
     {
+
     }
 
     public unsafe partial struct AVCodecDefault
     {
+
     }
 
     public unsafe partial struct MpegEncContext
     {
+
     }
 
     public unsafe partial struct ReSampleContext
     {
+
     }
 
     public unsafe partial struct AVResampleContext
     {
+
     }
 
     public unsafe partial struct AVIOInterruptCB
@@ -69,6 +78,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct URLContext
     {
+
     }
 
     public unsafe partial struct AVIOContext
@@ -106,18 +116,22 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVFormatContext
     {
+
     }
 
     public unsafe partial struct AVDeviceInfoList
     {
+
     }
 
     public unsafe partial struct AVDeviceCapabilitiesQuery
     {
+
     }
 
     public unsafe partial struct AVFrac
@@ -129,6 +143,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVCodecTag
     {
+
     }
 
     public unsafe partial struct AVProbeData
@@ -207,6 +222,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVStreamInternal
     {
+
     }
 
     public unsafe partial struct AVStream
@@ -274,10 +290,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct FFFrac
     {
+
     }
 
     public unsafe partial struct AVPacketList
     {
+
     }
 
     public unsafe partial struct info
@@ -325,6 +343,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVFormatInternal
     {
+
     }
 
     public unsafe partial struct AVFormatContext
@@ -1005,7 +1024,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libavformat, EntryPoint = "av_apply_bitstream_filters", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_apply_bitstream_filters(AVCodecContext* @codec, AVPacket* @pkt, AVBitStreamFilterContext* @bsfc);
-
     }
 }
 

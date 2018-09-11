@@ -37,13 +37,6 @@ public class UIProfileSelectionController : MonoBehaviour
     }
 
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-
     void OnDisable()
     {
         //NextScreen = null;
@@ -59,12 +52,6 @@ public class UIProfileSelectionController : MonoBehaviour
         UpdateAllProfiles();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void UpdateAllProfiles()
     {
@@ -85,7 +72,6 @@ public class UIProfileSelectionController : MonoBehaviour
 
         //isFirstUse = false;
     }
-
 
 
     public void OnCloseClick()
@@ -130,9 +116,4 @@ public class UIProfileSelectionController : MonoBehaviour
         UIConfirmationPopup psc = popup.GetComponent<UIConfirmationPopup>();
         psc.onConfirm = ChangeProfile;
     }
-
-
-
-
-
 }

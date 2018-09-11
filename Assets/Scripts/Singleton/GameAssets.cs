@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameAssets : MonoBehaviour
 {
-
     public static GameAssets Instance;
 
 
@@ -62,7 +61,6 @@ public class GameAssets : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
 
@@ -70,6 +68,4 @@ public class GameAssets : MonoBehaviour
     {
 
     }
-
-
 }

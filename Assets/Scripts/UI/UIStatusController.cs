@@ -4,8 +4,6 @@ using System.Collections;
 
 public class UIStatusController : MonoBehaviour
 {
-
-
     public Image TitleImg;
     public Image IconImg;
     public GameObject MonsterHolder;
@@ -44,20 +42,11 @@ public class UIStatusController : MonoBehaviour
     Monster CurrentMonster;
 
 
-
-
-
-    // Use this for initialization
     void Start()
     {
         Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -79,7 +68,6 @@ public class UIStatusController : MonoBehaviour
 
         switch (CurrentMonster.EmotionType)
         {
-
             case MonsterEmotionTypes.Happy:
             case MonsterEmotionTypes.NONE:
                 break;
@@ -171,7 +159,6 @@ public class UIStatusController : MonoBehaviour
             //SadMonster.transform.SetParent (MonsterHolder.transform, true);
             //SadMonster.transform.localPosition = Vector3.zero;
         }
-
     }
 
 
@@ -190,5 +177,4 @@ public class UIStatusController : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }

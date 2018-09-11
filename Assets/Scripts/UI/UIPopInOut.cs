@@ -9,25 +9,12 @@ public class UIPopInOut : MonoBehaviour
     public float delay = 0f;
 
 
-
     float mInitScale;
 
     public float InitScale {
         set {
             mInitScale = value;
         }
-    }
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
 
@@ -60,10 +47,8 @@ public class UIPopInOut : MonoBehaviour
     }
 
 
-
     IEnumerator PopInElement(Transform transform, float speed = 5f)
     {
-
         transform.localScale = new Vector3(0, 0, 0);
         if (delay > 0)
         {
@@ -89,7 +74,6 @@ public class UIPopInOut : MonoBehaviour
 
     IEnumerator PopOutElement(Transform transform, float speed = 5.0f)
     {
-
         transform.localScale = new Vector3(mInitScale * 1, mInitScale * 1, mInitScale * 1);
 
         float[] scales = new float[] { mInitScale * 0.9f, mInitScale * 1.1f, 0f };
@@ -113,8 +97,4 @@ public class UIPopInOut : MonoBehaviour
 
         yield return true;
     }
-
-
-
-
 }

@@ -29,7 +29,6 @@ public class EditEdgeCollider2D : MonoBehaviour
             Vector2[] points = m_edgeCollider2D.points;
 
 
-
             //GUI.color = Color.red;
             //GUI.skin.label.fontSize = 16; 
             GUI.skin.label.fontStyle = FontStyle.Bold;
@@ -40,7 +39,6 @@ public class EditEdgeCollider2D : MonoBehaviour
             Vector2 p3;
             for (int i = 0; i < points.Length - 1; i++)
             {
-
                 p1 = new Vector2(points[i].x + transform.position.x, points[i].y + transform.position.y);
                 p2 = new Vector2(points[i + 1].x + transform.position.x, points[i + 1].y + transform.position.y);
 
@@ -66,6 +64,4 @@ public class EditEdgeCollider2D : MonoBehaviour
         }
     }
 #endif
-
-
 }

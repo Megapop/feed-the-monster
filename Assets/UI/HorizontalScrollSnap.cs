@@ -39,7 +39,7 @@ public class HorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHa
     private Vector3 _startPosition = new Vector3();
     private int _currentScreen;
 
-    // Use this for initialization
+
     void Start()
     {
         _scroll_rect = gameObject.GetComponent<ScrollRect>();
@@ -96,7 +96,6 @@ public class HorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, IEndDragHa
         {
             _fastSwipeCounter++;
         }
-
     }
 
     private bool fastSwipe = false; //to determine if a fast swipe was performed

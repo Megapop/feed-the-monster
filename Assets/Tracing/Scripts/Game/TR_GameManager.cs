@@ -15,9 +15,6 @@ public class TR_GameManager : MonoBehaviour
     public onCompleteDelegate onComplete;
 
 
-
-
-
     /// <summary>
     /// Whether the script is running or not.
     /// </summary>
@@ -121,7 +118,6 @@ public class TR_GameManager : MonoBehaviour
     int lastCorrectSFXIndex = 0;
 
 
-
     /// <summary>
     /// The wrong sound effect.
     /// </summary>
@@ -132,7 +128,7 @@ public class TR_GameManager : MonoBehaviour
     /// </summary>
     private RaycastHit2D hit2d;
 
-    // Use this for initialization
+
     void Start()
     {
         //Initiate values and setup the references
@@ -158,8 +154,6 @@ public class TR_GameManager : MonoBehaviour
     }
 
 
-
-    // Update is called once per frame
     void Update()
     {
         //Game Logic is here
@@ -273,7 +267,6 @@ public class TR_GameManager : MonoBehaviour
             if (TableShape.selectedShape.ID >= 1 && TableShape.selectedShape.ID < ShapesTable.shapes.Count) {
                     //Get the next shape and check if it's locked , then do not load the next shape
                     if (TableShape.selectedShape.ID + 1 <= ShapesManager.instance.shapes.Count) {
-
                             if (DataManager.IsShapeLocked (TableShape.selectedShape.ID + 1)) {
                                     //Play lock sound effectd
                                     if (lockedSFX != null && effectsAudioSource != null) {
@@ -285,7 +278,6 @@ public class TR_GameManager : MonoBehaviour
                     }
                     TableShape.selectedShape = ShapesTable.shapes [TableShape.selectedShape.ID];//Set the selected shape
                     CreateShape ();//Create new shape
-
             } else {
                     if (TableShape.selectedShape.ID == ShapesTable.shapes.Count) {
                         StartCoroutine(SceneLoader.LoadSceneAsync("Album"));
@@ -295,7 +287,6 @@ public class TR_GameManager : MonoBehaviour
                                     CommonUtil.PlayOneShotClipAt (lockedSFX, Vector3.zero, effectsAudioSource.volume);
                             }
                     }
-
             }
     }
     */
@@ -319,7 +310,6 @@ public class TR_GameManager : MonoBehaviour
 
     public void cleanShapesQueue()
     {
-
         if (shapesQueue == null)
         {
             shapesQueue = new Queue<GameObject>();
@@ -339,7 +329,6 @@ public class TR_GameManager : MonoBehaviour
 
         if (shapesQueue.Count == 0)
         {
-
             System.Random rng = new System.Random();
             int n = shapes.Length;
             while (n > 1)
@@ -617,7 +606,6 @@ public class TR_GameManager : MonoBehaviour
     }
 
 
-
     AudioClip getCorrectSFX()
     {
         AudioClip clip = null;
@@ -764,9 +752,6 @@ public class TR_GameManager : MonoBehaviour
             onComplete();
         }
     }
-
-
-
 
 
     /// <summary>

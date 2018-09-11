@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
-
     [SerializeField]
     public string scene;
 
@@ -20,14 +19,10 @@ public class SceneLoader : MonoBehaviour
 
     bool loadScene = false;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     void OnEnable()
     {
+
     }
 
     void OnDestroy()
@@ -35,7 +30,6 @@ public class SceneLoader : MonoBehaviour
         SceneController.Instance.onReadyToHide();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isActive == false)
@@ -47,7 +41,6 @@ public class SceneLoader : MonoBehaviour
             loadScene = true;
             StartCoroutine(LoadNewScene());
         }
-
     }
 
 

@@ -23,7 +23,7 @@ public class CountTo10Letter : MonoBehaviour
     float mTimeFromLaunch;
     float Speed = 20000;
 
-    // Use this for initialization
+
     void Start()
     {
         Text text = gameObject.GetComponentInChildren<Text>();
@@ -35,14 +35,10 @@ public class CountTo10Letter : MonoBehaviour
         InitPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
         if (isGoToMouth)
         {
-
             Vector3 toPos = getMonsterMouth();
 
             transform.position = Vector3.MoveTowards(transform.position, toPos, Time.deltaTime * Speed * (Time.time - mTimeFromLaunch));
@@ -84,7 +80,6 @@ public class CountTo10Letter : MonoBehaviour
 
     public void OnEnable()
     {
-
         isGoToMouth = false;
 
         AudioController.Instance.PlaySound(SoundAppear);
@@ -133,13 +128,9 @@ public class CountTo10Letter : MonoBehaviour
 
     public void gotoMouth()
     {
-
         mTimeFromLaunch = Time.time;
         isGoToMouth = true;
-
     }
-
-
 
 
     public Vector2 getMonsterMouth()
@@ -159,6 +150,4 @@ public class CountTo10Letter : MonoBehaviour
 
         return toPos;
     }
-
-
 }

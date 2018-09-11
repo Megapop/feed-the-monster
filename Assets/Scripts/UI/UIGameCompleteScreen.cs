@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class UIGameCompleteScreen : MonoBehaviour
 {
-
     [Range(3f, 20f)]
     public float showFeedBackAfter;
     public string FeedBackFile;
     public GameObject FeedBackGO;
 
-    // Use this for initialization
+
     void Start()
     {
         if (FeedBackGO != null)
@@ -20,11 +19,6 @@ public class UIGameCompleteScreen : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void onMapClick()
     {
@@ -50,5 +44,4 @@ public class UIGameCompleteScreen : MonoBehaviour
     {
         Invoke("onMapClick", 1f);
     }
-
 }

@@ -286,7 +286,6 @@ public class TR_CommonUtil
     /// <param name="volume">Volume.</param>
     public static void PlayOneShotClipAt(AudioClip audioClip, Vector3 postion, float volume)
     {
-
         if (audioClip == null || volume == 0)
         {
             return;

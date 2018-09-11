@@ -11,24 +11,11 @@ public class SegmentDisplay
 
 public class UISegmentsDisplay : MonoBehaviour
 {
-
     //public SegmentDisplay[] segmentsDisplays;
 
     public Sprite SegmentEmpty;
     public Sprite SegmentFull;
 
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void Init(int numSegments)
     {
@@ -39,5 +26,4 @@ public class UISegmentsDisplay : MonoBehaviour
     {
         transform.GetChild(index).gameObject.GetComponent<Image>().sprite = SegmentFull;
     }
-
 }

@@ -28,28 +28,12 @@ public class UIDiscoverNewMonsterController : MonoBehaviour
     string mSelectedFriendName;
 
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     void OnEnable()
     {
         Destroy(GameObject.Find("monster"));
 
         if (GameAssets.Instance.NewMonster != null)
         {
-
             Monster friend = GameAssets.Instance.NewMonster;
 
             GameObject orig = friend.firstPlayGO;
@@ -74,7 +58,6 @@ public class UIDiscoverNewMonsterController : MonoBehaviour
                     }
 
                     newMonsterGO.transform.parent = null;
-
                 }
             }
 

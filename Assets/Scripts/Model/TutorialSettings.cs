@@ -2,7 +2,6 @@
 
 public static class TutorialSettings
 {
-
     public static int TutorialLetterLevel = 0;
 
     public static int TutorialLetterInWordLevel = 0;

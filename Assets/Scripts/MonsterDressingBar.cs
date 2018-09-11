@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterDressingBar : MonoBehaviour
 {
-
     public Transform monsterHolder;
 
     public GameObject[] Categories;
@@ -15,12 +14,6 @@ public class MonsterDressingBar : MonoBehaviour
     public Dictionary<MonsterType, List<MonsterDressingItem>> monstersItems = new Dictionary<MonsterType, List<MonsterDressingItem>>();
 
 
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.position = monsterHolder.position;
@@ -80,11 +73,9 @@ public class MonsterDressingBar : MonoBehaviour
 
         foreach (DressingCategoriesTO cat in DressingController.Instance.Dressing.Values)
         {
-
             MonsterAccessoryTO monsterItem = UsersController.Instance.userData().getMonsterAccessory(monster, cat.id);
             if (monsterItem != null)
             {
-
                 Transform parent = Categories[cat.id - 1].transform;
 
                 Vector3 v = parent.localPosition;
@@ -98,7 +89,6 @@ public class MonsterDressingBar : MonoBehaviour
 
     public void updateMonsterItem(Monster monster)
     {
-
         MonsterDressingItem[] items = monstersItems[monster.MonsterType].ToArray();
 
         monstersItems[monster.MonsterType].Clear();
@@ -135,7 +125,6 @@ public class MonsterDressingBar : MonoBehaviour
                 Transform parent = Categories[cat.id - 1].transform;
                 addItem(parent, monster.MonsterType, monsterItem, cat);
             }
-
         }
         /*
                 return;
@@ -194,6 +183,4 @@ public class MonsterDressingBar : MonoBehaviour
             }
         }
     }
-
-
 }

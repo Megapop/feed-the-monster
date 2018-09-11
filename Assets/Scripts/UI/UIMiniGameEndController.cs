@@ -28,13 +28,7 @@ public class UIMiniGameEndController : MonoBehaviour
     public Button Button_NextLevel;
     public Button Button_GameComplete;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (statusQueue.Count > 0)
@@ -50,7 +44,6 @@ public class UIMiniGameEndController : MonoBehaviour
         GameObject go = GameObject.Find("monster");
         if (go != null)
         {
-
             Animator animController;
             animController = go.GetComponentInChildren<Animator>();
             if (animController != null)
@@ -76,7 +69,6 @@ public class UIMiniGameEndController : MonoBehaviour
 
     void updateButtons()
     {
-
         bool hasNextLevel = (GameAssets.CurrentLevelIndex != GameAssets.Instance.NumOfLevels - 1);
 
 
@@ -113,7 +105,6 @@ public class UIMiniGameEndController : MonoBehaviour
     }
 
 
-
     void UnPauseMusic()
     {
         AudioController.Instance.ChangeMusic(GameWinMusic, true);
@@ -134,7 +125,6 @@ public class UIMiniGameEndController : MonoBehaviour
     {
         FirstZoomIn,
     }
-
 
 
     void doStatusQueue(status s)
@@ -161,6 +151,4 @@ public class UIMiniGameEndController : MonoBehaviour
     {
 
     }
-
-
 }

@@ -7,7 +7,6 @@ public class MonsterPettingZone : MonoBehaviour,
 IBeginDragHandler, IDragHandler, IEndDragHandler,
 IPointerDownHandler, IPointerUpHandler
 {
-
     public enum TutorialType
     {
         None,
@@ -32,20 +31,6 @@ IPointerDownHandler, IPointerUpHandler
     //bool isTap;
     bool isSwipe;
 
-
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {

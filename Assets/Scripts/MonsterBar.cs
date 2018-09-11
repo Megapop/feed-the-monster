@@ -5,7 +5,6 @@ using System.Collections;
 
 public class MonsterBar : MonoBehaviour
 {
-
     public static MonsterBar Instance;
 
     public delegate void onMonsterChangeDelegate(Monster monster);
@@ -88,7 +87,7 @@ public class MonsterBar : MonoBehaviour
         Instance = this;
     }
 
-    // Use this for initialization
+
     void Start()
     {
         Content = transform.GetChild(0);
@@ -100,10 +99,8 @@ public class MonsterBar : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-
         if (selectedMonster != null)
         {
             if (isLocated == false)
@@ -210,7 +207,6 @@ public class MonsterBar : MonoBehaviour
                     {
                         StartCoroutine(DressingBar.addMonster(monster, new Vector3(spacing * numReady, 0, 0)));
                     }
-
                 }
                 else
                 {
@@ -231,7 +227,6 @@ public class MonsterBar : MonoBehaviour
                     GameAssets.Instance.DefaultMonster = MonsterType.NONE;
                     currentMonsterIndex = monsterIndex;
                 }
-
             }
         }
         NumMonsters = numReady;
@@ -341,7 +336,6 @@ public class MonsterBar : MonoBehaviour
 
     public void updateButtons(bool immediately)
     {
-
         if (immediately == true)
         {
             updateButtons();
@@ -376,7 +370,6 @@ public class MonsterBar : MonoBehaviour
 
         if (ButtonPrevious != null)
         {
-
             if (currentMonsterIndex > 0)
             {
                 ButtonPrevious.interactable = true;
@@ -404,7 +397,6 @@ public class MonsterBar : MonoBehaviour
 
             if (monster != null)
             {
-
                 if (monster.IsReady)
                 {
                     MonsterGageSlider.gameObject.SetActive(false);
@@ -422,7 +414,6 @@ public class MonsterBar : MonoBehaviour
             }
         }
     }
-
 
 
     public Monster getCurrentMonster()
@@ -455,14 +446,12 @@ public class MonsterBar : MonoBehaviour
             isLocatedCalled = false;
             callMonsterDragDelegate();
         }
-
     }
 
     public void OnEndDrag()
     {
         if (isTouchAllow)
         {
-
             isDrag = false;
 
             float minDistance = float.MaxValue;
@@ -488,7 +477,6 @@ public class MonsterBar : MonoBehaviour
 
             if (minDistance < currDist * 4.0f)
             {
-
                 Transform t = Content.GetChild(minIndex);
                 toX = Content.transform.position.x - t.position.x;
 
@@ -539,7 +527,6 @@ public class MonsterBar : MonoBehaviour
         {
             Icon_gage_3.gameObject.SetActive(true);
         }
-
     }
 
 
@@ -571,7 +558,6 @@ public class MonsterBar : MonoBehaviour
 
     public void showCurrentMonsterItems()
     {
-
         if (Content.childCount > currentMonsterIndex)
         {
             Transform t = Content.GetChild(currentMonsterIndex);
@@ -593,6 +579,4 @@ public class MonsterBar : MonoBehaviour
             DressingBar.showCurrentMonsterItems(type);
         }
     }
-
-
 }

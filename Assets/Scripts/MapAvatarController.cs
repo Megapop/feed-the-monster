@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MapAvatarController : MonoBehaviour
 {
-
     [HideInInspector]
     public Vector2[] ColliderPoints;
 
@@ -23,16 +22,9 @@ public class MapAvatarController : MonoBehaviour
     {
         mProfileIcon = GetComponent<Image>();
     }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    
     void OnEnable()
     {
-
         if (mProfileIcon != null && UsersController.Instance != null)
         {
             Sprite sp = UsersController.Instance.CurrentProfileSprite;
@@ -42,13 +34,11 @@ public class MapAvatarController : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (mTargetPointId != -1)
         {
-
             if (mDelay > 0f)
             {
                 mDelay -= Time.deltaTime;
@@ -105,6 +95,4 @@ public class MapAvatarController : MonoBehaviour
         mTargetLevelController.onClick();
         //SceneController.Instance.LoadScene("GameScreen");
     }
-
-
 }

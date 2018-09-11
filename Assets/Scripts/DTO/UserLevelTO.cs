@@ -6,12 +6,9 @@ using UnityEngine;
 [Serializable]
 public class UserLevelTO
 {
-
     public int levelId;
     public int levelScore;
     public int levelStars;
-
-
 
 
     public static UserLevelTO create(int levelId, int score, int stars)
@@ -23,5 +20,4 @@ public class UserLevelTO
 
         return level;
     }
-
 }

@@ -4,22 +4,10 @@ using System.Collections;
 
 public class UILevelWinStarsDisplay : MonoBehaviour
 {
-
     public Image StarImage1;
     public Image StarImage2;
     public Image StarImage3;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnDisable()
     {
@@ -46,7 +34,6 @@ public class UILevelWinStarsDisplay : MonoBehaviour
 
     IEnumerator PopInStar(Transform transform, float delay = 0)
     {
-
         transform.localScale = new Vector3(0, 0, 0);
 
         yield return new WaitForSeconds(delay);

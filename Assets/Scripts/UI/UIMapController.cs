@@ -20,22 +20,16 @@ public class UIMapController : MonoBehaviour
     public EdgeCollider2D trackCollider;
 
 
-
     void Awake()
     {
         avatar.ColliderPoints = trackCollider.points;
     }
 
-    // Use this for initialization
+
     /*void Start () {
 	
 	}*/
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -67,7 +61,6 @@ public class UIMapController : MonoBehaviour
     }
 
 
-
     void OnDisable()
     {
         if (TutorialController.Instance != null)
@@ -85,7 +78,6 @@ public class UIMapController : MonoBehaviour
         TutorialController.Instance.EndTutorial(); //Jonathan??
 
         SnapTo(GameObject.Find("Pin - Level " + lastPlayingLevelIndex).transform);
-
     }
 
     void updateAvatarPosition()
@@ -233,5 +225,4 @@ public class UIMapController : MonoBehaviour
         }
         Invoke("moveAvatarToNextPosition", 0.1f);
     }
-
 }

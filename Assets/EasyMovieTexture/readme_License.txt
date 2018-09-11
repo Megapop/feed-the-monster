@@ -1,7 +1,6 @@
 
 
 
-
 EasyMovieTexture Editor uses the LGPL library.
 
 Use of the library is as follows:
@@ -14,10 +13,7 @@ FFmpeg is licensed under the GNU Lesser General Public License (LGPL) version 2.
 
 Read the license texts to learn how this affects programs built on top of FFmpeg or reusing FFmpeg. You may also wish to have a look at the GPL FAQ. 
 
-Note that FFmpeg is not available under any other licensing terms, especially not proprietary/commercial ones, not even in exchange for payment. 
-
-
-
+Note that FFmpeg is not available under any other licensing terms, especially not proprietary/commercial ones, not even in exchange for payment.
 
 
 ffmpeg.autogen : https://github.com/Ruslan-B/FFmpeg.AutoGen

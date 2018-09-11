@@ -5,13 +5,12 @@ using UnityEngine.EventSystems;
 
 public class InteractiveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
 {
-
     public bool allowMultipleClicks = false;
 
 
     Button btn;
 
-    // Use this for initialization
+
     void Start()
     {
         btn = gameObject.GetComponent<Button>();
@@ -20,13 +19,6 @@ public class InteractiveButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     void OnDisable()
     {
         CancelInvoke("reEnableButton");
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -35,6 +27,7 @@ public class InteractiveButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public event PointerEventDataDelegate onPointerEnter;
     public void OnPointerEnter(PointerEventData eventData)
     {
+
     }
 
     #endregion
@@ -86,7 +79,6 @@ public class InteractiveButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
 
 
-
     void reEnableButton()
     {
         if (btn != null)
@@ -96,7 +88,5 @@ public class InteractiveButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
 
 
-
     #endregion
-
 }

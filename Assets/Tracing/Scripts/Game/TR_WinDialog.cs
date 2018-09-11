@@ -17,7 +17,6 @@ public class TR_WinDialog : MonoBehaviour
     public Animator WinDialogAnimator;
 
 
-    // Use this for initialization
     void Start()
     {
         ///Setting up the references

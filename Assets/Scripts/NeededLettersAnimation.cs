@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class NeededLettersAnimation
 {
-
     Text mTarget;
     int mDefaultSize;
     int mPopSize;

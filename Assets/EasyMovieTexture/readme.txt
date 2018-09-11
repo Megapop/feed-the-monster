@@ -17,7 +17,6 @@ Editor On the Android Platform API can not be used ....
 Only works with Android devices.
 
 
-
 iOS 
 
 The original source of the following site.( iOS Source )

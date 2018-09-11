@@ -1,7 +1,6 @@
 ﻿
 public static class ArabicBaseForm
 {
-
     const int ArabicBaseStart = 1569;
     const int ArabicBaseEnd = 1640; //1610 + some extra
     public static int[][] ARABIC_GLPHIES = {
@@ -77,7 +76,6 @@ public static class ArabicBaseForm
 
     public static char GetLetterForm(char chr, LetterForm form)
     {
-
         for (int n = 0; n < ARABIC_GLPHIES.Length; n++)
         {
             for (int glyphIndex = 0; glyphIndex < ARABIC_GLPHIES[n].Length; glyphIndex++)

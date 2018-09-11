@@ -3,17 +3,16 @@ using System.Collections;
 
 public class CloudAppearingEnter : MonoBehaviour
 {
-
     Vector3 dest;
     bool arrived = false;
-    // Use this for initialization
+
     void Start()
     {
         dest = transform.localPosition;
         transform.localPosition = dest - new Vector3(Screen.width * 2, 0, 0);
     }
     float counter = 0;
-    // Update is called once per frame
+
     void Update()
     {
         counter += Time.deltaTime;
@@ -28,10 +27,6 @@ public class CloudAppearingEnter : MonoBehaviour
                 arrived = true;
                 //GetComponent<Animator> ().enabled = true;
             }
-        }
-        else
-        {
-
         }
     }
 }

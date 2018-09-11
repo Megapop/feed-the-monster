@@ -10,7 +10,6 @@ public class Common : MonoBehaviour
 
     Queue<Action> mNonPauseActions;
 
-    // Use this for initialization
     void Awake()
     {
         Instance = this;
@@ -18,7 +17,6 @@ public class Common : MonoBehaviour
         mNonPauseActions = new Queue<Action>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!GameplayController.Instance.IsPause && !GameplayController.Instance.IsPausePopup)
@@ -45,5 +43,4 @@ public class Common : MonoBehaviour
 
         return temp;
     }
-
 }

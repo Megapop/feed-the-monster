@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BonusPuzzle : MonoBehaviour
 {
-
     public delegate void onDoneDelegate();
     public onDoneDelegate onDone;
 
@@ -15,7 +14,6 @@ public class BonusPuzzle : MonoBehaviour
 
     [Range(0.01f, 0.5f)]
     public float Speed = 0.1f;
-
 
 
     public GameObject StonesHolder;
@@ -40,7 +38,7 @@ public class BonusPuzzle : MonoBehaviour
     float speed1;
     float speed2;
 
-    // Use this for initialization
+
     void Start()
     {
         cg = this.gameObject.GetComponent<CanvasGroup>();
@@ -49,11 +47,6 @@ public class BonusPuzzle : MonoBehaviour
         speed2 = ((MaxStones / 100f) * 80f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void OnEnable()
     {
@@ -177,5 +170,4 @@ public class BonusPuzzle : MonoBehaviour
         //numParticles--;
         //}
     }
-
 }

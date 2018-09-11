@@ -68,6 +68,4 @@ public class LetterTouchController : MonoBehaviour
     {
         letterController.OnDrop(eventData);
     }
-
-
 }

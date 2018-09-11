@@ -3,7 +3,6 @@ using System.Collections;
 
 public class AudioController : MonoBehaviour
 {
-
     public static AudioController Instance = null;
 
     public AudioClip Music;
@@ -119,7 +118,6 @@ public class AudioController : MonoBehaviour
             musicFadeDirection = 0;
             MusicSource.Pause();
         }
-
     }
 
     public void StopMusic()

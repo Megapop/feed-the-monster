@@ -9,13 +9,8 @@ public class UILoadingScreenController : MonoBehaviour
     bool mIsRunning;
     //GameObject mPanelToShowOnEnd;
     public AudioClip LoadingSound;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (mIsRunning)

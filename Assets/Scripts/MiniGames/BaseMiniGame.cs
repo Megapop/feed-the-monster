@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BaseMiniGame : MonoBehaviour
 {
-
     [HideInInspector]
     public bool GameOver = false;
 
@@ -23,13 +22,6 @@ public class BaseMiniGame : MonoBehaviour
     protected Monster CurrentMonster;
 
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //TitleImage.GetComponent<CanvasGroup> ().alpha -= Time.deltaTime/10;
@@ -126,5 +118,4 @@ public class BaseMiniGame : MonoBehaviour
             AudioController.Instance.PlaySound(snd);
         }
     }
-
 }

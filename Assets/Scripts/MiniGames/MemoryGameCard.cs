@@ -40,7 +40,7 @@ public class MemoryGameCard : MonoBehaviour
         Wrong,
     }
 
-    // Use this for initialization
+
     void Start()
     {
         Vector3 v = Back.transform.rotation.eulerAngles;
@@ -85,7 +85,6 @@ public class MemoryGameCard : MonoBehaviour
         CancelInvoke();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (status == CardStatus.Close || status == CardStatus.Open)
@@ -104,7 +103,6 @@ public class MemoryGameCard : MonoBehaviour
                 shake();
                 if (shikeTime >= MemoryGame.Instance.shakeTime)
                 {
-
                     Vector3 v = new Vector3();
                     v = transform.rotation.eulerAngles;
                     v.z = 0;
@@ -185,7 +183,6 @@ public class MemoryGameCard : MonoBehaviour
     }
 
 
-
     void rotate()
     {
         Vector3 v = transform.rotation.eulerAngles;
@@ -215,7 +212,6 @@ public class MemoryGameCard : MonoBehaviour
             {
                 FlipParticle.SetActive(true);
             }
-
         }
         else if (status == CardStatus.Closeing && (angle > 356f || angle < 4f))
         {
@@ -304,12 +300,10 @@ public class MemoryGameCard : MonoBehaviour
         {
             MatchParticle.SetActive(true);
         }
-
     }
 
     IEnumerator PopOutElement(Transform transform, float speed = 5.0f)
     {
-
         transform.localScale = new Vector3(1, 1, 1);
 
         float[] scales = new float[] { 0.9f, 1.2f, 1f };
@@ -327,7 +321,4 @@ public class MemoryGameCard : MonoBehaviour
         }
         yield return true;
     }
-
-
-
 }

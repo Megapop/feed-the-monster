@@ -23,7 +23,6 @@ public class UIVoiceTutorial : MonoBehaviour
     int currentDataId = 0;
 
 
-    // Use this for initialization
     void Start()
     {
         mAnimator = gameObject.GetComponentInChildren<Animator>();
@@ -41,7 +40,6 @@ public class UIVoiceTutorial : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (mTime > 0)
@@ -66,7 +64,6 @@ public class UIVoiceTutorial : MonoBehaviour
         currentDataId = 0;
         if (data == null || data.Clips.Length == 0)
         {
-
             if (onDone != null)
             {
                 onDone();
@@ -125,7 +122,6 @@ public class UIVoiceTutorial : MonoBehaviour
 
     public void OnCloseClick()
     {
-
         mAnimator.SetBool("IsIn", false);
         if (mSource)
         {
@@ -159,7 +155,6 @@ public class UIVoiceTutorial : MonoBehaviour
 
     IEnumerator PopInBubble(float speed = 5f)
     {
-
         imageBubble.transform.localScale = new Vector3(0, 0, 0);
 
         float[] scales = new float[] { 0f, 1.1f, 0.9f, 1f };
@@ -180,7 +175,6 @@ public class UIVoiceTutorial : MonoBehaviour
 
     IEnumerator PopOutBubble(float speed = 5f)
     {
-
         imageBubble.transform.localScale = new Vector3(1f, 1f, 1f);
 
         float[] scales = new float[] { 0.9f, 1.1f, 0f };
@@ -209,5 +203,4 @@ public class UIVoiceTutorial : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
 }

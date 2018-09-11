@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class LetterTracingStone : MonoBehaviour
 {
-
     public delegate void onCompleteDelegate();
     public onCompleteDelegate onCompleteIdle;
     public onCompleteDelegate onCompleteGame;
-
 
 
     public Vector2 IdlePosition;
@@ -19,13 +17,11 @@ public class LetterTracingStone : MonoBehaviour
     public Vector2 GameScale = new Vector2(1f, 1f);
 
 
-
     bool isInGame = false;
 
     TR_Shape _shape;
     Vector3 mShapeInitPosition;
     Vector3 mShapeInitScale;
-
 
 
     public TR_Shape shape {
@@ -41,15 +37,9 @@ public class LetterTracingStone : MonoBehaviour
     }
 
 
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     void OnEnable()
     {
+
     }
 
     void OnDisable()
@@ -57,12 +47,6 @@ public class LetterTracingStone : MonoBehaviour
         CancelInvoke();
         iTween.Stop(gameObject);
         Reset(0);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -164,6 +148,4 @@ public class LetterTracingStone : MonoBehaviour
         }
         //shape.init ();
     }
-
-
 }

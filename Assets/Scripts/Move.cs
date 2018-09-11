@@ -22,25 +22,17 @@ public class Move : MonoBehaviour
         );
 
 
-
         curveX.preWrapMode = WrapMode.Default;
         curveX.postWrapMode = WrapMode.Default;
 
         curveY.preWrapMode = WrapMode.Default;
         curveY.postWrapMode = WrapMode.Default;
-
     }
 
     void Update()
     {
         transform.position = new Vector3(curveX.Evaluate(Time.time), curveY.Evaluate(Time.time), transform.position.z);
     }
-
-
-
-
-
-
 
 
     /*
@@ -71,10 +63,8 @@ public class Move : MonoBehaviour
 	}
 
 
-
 	void Update()
 	{
-
 		for (int i = 0; i < numberOfPoints; i++)
 		{
 			float functionXvalue = i * scaleInputRange / numberOfPoints; // scale number from [0 to 99] to [0 to 2Pi]
@@ -95,8 +85,6 @@ public class Move : MonoBehaviour
 */
 
 
-
-
     /*
         public float frequency = 1.0f; // in Hz
         public Vector3 PositionA = new Vector3(-160f, 0f, 0f);
@@ -104,14 +92,12 @@ public class Move : MonoBehaviour
         private float elapsedTime = 0.0f;
 
 
-         // Use this for initialization
          void Start () 
          {
             PositionA = new Vector3(-160f,  200f, 0f);
             PositionB = new Vector3( 160f, -200f, 0f);
          }
 
-         // Update is called once per frame
          void Update () 
          {
             elapsedTime += Time.deltaTime;
@@ -119,5 +105,4 @@ public class Move : MonoBehaviour
             transform.position = PositionA + (PositionB - PositionA) * 0.5f * (1 - cosineValue);
          }
     */
-
 }

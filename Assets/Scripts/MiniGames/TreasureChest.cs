@@ -3,8 +3,6 @@ using System.Collections;
 
 public class TreasureChest : MonoBehaviour
 {
-
-
     public delegate void onDoneDelegate();
     public onDoneDelegate onDone;
 
@@ -38,7 +36,6 @@ public class TreasureChest : MonoBehaviour
     bool isDone;
 
 
-    // Use this for initialization
     void Start()
     {
         clicksHad = 0;
@@ -68,10 +65,8 @@ public class TreasureChest : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-
         if (clicksHad >= GameplaySettings.TreasureChest_ClicksToOpen)
         {
             StartCoroutine(startHide());
@@ -163,7 +158,6 @@ public class TreasureChest : MonoBehaviour
 
     void OpenChest()
     {
-
         BoxClose.SetActive(false);
         //BoxOpen.SetActive (true);
 

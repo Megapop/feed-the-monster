@@ -19,7 +19,6 @@ public class UIParentsReportPanel : MonoBehaviour
     public GameObject ImageLevel;
 
 
-
     [Range(0f, 100f)]
     public float SoundLevelWeight = 70f;
 
@@ -39,17 +38,11 @@ public class UIParentsReportPanel : MonoBehaviour
     int initProfileId;
 
 
-    // Use this for initialization
     void Awake()
     {
         Instance = this;
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-    }
 
     void OnEnable()
     {
@@ -74,11 +67,6 @@ public class UIParentsReportPanel : MonoBehaviour
         //GameplayController.Instance.DestroyBackground();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void updateProfile()
     {
@@ -172,7 +160,6 @@ public class UIParentsReportPanel : MonoBehaviour
 
         foreach (int s in list)
         {
-
             if (s > 0)
             {
                 sum += s;
@@ -260,6 +247,4 @@ public class UIParentsReportPanel : MonoBehaviour
     {
         SceneController.Instance.LoadScene("MapScreen");
     }
-
-
 }

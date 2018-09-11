@@ -27,7 +27,6 @@ public class LetterTracingGame : BaseMiniGame
     public LetterTracingStone[] Stones;
 
 
-
     RectTransform _rectTransform;
     Queue<GameObject> shapesQueue = new Queue<GameObject>();
     int currentStone;
@@ -49,7 +48,7 @@ public class LetterTracingGame : BaseMiniGame
         Instance = this;
     }
 
-    // Use this for initialization
+
     void Start()
     {
         GameManager.onComplete = complete;
@@ -95,12 +94,6 @@ public class LetterTracingGame : BaseMiniGame
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public override void init(Monster monster)
     {
         base.init(monster);
@@ -110,7 +103,6 @@ public class LetterTracingGame : BaseMiniGame
     {
         LetterTracingStone lts = Stones[currentStone];
         lts.CloseGame();
-
     }
 
     void UpdateLettersForGroup()
@@ -211,7 +203,6 @@ public class LetterTracingGame : BaseMiniGame
     {
         if (currentStone < Stones.Length)
         {
-
             LetterTracingStone lts = Stones[currentStone];
             lts.onCompleteGame = onStoneLocated;
             lts.onCompleteIdle = onStoneHided;
@@ -220,7 +211,6 @@ public class LetterTracingGame : BaseMiniGame
         }
         else
         {
-
             //if (MiniGameController.Instance != null) {
             //MiniGameController.Instance.ResetEmotion ();
             //}
@@ -275,9 +265,6 @@ public class LetterTracingGame : BaseMiniGame
     }
 
 
-
-
-
     void ShowPositiveFeedback()
     {
         string fileName = AudioController.Instance.PlayFeedback();
@@ -297,5 +284,4 @@ public class LetterTracingGame : BaseMiniGame
             fb.init(fileName);
         }
     }
-
 }

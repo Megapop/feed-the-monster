@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MemoryGame : BaseMiniGame
 {
-
     public static MemoryGame Instance;
 
     [Range(0.2f, 5f)]
@@ -40,7 +39,6 @@ public class MemoryGame : BaseMiniGame
     public GameObject MatchParticle;
 
 
-
     [HideInInspector]
     public bool isPause;
 
@@ -58,12 +56,6 @@ public class MemoryGame : BaseMiniGame
         Instance = this;
     }
 
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -91,7 +83,6 @@ public class MemoryGame : BaseMiniGame
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         if (updateCamera)
@@ -114,7 +105,6 @@ public class MemoryGame : BaseMiniGame
         {
             card.gameObject.SetActive(false);
         }
-
     }
 
 
@@ -234,7 +224,6 @@ public class MemoryGame : BaseMiniGame
         }
         if (completedCards == cards.Length)
         {
-
             StartCoroutine(delayHideAllCards());
             //Invoke ("onCompleted" , 1);
         }
@@ -275,7 +264,6 @@ public class MemoryGame : BaseMiniGame
 
     void onCompleted()
     {
-
         animController.SetBool("IsSad", false);
         MiniGameController.Instance.ResetEmotion();
         EndMiniGame();
@@ -347,5 +335,4 @@ public class MemoryGame : BaseMiniGame
             list[k] = temp;
         }
     }
-
 }

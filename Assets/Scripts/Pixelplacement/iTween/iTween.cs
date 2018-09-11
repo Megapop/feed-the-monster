@@ -46,7 +46,6 @@ using UnityEngine;
 /// </summary>
 public class iTween : MonoBehaviour
 {
-
     #region Variables
 
     //repository of all living iTweens:
@@ -3706,7 +3705,6 @@ public class iTween : MonoBehaviour
                 gameObject.AddComponent<AudioSource>();
                 audioSource = GetComponent<AudioSource>();
                 audioSource.playOnAwake = false;
-
             }
         }
 
@@ -4634,7 +4632,6 @@ public class iTween : MonoBehaviour
         //handle orient to path request:
         if (tweenArguments.Contains("orienttopath") && (bool)tweenArguments["orienttopath"])
         {
-
             //plot a point slightly ahead in the interpolation by pushing the percentage forward using the default lookahead value:
             float tLook;
             if (tweenArguments.Contains("lookahead"))
@@ -7664,7 +7661,6 @@ public class iTween : MonoBehaviour
         if (!args.Contains("target"))
         {
             args["target"] = target;
-
         }
 
         tweens.Insert(0, args);
@@ -8006,7 +8002,6 @@ public class iTween : MonoBehaviour
     //calculate percentage of tween based on time:
     void UpdatePercentage()
     {
-
         // Added by PressPlay   
         if (useRealTime)
         {

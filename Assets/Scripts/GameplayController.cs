@@ -9,7 +9,6 @@ using System.Text;
 
 public class GameplayController : MonoBehaviour
 {
-
     public static GameplayController Instance;
     //[System.Serializable]
     //public struct LetterRecognitionStrcut{
@@ -91,7 +90,6 @@ public class GameplayController : MonoBehaviour
         //ReactingToLetter,
         //DisplayBadLetter,
         //LettersDestroyAnimation,
-
     }
 
     //public TextAsset RecognitionVariantsText;
@@ -133,8 +131,6 @@ public class GameplayController : MonoBehaviour
     public GameState PreviousState { get; private set; }
 
 
-
-
     public GameObject FeedbackGO;
 
     public GameObject LevelBackground;
@@ -148,7 +144,6 @@ public class GameplayController : MonoBehaviour
     public GameObject BonusGameHolder;
     //public GameObject treasureChestPrefabs;
     //public GameObject bonusPuzzlePrefabs;
-
 
 
     [HideInInspector]
@@ -170,7 +165,6 @@ public class GameplayController : MonoBehaviour
     public AudioClip SoundCancelDrag;
     public AudioClip SoundSpitsMeal;
     public AudioClip SoundScoreCount;
-
 
 
     public string[] backgrounds;
@@ -378,8 +372,6 @@ public class GameplayController : MonoBehaviour
             {
                 shildBoosterDuration -= t;//Time.deltaTime;
             }
-
-
         }
         // end added by Tzahi
     }
@@ -432,7 +424,7 @@ public class GameplayController : MonoBehaviour
         DestroyBonusPuzzlePopup();
     }
 
-    // Use this for initialization
+
     void Start()
     {
         //Init ();
@@ -489,7 +481,6 @@ public class GameplayController : MonoBehaviour
         mGameplayPosition.SucsessSegments = new bool[5];
 
         mGameplayPosition.AllowMaxStars = true;
-
 
 
         LevelScoreText.text = "0";
@@ -633,7 +624,6 @@ public class GameplayController : MonoBehaviour
     public Tutorial pointTutorial;
 
 
-
     void StartTutorial()
     {
         gameTutorial = TutorialController.Instance.StartTutorial(TutorialHolder);
@@ -734,7 +724,6 @@ public class GameplayController : MonoBehaviour
         }
         return false;
     }
-
 
 
     /*
@@ -862,6 +851,7 @@ public class GameplayController : MonoBehaviour
                 }
                 catch
                 {
+
                 }
             }
         }
@@ -886,7 +876,6 @@ public class GameplayController : MonoBehaviour
     {
         if (boosterType != Booster.BoosterType.NONE)
         {
-
             GameObject holder = new GameObject("Booster Stone");
             holder.AddComponent<LetterTouchController>();
             holder.transform.SetParent(LettersPanel.transform);
@@ -991,7 +980,6 @@ public class GameplayController : MonoBehaviour
         return mGameplayPosition.SegmentIndex + 1 < CurrentLevel.Segments.Length;
     }
 
-    // Update is called once per frame
 
     AudioSource SoundScoreCountSRC;
 
@@ -1023,9 +1011,9 @@ public class GameplayController : MonoBehaviour
             yield return true;
         }
     */
+
     void Update()
     {
-
         if (!IsPause && !IsPausePopup)
         {
             if (SegmentToLoad > -1)
@@ -1057,7 +1045,6 @@ public class GameplayController : MonoBehaviour
         }
         else
         {
-
             if (SoundScoreCountSRC != null)
             {
                 SoundScoreCountSRC.loop = false;
@@ -1070,10 +1057,8 @@ public class GameplayController : MonoBehaviour
                 }
             }
             fromS = mGameplayPosition.LevelScore;
-
         }
         LevelScoreText.text = (fromS).ToString();
-
 
 
         if (IsPause || IsPausePopup || !IsInteractable)
@@ -1302,7 +1287,6 @@ public class GameplayController : MonoBehaviour
 
         if (_currentLevelScoreToFlush > 0)
         {
-
             if (ScoreAnimation != null)
             {
                 ScoreAnimation.Play();
@@ -1318,7 +1302,6 @@ public class GameplayController : MonoBehaviour
             GameplayController.Instance.EndSegmentWinAnimation();
             //OnEatAnimationEnd ();
         }
-
     }
 
     public void EndSegmentWinAnimation()
@@ -1426,7 +1409,6 @@ public class GameplayController : MonoBehaviour
         }
         set {
             mGameplayPosition.LevelIndex = value;
-
         }
     }
 
@@ -1528,7 +1510,6 @@ public class GameplayController : MonoBehaviour
     public bool isSegmentComplete = false;
 
 
-
     public void OnEatAnimationEnd()
     {
         if (
@@ -1537,7 +1518,6 @@ public class GameplayController : MonoBehaviour
             State == GameState.SegmentLoseAnimation
         )
         {
-
             CurrentActive.OnEatDone();
 
             Invoke("EndSegment", 1.6f);
@@ -1608,7 +1588,6 @@ public class GameplayController : MonoBehaviour
                 {
                     if (dragedLetter.stone.value == BoosterController.letterName)
                     {
-
                         GameObject holder = dragedLetter.GetComponentInParent<LetterTouchController>().gameObject;
                         letter.transform.SetParent(holder.transform);
                         letter.Select();
@@ -1629,7 +1608,6 @@ public class GameplayController : MonoBehaviour
                         {
                             monster.EatBooster((BoosterController)letter, dragedLetter);
                         }
-
                     }
                     else if (CurrentLevel.monsterInputType == MonsterInputType.Letter || CurrentLevel.monsterInputType == MonsterInputType.LetterName || CurrentLevel.monsterInputType == MonsterInputType.LetterInWord || CurrentLevel.monsterInputType == MonsterInputType.SoundLetter || CurrentLevel.monsterInputType == MonsterInputType.SoundLetterName)
                     {
@@ -1815,7 +1793,6 @@ public class GameplayController : MonoBehaviour
     {
         if (booster != null && booster.Model != null && booster.Model.EffectOnLetterPrefab != null)
         {
-
             LetterController ltr = null;
             if (dragedLetter != null)
             {
@@ -1847,9 +1824,7 @@ public class GameplayController : MonoBehaviour
                 }
             }
         }
-
     }
-
 
 
     public void DoFreezeBooster()
@@ -1861,7 +1836,6 @@ public class GameplayController : MonoBehaviour
 
         //isFreezeTimer = true;
     }
-
 
 
     public void DoBounsLetterBooster(BoosterController booster)
@@ -1898,6 +1872,4 @@ public class GameplayController : MonoBehaviour
     /*
     * Tzahi - End
     */
-
-
 }

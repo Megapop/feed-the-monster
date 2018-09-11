@@ -5,12 +5,9 @@ using UnityEngine.UI;
 
 public class BoosterController : LetterController
 {
-
     public static string letterName = "Booster";
 
     public Booster Model { get; private set; }
-
-
 
 
     //public void Init(Booster model, Vector3 position)
@@ -54,5 +51,4 @@ public class BoosterController : LetterController
             AudioController.Instance.PlaySound(Model.Sound);
         }
     }
-
 }

@@ -14,13 +14,7 @@ public class UIZoomOut : MonoBehaviour
     float startSize;
     float targetSize;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isZoomDone && isCircleDone)
@@ -31,7 +25,6 @@ public class UIZoomOut : MonoBehaviour
             }
             Destroy(this);
         }
-
     }
 
     public void init(float size = 5f)
@@ -43,8 +36,6 @@ public class UIZoomOut : MonoBehaviour
         StartCoroutine(ZoomIn());
         StartCoroutine(Circle());
     }
-
-
 
 
     IEnumerator ZoomIn()
@@ -83,6 +74,4 @@ public class UIZoomOut : MonoBehaviour
 
         isCircleDone = true;
     }
-
-
 }

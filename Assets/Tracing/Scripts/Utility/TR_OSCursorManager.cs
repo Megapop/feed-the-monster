@@ -15,7 +15,6 @@ public class TR_OSCursorManager : MonoBehaviour
     /// </summary>
     public CursorStatus status = CursorStatus.ENABLED;
 
-    // Update is called once per frame
     void Start()
     {
 #if (!(UNITY_ANDROID || UNITY_IPHONE) || UNITY_EDITOR)

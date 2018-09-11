@@ -46,7 +46,6 @@ public class XMLLevel
     public int LettersGroup;
 
 
-
     public static string LevelMaxScore = string.Empty;
 
     //public void Save()
@@ -112,7 +111,6 @@ public class XMLLevel
 
         SerializeLevelFromXML(levelId, levelPath, reader, level);
     }
-
 
 
     private void SerializeLevelFromXML(int levelId, string levelPath, XmlReader reader, Level level)
@@ -235,5 +233,4 @@ public class XMLLevel
 
         return maxPointsInLevel;
     }
-
 }

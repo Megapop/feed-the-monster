@@ -32,15 +32,13 @@ public class StartButton : MonoBehaviour
 
     bool isActive = false;
 
-    // Use this for initialization
+
     void Start()
     {
-
         //transform.position = PositionOut;
         //currentPosition = PositionOut;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //transform.position = Vector2.MoveTowards (transform.position, currentPosition, 1000 * Time.deltaTime);	
@@ -257,7 +255,6 @@ public class StartButton : MonoBehaviour
         //currentPosition = PositionOut;
         gameObject.GetComponent<Button>().interactable = false;
         gameObject.GetComponent<Image>().raycastTarget = false;
-
     }
 
     void addScorebubble(int score)
@@ -273,7 +270,4 @@ public class StartButton : MonoBehaviour
             c.Play(score);
         }
     }
-
-
-
 }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class UIZoomIn : MonoBehaviour
 {
-
     public delegate void onDoneDelegate();
     public onDoneDelegate onDone;
 
@@ -14,15 +13,9 @@ public class UIZoomIn : MonoBehaviour
     float startSize;
     float targetSize;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (isZoomDone && isCircleDone)
         {
             if (onDone != null)
@@ -80,6 +73,4 @@ public class UIZoomIn : MonoBehaviour
 
         isCircleDone = true;
     }
-
-
 }

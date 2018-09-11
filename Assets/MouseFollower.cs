@@ -3,8 +3,6 @@ using System.Collections;
 
 public class MouseFollower : MonoBehaviour
 {
-    // Use this for initialization
-
     [Range(0.1f, 5f)]
     public float HideAfter = 1f;
 
@@ -17,7 +15,6 @@ public class MouseFollower : MonoBehaviour
         Counter = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 newPosition;

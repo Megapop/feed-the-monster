@@ -12,17 +12,6 @@ public class UIEvolveMonsterController : MonoBehaviour
 
     //string mSelectedFriendName;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -72,7 +61,6 @@ public class UIEvolveMonsterController : MonoBehaviour
     {
         //mSelectedFriendName = buttonSender.name;
         ShowEvolveAnimation(buttonSender);
-
     }
 
     void ShowEvolveAnimation(GameObject buttonSender)

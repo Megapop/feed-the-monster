@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class UINewAccessoriesController : MonoBehaviour
 {
-
     public Image itemImage;
     public AudioClip audioClip;
 
-    // Use this for initialization
+
     void Start()
     {
         addItem();

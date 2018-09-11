@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameBackgroundController : MonoBehaviour
 {
-
     public static GameBackgroundController Instance;
 
 
@@ -18,18 +17,6 @@ public class GameBackgroundController : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     //public void Load(Level level){
@@ -70,7 +57,5 @@ public class GameBackgroundController : MonoBehaviour
         {
             sp.gameObject.SetActive(false);
         }
-
     }
-
 }

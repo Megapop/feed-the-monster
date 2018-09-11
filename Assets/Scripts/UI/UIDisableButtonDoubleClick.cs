@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UIDisableButtonDoubleClick : MonoBehaviour
 {
-
     [Range(0.1f, 10f)]
     public float DisableSeconds = 1f;
 
@@ -50,5 +49,4 @@ public class UIDisableButtonDoubleClick : MonoBehaviour
         btn.interactable = false;
         Debug.Log("Button Clicked");
     }
-
 }

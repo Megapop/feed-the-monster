@@ -6,18 +6,22 @@ namespace FFmpeg.AutoGen
 {
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct SwrContext
     {
+
     }
 
     public enum SwrDitherType : int
@@ -125,7 +129,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libswresample, EntryPoint = "swr_config_frame", CallingConvention = CallingConvention.Cdecl)]
         public static extern int swr_config_frame(SwrContext* @swr, AVFrame* @out, AVFrame* @in);
-
     }
 }
 

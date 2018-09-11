@@ -11,13 +11,6 @@ public class ColorSwapper : MonoBehaviour
     Image mImageTarget;
     bool mGoHighlight;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (mGoHighlight)

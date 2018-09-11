@@ -23,7 +23,6 @@ public class UIController : MonoBehaviour
     GameObject mOpenPopup;
 
 
-
     public GameObject LastPanel {
         get {
             return mLastPanel;
@@ -32,19 +31,17 @@ public class UIController : MonoBehaviour
 
     void Awake()
     {
-
         Instance = this;
 
         HideAllPanels();
     }
 
-    // Use this for initialization
+
     void Start()
     {
         Init();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -85,7 +82,6 @@ public class UIController : MonoBehaviour
     {
         ShowPanel(GamePanel);
     }
-
 
 
     public void ShowPopup(GameObject popup)
@@ -178,7 +174,6 @@ public class UIController : MonoBehaviour
     */
     /*
         public void RetryLevelClick() {
-
             bool isWin = GameplayController.Instance.CurrentLevelStars > 0;
 
             if (isWin && GameplayController.Instance.CurrentLevel.CollectableMonster != null && !UserInfo.Instance.HasCollectedFriend(GameplayController.Instance.CurrentLevel.CollectableMonster) ) {
@@ -254,7 +249,6 @@ public class UIController : MonoBehaviour
     }
 
 
-
     /*
         public void OnChangeProfile(GameObject nextScreen)
         {
@@ -265,5 +259,4 @@ public class UIController : MonoBehaviour
             }
         }
     */
-
 }

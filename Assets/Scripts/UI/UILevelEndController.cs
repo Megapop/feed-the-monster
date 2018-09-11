@@ -72,13 +72,6 @@ public class UILevelEndController : MonoBehaviour
     UIFlashAnimation flashAnimation;
 
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (statusQueue.Count > 0)
@@ -147,14 +140,10 @@ public class UILevelEndController : MonoBehaviour
         transform.GetChild(0).gameObject.GetComponent<Image>().sprite = isWin ? WinScreen : LoseScreen;
 
 
-
         if (!addAddVoiceTutorial(isWin))
         {
             onVoiceTutorialDone();
         }
-
-
-
 
 
         if (isWin)
@@ -276,7 +265,6 @@ public class UILevelEndController : MonoBehaviour
 
         GageZoomIn
     }
-
 
 
     void doStatusQueue(status s)
@@ -687,5 +675,4 @@ public class UILevelEndController : MonoBehaviour
         }
     }
     // End Tzahi
-
 }

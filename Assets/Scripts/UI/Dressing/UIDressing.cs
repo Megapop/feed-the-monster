@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UIDressing : MonoBehaviour
 {
-
     public static UIDressing Instance;
 
 
@@ -18,19 +17,8 @@ public class UIDressing : MonoBehaviour
     void Awake()
     {
         Instance = this;
-
     }
 
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void DressingPopupClick(int type)
     {
@@ -64,8 +52,6 @@ public class UIDressing : MonoBehaviour
     }
 
 
-
-
     public void onMonsterChange()
     {
         if (popups != null)
@@ -79,6 +65,4 @@ public class UIDressing : MonoBehaviour
             }
         }
     }
-
-
 }

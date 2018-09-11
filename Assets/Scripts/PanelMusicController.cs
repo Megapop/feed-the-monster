@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PanelMusicController : MonoBehaviour
 {
-
     public AudioClip music;
 
     [Range(0f, 1f)]
@@ -15,6 +14,7 @@ public class PanelMusicController : MonoBehaviour
 
     /*
         void Start () {
+
         }
 
         void Update () {

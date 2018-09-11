@@ -43,7 +43,6 @@ public class Level : ScriptableObject
     }
 
 
-
     public void ShuffleSegments()
     {
         System.Random rng = new System.Random();
@@ -57,5 +56,4 @@ public class Level : ScriptableObject
             Segments[k] = temp;
         }
     }
-
 }

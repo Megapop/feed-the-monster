@@ -7,6 +7,4 @@ using System.Linq;
 public class PlayerInfo
 {
 
-
-
 }

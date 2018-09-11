@@ -4,19 +4,6 @@ using UnityEngine.EventSystems;
 
 public class HoleButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
 {
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     #region IPointerEnterHandler implementation
     public delegate void PointerEventDataDelegate(PointerEventData eventData);
     public event PointerEventDataDelegate onPointerEnter;

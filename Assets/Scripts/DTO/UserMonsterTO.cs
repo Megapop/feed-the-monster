@@ -40,9 +40,4 @@ public class UserMonsterTO
             LastUsed = value.Ticks;
         }
     }
-
-
-
-
-
 }

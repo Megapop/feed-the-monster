@@ -3,18 +3,10 @@ using System.Collections;
 
 public class VideoCopyTexture : MonoBehaviour
 {
-
     public MediaPlayerCtrl m_srcVideo;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
         if (m_srcVideo != null)
         {
 #if !UNITY_WEBPLAYER && !UNITY_WEBGL && !UNITY_WP8 && !UNITY_WP8_1
@@ -30,6 +22,5 @@ public class VideoCopyTexture : MonoBehaviour
             }
 #endif
         }
-
     }
 }

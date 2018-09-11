@@ -28,13 +28,7 @@ public class UIMonsterSelection : MonoBehaviour
     float TutorialCurrentTime = 0;
     float TutorialShowTime = 0;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -168,8 +162,6 @@ public class UIMonsterSelection : MonoBehaviour
     }
 
 
-
-
     public void Done()
     {
         if (selected)
@@ -223,8 +215,6 @@ public class UIMonsterSelection : MonoBehaviour
         {
             TutorialController.Instance.EndTutorial();
         }
-
-
     }
 
     void updateButtons()
@@ -260,7 +250,6 @@ public class UIMonsterSelection : MonoBehaviour
             TutorialController.Instance.EndTutorial();
         }
     }
-
 
 
     float LastX;
@@ -336,5 +325,4 @@ public class UIMonsterSelection : MonoBehaviour
     {
         SceneController.Instance.LoadScene("MapScreen");
     }
-
 }

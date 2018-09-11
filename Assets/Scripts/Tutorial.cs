@@ -26,16 +26,9 @@ public class Tutorial : MonoBehaviour
 
     bool isVoiceShow = false;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
         if (firstLetter)
         {
             firstLetter.OnDrag(null);
@@ -67,7 +60,6 @@ public class Tutorial : MonoBehaviour
                             counter = 0;
                         }
                         pointAnimationStart = tutorialHandImage.transform.localPosition;
-
                     }
                     else
                     {
@@ -184,7 +176,6 @@ public class Tutorial : MonoBehaviour
         Vector3 startPos, handDest;
         if (letters.Length != 0)
         {
-
             firstLetter = letters[0];
 
             firstLetter.isTutorial = true;
@@ -197,7 +188,6 @@ public class Tutorial : MonoBehaviour
 
             for (int letterIndex = 0; letterIndex < letters.Length; letterIndex++)
             {
-
                 LetterController letter = letters[letterIndex];
                 tutorialHandImage.enabled = true;
                 startPos = tutorialHandImage.transform.position;
@@ -222,8 +212,6 @@ public class Tutorial : MonoBehaviour
                     {
                         letter.transform.localScale = newScale;
                     }
-
-
                 }
                 tutorialHandImage.transform.position = handDest;
                 startPos = tutorialHandImage.transform.position;
@@ -285,17 +273,6 @@ public class Tutorial : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
     public void InitPettingMonster(GameObject go)
     {
         State = TutorialController.TutorialState.InGame;
@@ -343,13 +320,6 @@ public class Tutorial : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
     public Vector2 getMonsterMouth()
     {
         Transform to = GameObject.Find("monster").transform.Find("Mouth");
@@ -371,7 +341,6 @@ public class Tutorial : MonoBehaviour
                 ((ViewportPosition.x * CanvasRect.sizeDelta.x) - (CanvasRect.sizeDelta.x * 0.5f)),
                 ((ViewportPosition.y * CanvasRect.sizeDelta.y) - (CanvasRect.sizeDelta.y * 0.5f))
             );
-
         }
         return toPos;
     }
@@ -406,7 +375,6 @@ public class Tutorial : MonoBehaviour
             //((ViewportPosition.x * CanvasRect.sizeDelta.x) - (CanvasRect.sizeDelta.x * 0.5f)),
             //((ViewportPosition.y * CanvasRect.sizeDelta.y) - (CanvasRect.sizeDelta.y * 0.5f))
             //);
-
         }
         return toPos;
     }
@@ -451,7 +419,4 @@ public class Tutorial : MonoBehaviour
 
         return correctLetters.ToArray();
     }
-
-
-
 }

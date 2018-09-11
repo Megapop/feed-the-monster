@@ -11,7 +11,6 @@ using System.Collections;
 [CustomEditor(typeof(TR_Path))]
 public class TR_PathEditor : Editor
 {
-
     public override void OnInspectorGUI()
     {
         TR_Path path = (TR_Path)target;//get the target

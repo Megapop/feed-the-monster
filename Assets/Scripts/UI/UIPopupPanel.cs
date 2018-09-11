@@ -5,19 +5,8 @@ using System.Collections.Generic;
 
 public class UIPopupPanel : MonoBehaviour
 {
-
     private Image windowImage;
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -76,6 +65,7 @@ public class UIPopupPanel : MonoBehaviour
 
     public void Popup()
     {
+
     }
 
     public void PopOut()
@@ -85,7 +75,6 @@ public class UIPopupPanel : MonoBehaviour
 
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
-
             Transform child = transform.GetChild(i);
 
             if (isObjectAllow(child.gameObject))
@@ -97,7 +86,6 @@ public class UIPopupPanel : MonoBehaviour
 
     IEnumerator PopInElement(Transform transform, float delay = 0, float speed = 5f)
     {
-
         transform.localScale = new Vector3(0, 0, 0);
 
         yield return new WaitForSeconds(delay);
@@ -119,7 +107,6 @@ public class UIPopupPanel : MonoBehaviour
 
     IEnumerator PopOutElement(Transform transform, float delay = 0, float speed = 5.0f)
     {
-
         transform.localScale = new Vector3(1, 1, 1);
 
         yield return new WaitForSeconds(delay);
@@ -139,7 +126,6 @@ public class UIPopupPanel : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-
 
 
     //Jonathan
@@ -165,7 +151,6 @@ public class UIPopupPanel : MonoBehaviour
 
     IEnumerator PopOutElementAny(Transform transform, float delay = 0, float speed = 5.0f)
     {
-
         transform.localScale = new Vector3(1, 1, 1);
 
         yield return new WaitForSeconds(delay);

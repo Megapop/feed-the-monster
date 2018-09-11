@@ -6,18 +6,22 @@ namespace FFmpeg.AutoGen
 {
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVCodecDescriptor
@@ -33,6 +37,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVProfile
     {
+
     }
 
     public unsafe partial struct RcOverride
@@ -85,6 +90,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVCodecInternal
     {
+
     }
 
     public unsafe partial struct AVCodecContext
@@ -296,10 +302,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVHWAccel
     {
+
     }
 
     public unsafe partial struct AVCodec
     {
+
     }
 
     public unsafe partial struct AVProfile
@@ -310,10 +318,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVCodecDefault
     {
+
     }
 
     public unsafe partial struct AVSubtitle
     {
+
     }
 
     public unsafe partial struct AVCodec
@@ -348,6 +358,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct MpegEncContext
     {
+
     }
 
     public unsafe partial struct AVHWAccel
@@ -443,6 +454,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVCodecParser
     {
+
     }
 
     public unsafe partial struct AVCodecParser
@@ -458,10 +470,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct ReSampleContext
     {
+
     }
 
     public unsafe partial struct AVResampleContext
     {
+
     }
 
     public unsafe partial struct AVBitStreamFilterContext
@@ -475,6 +489,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVBitStreamFilter
     {
+
     }
 
     public unsafe partial struct AVBitStreamFilter
@@ -1810,7 +1825,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libavcodec, EntryPoint = "av_cpb_properties_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVCPBProperties* av_cpb_properties_alloc(ulong* @size);
-
     }
 }
 

@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class UIMonsterScrollPanel : MonoBehaviour, IEndDragHandler, IDragHandler
 {
-
     public GridLayoutGroup Content;
     public RectTransform MonsterIcon;
     private GameObject monster;
@@ -15,7 +14,7 @@ public class UIMonsterScrollPanel : MonoBehaviour, IEndDragHandler, IDragHandler
     public int currentIndex = 0;
     private ScrollRect scroll;
     private bool _lerp = true;
-    // Use this for initialization
+
     void Awake()
     {
         scroll = GetComponent<ScrollRect>();
@@ -30,7 +29,6 @@ public class UIMonsterScrollPanel : MonoBehaviour, IEndDragHandler, IDragHandler
         //SetChosenIndex (0);
     }
     int lastForegroundIndex = 0;
-    // Update is called once per frame
     void Update()
     {
         int foregroundIndex = (int)Mathf.Round(scroll.horizontalNormalizedPosition * count - .5f);
@@ -64,6 +62,7 @@ public class UIMonsterScrollPanel : MonoBehaviour, IEndDragHandler, IDragHandler
 
     void OnEnable()
     {
+
     }
 
     void OnDisable()
@@ -112,5 +111,4 @@ public class UIMonsterScrollPanel : MonoBehaviour, IEndDragHandler, IDragHandler
         Debug.Log(scroll.horizontalNormalizedPosition + "    =   =   " + currentIndex);
         _lerp = true;
     }
-
 }

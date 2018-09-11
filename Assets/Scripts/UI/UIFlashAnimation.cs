@@ -10,21 +10,12 @@ public class UIFlashAnimation : MonoBehaviour
     public AudioClip sndEvolv;
 
 
-    // Use this for initialization
     void Start()
     {
         StartCoroutine(ChangeTimer());
 
         AudioController.Instance.PlaySound(sndEvolv);
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
 
     IEnumerator ChangeTimer()
@@ -43,7 +34,6 @@ public class UIFlashAnimation : MonoBehaviour
         {
             onPeak();
         }
-
     }
 
     public void End()
@@ -53,5 +43,4 @@ public class UIFlashAnimation : MonoBehaviour
             onEnd();
         }
     }
-
 }

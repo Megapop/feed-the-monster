@@ -5,14 +5,10 @@ using UnityEngine;
 
 public class SoundTest : MonoBehaviour
 {
-
-
-
     public bool TryLetter = true;
     public bool TryLetterName = true;
     public bool TryLetterInWord = true;
     public bool TryWord = true;
-
 
 
     public bool MoveNotUsed = false;
@@ -28,23 +24,15 @@ public class SoundTest : MonoBehaviour
     string logLetterInWord;
     string logWord;
 
-    // Use this for initialization
+
     void Start()
     {
         MoveNotUsed = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
 
     public void OnEnable()
     {
-
         if (MoveNotUsed)
         {
             loadAllFiles();
@@ -111,7 +99,6 @@ public class SoundTest : MonoBehaviour
         Debug.Log(letters.Count);
 
 
-
         dir = new DirectoryInfo("Assets/Resources/Sounds/Voice/LettersName");
         info = dir.GetFiles("*.mp3");
 
@@ -130,8 +117,6 @@ public class SoundTest : MonoBehaviour
         }
 
         Debug.Log(words.Count);
-
-
     }
 
     void moveNotRelevantFiles()
@@ -171,7 +156,6 @@ public class SoundTest : MonoBehaviour
 
         switch (lvl.monsterInputType)
         {
-
             case MonsterInputType.LetterName:
             case MonsterInputType.SoundLetterName:
                 if (TryLetterName)
@@ -254,8 +238,4 @@ public class SoundTest : MonoBehaviour
                 break;
         }
     }
-
-
-
-
 }

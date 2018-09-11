@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 [System.Serializable]
 public class Segment
 {
-
     [XmlAttribute("VoiceTutorial")]
     public string VoiceTutorial;
 
@@ -31,9 +30,6 @@ public class Segment
     [XmlArray("MonsterAllLetters")]
     [XmlArrayItem("string")]
     public string[] MonsterAllLetters;
-
-
-
 
 
     string[] _fixRequiredLetters;
@@ -65,7 +61,6 @@ public class Segment
         }
         return _fixAllLetters[index];
     }
-
 
 
     public string valueForAnalytics
@@ -105,8 +100,5 @@ public class Segment
             }
             return s;
         }
-
     }
-
-
 }

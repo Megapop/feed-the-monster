@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LogConntroller : MonoBehaviour
 {
-
     public static LogConntroller Instance;
 
     GUIStyle style;
@@ -39,7 +38,6 @@ public class LogConntroller : MonoBehaviour
     }
 
 
-
     public void Clear()
     {
         if (GameAssets.Instance.DEBUG_ACTIVE)
@@ -53,7 +51,6 @@ public class LogConntroller : MonoBehaviour
     {
         if (GameAssets.Instance.DEBUG_ACTIVE)
         {
-
             Debug.Log(text);
 
             logLines.Add(text);
@@ -81,5 +78,4 @@ public class LogConntroller : MonoBehaviour
             }
         }
     }
-
 }

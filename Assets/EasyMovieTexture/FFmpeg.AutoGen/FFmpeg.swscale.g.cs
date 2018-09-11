@@ -22,6 +22,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct SwsContext
     {
+
     }
 
     public unsafe static partial class ffmpeg
@@ -162,7 +163,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libswscale, EntryPoint = "sws_get_class", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVClass* sws_get_class();
-
     }
 }
 #endif

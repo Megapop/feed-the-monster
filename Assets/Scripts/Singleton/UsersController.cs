@@ -20,10 +20,6 @@ public class UsersController : MonoBehaviour
     Dictionary<string, UserDataTO> dataToSave = new Dictionary<string, UserDataTO>();
 
 
-
-
-
-
     public UserDataTO userData()
     {
         return userData(currentProfileId);
@@ -42,7 +38,6 @@ public class UsersController : MonoBehaviour
 
     public void setUserData(UserDataTO userData)
     {
-
         if (usersData.ContainsKey(userData.UserId))
         {
             usersData[userData.UserId] = userData;
@@ -61,7 +56,6 @@ public class UsersController : MonoBehaviour
 
     public void clearAllUsersData()
     {
-
         for (int i = 0; i < 4; i++)
         {
             string key = UsersController.LocalUserPrefix + i.ToString();
@@ -69,7 +63,6 @@ public class UsersController : MonoBehaviour
             save(userData(), true);
         }
     }
-
 
 
     public int CurrentProfileId {
@@ -97,7 +90,6 @@ public class UsersController : MonoBehaviour
     }
 
 
-    // Use this for initialization
     void Awake()
     {
         if (Instance == null)
@@ -114,6 +106,7 @@ public class UsersController : MonoBehaviour
 
     /*
         void Start () {
+
         }
     */
     void Update()
@@ -157,7 +150,6 @@ public class UsersController : MonoBehaviour
 
     public void save(UserDataTO userDataToSave, bool replace = false)
     {
-
         string userId = (string.IsNullOrEmpty(userDataToSave.UserId)) ? "guest" : userDataToSave.UserId;
 
         if (userDataToSave != null)
@@ -172,7 +164,4 @@ public class UsersController : MonoBehaviour
             }
         }
     }
-
-
-
 }

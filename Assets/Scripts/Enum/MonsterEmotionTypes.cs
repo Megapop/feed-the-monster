@@ -10,7 +10,4 @@ public enum MonsterEmotionTypes
     Sad = 3,
     //Hungry = 4,
     //Afraid = 5
-
-
-
 }

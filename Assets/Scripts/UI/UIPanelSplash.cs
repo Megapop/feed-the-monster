@@ -3,7 +3,6 @@ using System.Collections;
 
 public class UIPanelSplash : MonoBehaviour
 {
-
     //public GameObject background;
     public Transform popupsHolder;
     public GameObject profileSelectionGO = null;
@@ -11,7 +10,6 @@ public class UIPanelSplash : MonoBehaviour
     public string nextScene;
 
 
-    // Use this for initialization
     void Start()
     {
         //GameplayController.Instance.LoadBackground (background);
@@ -35,10 +33,6 @@ public class UIPanelSplash : MonoBehaviour
         */
     }
 
-    void Update()
-    {
-
-    }
 
     void OnDisable()
     {
@@ -77,8 +71,6 @@ public class UIPanelSplash : MonoBehaviour
     }
 
 
-
-
     void showConfirmaction()
     {
         GameObject popup;
@@ -102,6 +94,4 @@ public class UIPanelSplash : MonoBehaviour
     {
         SceneController.Instance.LoadScene(nextScene);
     }
-
-
 }

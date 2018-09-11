@@ -36,5 +36,4 @@ public class GameBackground : ScriptableObject
 */
         return gameBackground;
     }
-
 }

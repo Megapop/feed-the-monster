@@ -12,13 +12,7 @@ public class UIScoreAnimationController : MonoBehaviour
 
     bool isSegmentAnimation = true;
 
-    // Use this for initialization
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //ScoreBg.color -= new Color (0, 0, 0, Time.deltaTime);
@@ -65,6 +59,4 @@ public class UIScoreAnimationController : MonoBehaviour
         GetComponent<Animation>().Play("AddScoreAnimation");
         text.text = sum.ToString();
     }
-
-
 }

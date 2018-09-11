@@ -3,11 +3,10 @@ using System.Collections;
 
 public class UIParticle : MonoBehaviour
 {
-
     private Vector3 direction;
     float speed = 0;
     private float timer;
-    // Use this for initialization
+
     void Start()
     {
         //direction = new Vector2 ( RandomRangeFloat(2), RandomRangeFloat(2));
@@ -17,7 +16,6 @@ public class UIParticle : MonoBehaviour
         transform.localScale = new Vector3(scale, scale, scale);
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime * speed;
@@ -35,5 +33,4 @@ public class UIParticle : MonoBehaviour
     {
         return (Random.value * (max - min)) + min;
     }
-
 }

@@ -11,7 +11,6 @@ public class Monster : ScriptableObject
     public MiniGameController.GameType MiniGame;
 
 
-
     public string AssetId;
 
     public GameObject MonsterPrefab;
@@ -37,7 +36,6 @@ public class Monster : ScriptableObject
     int _lastUse = -1;
     int _levelFaled = -1;
     MonsterEmotionTypes _emotionType = MonsterEmotionTypes.NONE;
-
 
 
     public void reset()
@@ -225,7 +223,6 @@ public class Monster : ScriptableObject
 
     public MonsterEmotionTypes EmotionType {
         get {
-
             if (_emotionType == MonsterEmotionTypes.NONE)
             {
                 _emotionType = UsersController.Instance.userData().getMonsterEmotionType(this);
@@ -283,5 +280,4 @@ public class Monster : ScriptableObject
     }
 
     // End Tzahi
-
 }

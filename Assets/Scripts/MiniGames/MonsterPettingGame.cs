@@ -15,18 +15,11 @@ public class MonsterPettingGame : BaseMiniGame
     int count;
 
 
-
     void Awake()
     {
         Instance = this;
     }
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-    }
 
     void OnDisable()
     {
@@ -37,7 +30,6 @@ public class MonsterPettingGame : BaseMiniGame
             Camera.main.transform.position = new Vector3(0, 0, -10);
         }
         CancelInvoke();
-
     }
 
     void OnEnable()
@@ -52,12 +44,6 @@ public class MonsterPettingGame : BaseMiniGame
         animController.SetInteger("EmotionState", 0);
 
         Analytics.TrackScreen("Monster Petting - Profile: " + UsersController.Instance.CurrentProfileId);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -162,6 +148,4 @@ public class MonsterPettingGame : BaseMiniGame
             zone.gameObject.SetActive(val);
         }
     }
-
-
 }

@@ -28,7 +28,6 @@ public class UISettingsController : UIPauseController
         ChangeSoundButtonColor();
 
         UpdateDebugPanel();
-
     }
 
     public void ShowParentReport()
@@ -101,5 +100,4 @@ public class UISettingsController : UIPauseController
             Close();
         }
     }
-
 }

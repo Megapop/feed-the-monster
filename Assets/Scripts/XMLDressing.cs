@@ -42,6 +42,5 @@ public class XMLDressing
             }
         }
         DressingController.Instance.Dressing = categories;
-
     }
 }

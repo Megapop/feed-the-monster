@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class SingletonLoader : MonoBehaviour
 {
-
 #if UNITY_WEBGL && !UNITY_EDITOR
 	[DllImport("__Internal")]
 	public static extern bool WebGL_isSiteAllow();
@@ -80,7 +79,6 @@ public class SingletonLoader : MonoBehaviour
 
     public static void CheckSingleton()
     {
-
         if (
             LogConntroller.Instance != null
             &&
@@ -125,6 +123,7 @@ public class SingletonLoader : MonoBehaviour
 
     static void onReadyToInit()
     {
+
     }
 
 
@@ -136,6 +135,4 @@ public class SingletonLoader : MonoBehaviour
             Instantiate(Resources.Load("Gameplay/SceneController") as GameObject);
         }
     }
-
-
 }

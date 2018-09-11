@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VersionIncrementer : ScriptableObject
 {
-
     [MenuItem("Megapop/Version/Increment Major Version (X.0.0)", false, 2)]
     public static void IncrementMajorVersion()
     {

@@ -24,13 +24,11 @@ public class LetterController : MonoBehaviour
     }
 
 
-
     public LetterState State { get; set; }
     public Text text;
     //public string value { get; private set;  }
     public Stone stone { get; private set; }
     public float Speed;
-
 
 
     public Image MainImage;
@@ -113,7 +111,6 @@ public class LetterController : MonoBehaviour
     bool isBlinking = false;
 
 
-
     public Vector2 getMonsterMouth()
     {
         Transform to = GameObject.Find("monster").transform.Find("Mouth");
@@ -135,13 +132,11 @@ public class LetterController : MonoBehaviour
                 ((ViewportPosition.x * CanvasRect.sizeDelta.x) - (CanvasRect.sizeDelta.x * 0.5f)),
                 ((ViewportPosition.y * CanvasRect.sizeDelta.y) - (CanvasRect.sizeDelta.y * 0.5f))
             );
-
         }
         return toPos;
     }
 
 
-    // Use this for initialization
     void Start()
     {
         SetParticlesUnVisible();
@@ -157,9 +152,6 @@ public class LetterController : MonoBehaviour
         text.GetComponent<Outline>().effectColor = FontOutlineColorDefault;//GameplayController.Instance.CurrentLevel.StoneLetterFontOutlineColorDefault;
 
 
-
-
-
         if (ParticlesMergeAccept != null)
         {
             ParticlesMergeAcceptScale = ParticlesMergeAccept.transform.localScale;
@@ -171,7 +163,6 @@ public class LetterController : MonoBehaviour
 
         if (stone.spawnIds.Length > 1)
         {
-
             if (stone.speed > 0)
             {
                 mCurrentSpeed = stone.speed;
@@ -187,10 +178,8 @@ public class LetterController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (GameplayController.Instance.IsPause || GameplayController.Instance.IsPausePopup || (State == LetterState.Inited && MainImage.enabled == false))
         {
             return;
@@ -249,7 +238,6 @@ public class LetterController : MonoBehaviour
                         )
                         {
                             GameplayController.Instance.margeLetters(this, mMagnetLetter);
-
                         }
                         else
                         {
@@ -309,6 +297,7 @@ public class LetterController : MonoBehaviour
                 if (!this.enabled) return;
 
                 if (shaking || shake_frame != 0) {
+
                 }
                 transform.position = Vector3.Lerp (transform.position, mTargetPosition, IdleShakeSpeed * Time.deltaTime);
                 break;*/
@@ -331,7 +320,6 @@ public class LetterController : MonoBehaviour
         }
         updateScale();
     }
-
 
 
     void onMovementPopOut()
@@ -377,7 +365,6 @@ public class LetterController : MonoBehaviour
     {
         if ((State == LetterState.Idle || State == LetterState.Warning) && GameplayController.Instance.State == GameplayController.GameState.SegmentIdle)
         {
-
             State = LetterState.Selected;
             //GetComponent<Animation> ().Play ("LetterBeat");
             MainImage.color = GameplayController.Instance.CurrentLevel.StoneLetterMainColorSelected;
@@ -630,7 +617,6 @@ public class LetterController : MonoBehaviour
         }
         State = state;
     }
-
 
 
     /*
@@ -893,7 +879,6 @@ public class LetterController : MonoBehaviour
 
     void startBlink()
     {
-
         if (stone.hideAfterBlinks > 0)
         {
             isBlinking = true;
@@ -997,12 +982,9 @@ public class LetterController : MonoBehaviour
         //ParticlesMergeReject.transform.localScale = ParticlesMergeReject.transform.localScale * GameplaySettings.LetterComboScale [numSubLetters - 1];
         //ParticlesMergeReject.transform.localScale = ParticlesMergeRejectScale * transform.localScale.x;
         //}
-
     }
 
     /*
     * Tzahi - end
     */
-
-
 }

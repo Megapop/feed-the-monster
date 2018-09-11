@@ -26,7 +26,6 @@ public class UIDressingItem : MonoBehaviour
 
     public void init(Action<DressingItemTO> onClickCallback, DressingItemTO item, MonsterAccessoryTO activeItem, string defaultOutlineFile)
     {
-
         _item = item;
         _onClickCallback = onClickCallback;
         _defaultOutlineFile = defaultOutlineFile;
@@ -87,7 +86,6 @@ public class UIDressingItem : MonoBehaviour
 
         if (activeItem == null)
         {
-
             if (_outlineIcon != null)
             {
                 _outlineIcon.enabled = false;
@@ -103,11 +101,8 @@ public class UIDressingItem : MonoBehaviour
     }
 
 
-
-
     public void onclick()
     {
-
         if (_onClickCallback != null)
         {
             _onClickCallback(_item);
@@ -136,7 +131,5 @@ public class UIDressingItem : MonoBehaviour
             _icon.material = null;
         }
     }
-
-
 }
 

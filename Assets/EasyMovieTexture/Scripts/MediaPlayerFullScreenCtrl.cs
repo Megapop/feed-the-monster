@@ -3,19 +3,16 @@ using System.Collections;
 
 public class MediaPlayerFullScreenCtrl : MonoBehaviour
 {
-
     public GameObject m_objVideo;
 
     int m_iOrgWidth = 0;
     int m_iOrgHeight = 0;
-    // Use this for initialization
+
     void Start()
     {
         Resize();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (m_iOrgWidth != Screen.width)
@@ -23,11 +20,7 @@ public class MediaPlayerFullScreenCtrl : MonoBehaviour
 
         if (m_iOrgHeight != Screen.height)
             Resize();
-
-
     }
-
-
 
 
     void Resize()
@@ -43,8 +36,4 @@ public class MediaPlayerFullScreenCtrl : MonoBehaviour
         m_objVideo.transform.GetComponent<MediaPlayerCtrl>().Resize();
 #endif
     }
-
-
-
-
 }

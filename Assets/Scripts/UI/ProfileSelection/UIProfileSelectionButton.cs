@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UIProfileSelectionButton : MonoBehaviour
 {
-
     public int ProfileId;
 
     public Image ImageIcon;
@@ -38,21 +37,6 @@ public class UIProfileSelectionButton : MonoBehaviour
             }
             return btn;
         }
-    }
-
-
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -102,7 +86,6 @@ public class UIProfileSelectionButton : MonoBehaviour
 
         if (highestLevelOpenIndex > 0)
         {
-
             ImageLevel.gameObject.SetActive(true);
             TextLevel.text = highestLevelOpenIndex.ToString();
         }
@@ -110,8 +93,5 @@ public class UIProfileSelectionButton : MonoBehaviour
         {
             ImageLevel.gameObject.SetActive(false);
         }
-
     }
-
-
 }

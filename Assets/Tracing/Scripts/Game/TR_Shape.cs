@@ -29,13 +29,6 @@ public class TR_Shape : MonoBehaviour
 
     UIPopInOut popOut;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-
 
     public void init()
     {
@@ -196,6 +189,5 @@ public class TR_Shape : MonoBehaviour
             popOut.PopOut();
         }
     }
-
-
 }
+

@@ -39,8 +39,6 @@ public class Booster : ScriptableObject
     public GameObject EffectOnLetterPrefab;
 
 
-
-
     public static BoosterType toEnum(string strValue)
     {
         if (!Enum.IsDefined(typeof(BoosterType), strValue))
@@ -48,6 +46,5 @@ public class Booster : ScriptableObject
             return BoosterType.NONE;
         }
         return (BoosterType)Enum.Parse(typeof(BoosterType), strValue);
-
     }
 }

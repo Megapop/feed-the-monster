@@ -12,6 +12,4 @@ public class VoiceTutorialData : ScriptableObject
     public Sprite MainImage;
     public AudioClip[] Clips;
     public Sprite[] BubbleImages;
-
-
 }

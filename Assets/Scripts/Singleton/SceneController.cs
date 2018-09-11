@@ -22,8 +22,6 @@ public class SceneController : MonoBehaviour
             DontDestroyOnLoad(MainObject);
             anim = GetComponent<Animator>();
             SingletonLoader.CheckSingleton();
-
-
         }
         else if (Instance != this)
         {
@@ -31,19 +29,6 @@ public class SceneController : MonoBehaviour
         }
     }
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void init()
     {
@@ -88,8 +73,4 @@ public class SceneController : MonoBehaviour
         sceneLoader.scene = SceneToLoad;
         sceneLoader.isActive = true;
     }
-
-
-
-
 }

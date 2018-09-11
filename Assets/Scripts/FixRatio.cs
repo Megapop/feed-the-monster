@@ -3,9 +3,6 @@ using System.Collections;
 
 public class FixRatio : MonoBehaviour
 {
-
-
-
     void Awake()
     {
         fix();
@@ -13,7 +10,6 @@ public class FixRatio : MonoBehaviour
 
     /*
         void Update(){
-
             float targetaspect = 9.0f / 16.0f;
 
             // determine the game window's current aspect ratio
@@ -77,7 +73,5 @@ public class FixRatio : MonoBehaviour
             camera.rect = rect;
         }
     }
-
-
 }
 

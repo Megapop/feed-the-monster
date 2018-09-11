@@ -7,7 +7,7 @@ public class StateConverter_2 : MonoBehaviour
 {
     public Action onDone;
 
-    // Use this for initialization
+
     void Start()
     {
         int DataVersion = SaveStatConnector.Instance.DataVersion;
@@ -150,7 +150,6 @@ public class StateConverter_2 : MonoBehaviour
 
         switch (key)
         {
-
             case Keys_2.LevelScore:
                 return str + "LevelScore";
             case Keys_2.LevelStars:

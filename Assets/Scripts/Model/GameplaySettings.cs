@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-
 public static class GameplaySettings
 {
-
     public const float CountdownDefault = 10f;
 
     public const float ShowTimeupSeconds = 1.6f;
@@ -83,7 +81,6 @@ public static class GameplaySettings
     public static int TreasureChest_ScoreMax = 1500;
 
     public static float TreasureChest_ChanceToShow = 0.15f;
-
 
 
     public static int MiniGame_SuccessScore = 500;

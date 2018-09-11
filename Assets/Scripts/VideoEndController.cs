@@ -4,20 +4,12 @@ using System.Collections;
 
 public class VideoEndController : MonoBehaviour
 {
-
     public UnityEvent VideoEnded;
     public string mNextScene;
 
     float elapsedTime;
     bool videoPlaying;
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     void OnEnable()
     {
@@ -32,7 +24,6 @@ public class VideoEndController : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.SystemSetting;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (videoPlaying)
@@ -56,9 +47,4 @@ public class VideoEndController : MonoBehaviour
     {
         SceneController.Instance.LoadScene(mNextScene);
     }
-
-
-
-
-
 }

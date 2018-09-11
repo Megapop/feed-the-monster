@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MonsterPosition : MonoBehaviour
 {
-
     public Vector2 EndScreen = new Vector2(0f, 0f);
     public Vector2 NewMonsterScreen = new Vector2(0f, 0f);
     public Vector2 GameScreen = new Vector2(0f, 0f);
@@ -12,11 +11,7 @@ public class MonsterPosition : MonoBehaviour
     bool needUpdate = false;
     Vector2 toPos;
 
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (needUpdate == true)
@@ -72,6 +67,4 @@ public class MonsterPosition : MonoBehaviour
             needUpdate = false;
         }
     }
-
-
 }

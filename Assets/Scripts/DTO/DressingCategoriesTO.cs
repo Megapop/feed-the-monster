@@ -4,11 +4,9 @@ using System.Xml;
 using System.Xml.Serialization;
 
 
-
 [System.Serializable]
 public class DressingCategoriesTO
 {
-
     [XmlAttribute("id")]
     public int id;
 
@@ -20,7 +18,4 @@ public class DressingCategoriesTO
     [XmlArray("items")]
     [XmlArrayItem("item")]
     public DressingItemTO[] items;
-
-
-
 }

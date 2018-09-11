@@ -6,62 +6,77 @@ namespace FFmpeg.AutoGen
 {
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVCodecInternal
     {
+
     }
 
     public unsafe partial struct AVCodecDefault
     {
+
     }
 
     public unsafe partial struct MpegEncContext
     {
+
     }
 
     public unsafe partial struct ReSampleContext
     {
+
     }
 
     public unsafe partial struct AVResampleContext
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVDeviceInfoList
     {
+
     }
 
     public unsafe partial struct AVDeviceCapabilitiesQuery
     {
+
     }
 
     public unsafe partial struct AVCodecTag
     {
+
     }
 
     public unsafe partial struct AVStreamInternal
     {
+
     }
 
     public unsafe partial struct AVFormatInternal
     {
+
     }
 
     public unsafe partial struct AVDeviceRect
@@ -187,7 +202,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libavdevice, EntryPoint = "avdevice_list_output_sinks", CallingConvention = CallingConvention.Cdecl)]
         public static extern int avdevice_list_output_sinks(AVOutputFormat* @device, [MarshalAs(UnmanagedType.LPStr)] string @device_name, AVDictionary* @device_options, AVDeviceInfoList** @device_list);
-
     }
 }
 #endif

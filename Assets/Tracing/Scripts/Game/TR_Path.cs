@@ -67,11 +67,6 @@ public class TR_Path : MonoBehaviour
     /// </summary>
     public float radialAngleOffset = 0;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     /// <summary>
     /// Auto fill.
@@ -181,7 +176,6 @@ public class TR_Path : MonoBehaviour
 
     public enum ShapeType
     {
-
         Horizontal,
         Vertical
     }

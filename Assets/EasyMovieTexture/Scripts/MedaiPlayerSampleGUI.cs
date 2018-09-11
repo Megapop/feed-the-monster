@@ -3,31 +3,17 @@ using System.Collections;
 
 public class MedaiPlayerSampleGUI : MonoBehaviour
 {
-
-
     public MediaPlayerCtrl scrMedia;
-
     public bool m_bFinish = false;
-    // Use this for initialization
+
     void Start()
     {
         scrMedia.OnEnd += OnEnd;
-
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
 #if !UNITY_WEBGL
     void OnGUI()
     {
-
-
         if (GUI.Button(new Rect(50, 50, 100, 100), "Load"))
         {
             scrMedia.Load("EasyMovieTexture.mp4");
@@ -93,11 +79,8 @@ public class MedaiPlayerSampleGUI : MonoBehaviour
         {
 
         }
-
-
     }
 #endif
-
 
 
     void OnEnd()

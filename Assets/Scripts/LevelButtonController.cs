@@ -19,8 +19,6 @@ public class LevelButtonController : MonoBehaviour
     protected int highestOpenLevelIndex;
     public int levelIndex;
 
-
-    // Use this for initialization
     void Awake()
     {
         if (LevelNumberText != null)
@@ -28,12 +26,6 @@ public class LevelButtonController : MonoBehaviour
             LevelNumberText.transform.localScale /= 2;
             LevelNumberText.fontSize *= 2;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnEnable()
@@ -154,7 +146,6 @@ public class LevelButtonController : MonoBehaviour
             StarImage3.enabled = false;
             LevelNumberText.enabled = false;
         }
-
     }
 
 
@@ -178,7 +169,6 @@ public class LevelButtonController : MonoBehaviour
     }
 
 
-
     public void goToGame()
     {
         SceneController.Instance.LoadScene("GameScreen");
@@ -187,12 +177,10 @@ public class LevelButtonController : MonoBehaviour
 
     public void goToMiniGame()
     {
-
         GameAssets.Instance.ForceMiniGame = ForceMiniGame;
         GameAssets.Instance.MiniGameAsLevel = true;
         SceneController.Instance.LoadScene("MiniGamesScreen");
 
         UsersController.Instance.userData().setLastPlayingLevel(GameAssets.CurrentLevelIndex);
     }
-
 }

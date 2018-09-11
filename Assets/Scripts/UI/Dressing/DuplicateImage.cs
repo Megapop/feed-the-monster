@@ -9,16 +9,12 @@ public class DuplicateImage : MonoBehaviour
     public Image _copy;
 
 
-
     void Awake()
     {
         //_src = GetComponent<Image> ();
     }
 
 
-
-
-    // Use this for initialization
     void Start()
     {
         if (_copy != null)
@@ -36,6 +32,7 @@ public class DuplicateImage : MonoBehaviour
 
     void OnEnable()
     {
+
     }
 
 

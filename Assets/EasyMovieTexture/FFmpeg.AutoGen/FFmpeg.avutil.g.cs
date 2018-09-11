@@ -24,6 +24,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVOptionRanges
     {
+
     }
 
     public unsafe partial struct AVClass
@@ -43,10 +44,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVOption
     {
+
     }
 
     public unsafe partial struct AVOptionRanges
     {
+
     }
 
     public unsafe partial struct AVFifoBuffer
@@ -61,18 +64,22 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVAudioFifo
     {
+
     }
 
     public unsafe partial struct AVBPrint
     {
+
     }
 
     public unsafe partial struct AVOptionRanges
     {
+
     }
 
     public unsafe partial struct AVBuffer
     {
+
     }
 
     public unsafe partial struct AVBufferRef
@@ -84,6 +91,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVBufferPool
     {
+
     }
 
     public unsafe partial struct AVDictionaryEntry
@@ -94,6 +102,7 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVFrameSideData
@@ -158,10 +167,12 @@ namespace FFmpeg.AutoGen
 
     public unsafe partial struct AVOptionRanges
     {
+
     }
 
     public unsafe partial struct AVDictionary
     {
+
     }
 
     public unsafe partial struct AVOption
@@ -1591,7 +1602,6 @@ namespace FFmpeg.AutoGen
 
         [DllImport(libavutil, EntryPoint = "av_image_check_sar", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_image_check_sar(uint @w, uint @h, AVRational @sar);
-
     }
 }
 

@@ -13,23 +13,9 @@ public class MonsterSelectionTouchController : MonoBehaviour
     public onDelegate onPointerClick;
 
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     void OnEnable()
     {
         transform.localScale = new Vector3(1, 1, 1);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -65,7 +51,4 @@ public class MonsterSelectionTouchController : MonoBehaviour
             onPointerClick();
         }
     }
-
-
-
 }
