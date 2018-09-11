@@ -14,7 +14,7 @@ public class LetterController : MonoBehaviour
         Inited,
         Idle,
         Showup,
-        Disapear,
+        Disappear,
         Selected,
         WaitingForMonster,
         GoingToMonster,
@@ -196,12 +196,11 @@ public class LetterController : MonoBehaviour
                 text.GetComponent<Outline>().effectColor = Color.Lerp(text.GetComponent<Outline>().effectColor, FontOutlineColorDefault/*GameplayController.Instance.CurrentLevel.StoneLetterFontOutlineColorDefault*/, Time.deltaTime * 10);
                 break;
 
-            case LetterState.Disapear:
+            case LetterState.Disappear:
                 //MainImage.color = Color.Lerp( MainImage.color , GameplayController.Instance.CurrentLevel.StoneLetterMainColorDefault * new Color (1, 1, 1, 0), Time.deltaTime*10 - .5f);
                 //OutlineImage.color = Color.Lerp( OutlineImage.color , GameplayController.Instance.CurrentLevel.StoneLetterMainOutlineColorDefault* new Color (1, 1, 1, 0), Time.deltaTime*10 - .5f);
                 //text.color  = Color.Lerp( text.color , GameplayController.Instance.CurrentLevel.StoneLetterFontColorDefault* new Color (1, 1, 1, 0), Time.deltaTime*10 - .1f);
                 //text.GetComponent<Outline>().effectColor = Color.Lerp( text.GetComponent<Outline>().effectColor , GameplayController.Instance.CurrentLevel.StoneLetterFontOutlineColorDefault* new Color (1, 1, 1, 0), Time.deltaTime*10 - .1f);
-                Debug.Log("Disapear");
 
                 break;
 
@@ -535,11 +534,11 @@ public class LetterController : MonoBehaviour
 
     public void Disapear()
     {
-        if (State == LetterState.Disapear)
+        if (State == LetterState.Disappear)
         {
             return;
         }
-        State = LetterState.Disapear;
+        State = LetterState.Disappear;
         GetComponent<Animation>().Play("DisapearAnimation");
         mShownup = false;
     }
