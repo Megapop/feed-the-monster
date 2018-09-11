@@ -14,6 +14,8 @@ platform :android do
   desc "Deploy Feed the Monster Google Dev to HockeyApp"
 
   lane :dev do
+  	return
+
     hockey(
       public_identifier:"",
       timeout: 3600,
@@ -29,6 +31,8 @@ platform :android do
   desc "Deploy Feed the Monster Live to alpha track on Google Play"
 
   lane :beta do
+  	return
+  	
     hockey(
       public_identifier:"",
       timeout: 3600,
