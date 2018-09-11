@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class DefaultAnalitics : MonoBehaviour, IAnalitics
 {
-
-    public void init()
-    {
-        //GameObject goLoader = Instantiate (Resources.Load ("Gameplay/GAv4") as GameObject);
-        Instantiate(Resources.Load("Gameplay/GAv4") as GameObject);
-    }
-
     public void StopSession()
     {
         Debug.LogWarning("Implement StopSession() in Firebase.");

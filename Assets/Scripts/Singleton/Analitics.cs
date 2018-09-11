@@ -34,13 +34,7 @@ public class Analitics : MonoBehaviour
 
     public void init()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-		connector = gameObject.AddComponent<WebGLAnalitics> ();
-#else
         connector = gameObject.AddComponent<DefaultAnalitics>();
-#endif
-
-        connector.init();
         connector.StartSession();
     }
 
