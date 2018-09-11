@@ -74,7 +74,7 @@ public class MemoryGame : BaseMiniGame
         hideAllCards();
         StartCoroutine(showAllCards());
 
-        Analitics.TreckScreen("Memory Game - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScreen("Memory Game - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
 
@@ -280,7 +280,7 @@ public class MemoryGame : BaseMiniGame
         MiniGameController.Instance.ResetEmotion();
         EndMiniGame();
 
-        Analitics.TreckScreen("Memory Game Done - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScreen("Memory Game Done - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
     void UpdateLettersFroGroup()

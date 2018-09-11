@@ -177,7 +177,7 @@ public class UIStatusController : MonoBehaviour
 
     public void OnOKClick()
     {
-        Analitics.Instance.treckEvent(AnaliticsCategory.Sel, AnaliticsAction.Open, "Status Popup");
+        Analytics.Instance.trackEvent(AnalyticsCategory.Sel, AnalyticsAction.Open, "Status Popup");
 
         SceneController.Instance.LoadScene("MiniGamesScreen");
 

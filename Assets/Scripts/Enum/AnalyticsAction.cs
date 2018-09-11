@@ -1,6 +1,6 @@
 ﻿using System;
 
-public enum AnaliticsAction
+public enum AnalyticsAction
 {
     LevelStart,
     LevelSuccess,

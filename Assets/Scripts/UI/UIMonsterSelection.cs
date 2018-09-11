@@ -95,7 +95,7 @@ public class UIMonsterSelection : MonoBehaviour
             TouchController.onPointerClick += OnPointerClick;
         }
 
-        Analitics.TreckScreen("Monster Select");
+        Analytics.TrackScreen("Monster Select");
     }
 
     void enableTutorialHand()
@@ -186,9 +186,9 @@ public class UIMonsterSelection : MonoBehaviour
         }
         if (selectedMonster != null)
         {
-            Analitics.Instance.treckEvent(
-                AnaliticsCategory.GamePlay,
-                AnaliticsAction.SelectMonster +
+            Analytics.Instance.trackEvent(
+                AnalyticsCategory.GamePlay,
+                AnalyticsAction.SelectMonster +
                 " " + selectedMonster.name +
                 " Evolve_" + (selectedMonster.Gage + 1),
                 "Level_" + (GameplayController.Instance.CurrentLevelIndex + 1),

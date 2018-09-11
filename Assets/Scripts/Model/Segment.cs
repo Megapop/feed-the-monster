@@ -68,8 +68,10 @@ public class Segment
 
 
 
-    public string valueForAnalitics {
-        get {
+    public string valueForAnalytics
+    {
+        get
+        {
             string s = string.Empty;
 
             switch (GameplayController.Instance.CurrentLevel.monsterInputType)

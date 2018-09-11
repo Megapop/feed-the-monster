@@ -69,7 +69,7 @@ public class LetterTracingGame : BaseMiniGame
         FillStones();
 
         Invoke("initStones", 1.5f);
-        Analitics.TreckScreen("Letter Tracing - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScreen("Letter Tracing - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
     void initStones()
@@ -230,7 +230,7 @@ public class LetterTracingGame : BaseMiniGame
                 animController.SetInteger("EmotionState", 1);
             }
 
-            Analitics.TreckScreen("Letter Tracing Done - Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.TrackScreen("Letter Tracing Done - Profile: " + UsersController.Instance.CurrentProfileId);
             EndMiniGame();
         }
     }

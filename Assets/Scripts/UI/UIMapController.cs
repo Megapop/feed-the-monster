@@ -63,7 +63,7 @@ public class UIMapController : MonoBehaviour
         }
 
 
-        Analitics.TreckScreen("Map");
+        Analytics.TrackScreen("Map");
     }
 
 
@@ -188,7 +188,7 @@ public class UIMapController : MonoBehaviour
 
     public void OnSELClick()
     {
-        Analitics.Instance.treckEvent(AnaliticsCategory.Sel, AnaliticsAction.Open, "Map");
+        Analytics.Instance.trackEvent(AnalyticsCategory.Sel, AnalyticsAction.Open, "Map");
         SceneController.Instance.LoadScene("MiniGamesScreen");
     }
 

@@ -114,7 +114,7 @@ public class UIProfileSelectionController : MonoBehaviour
 
         UsersController.Instance.userData().addFirstFriendsToCollection();
 
-        Analitics.Instance.treckEvent(AnaliticsCategory.Profiles, "Select Profile_" + currentButton.ProfileId.ToString(), currentButton.ProfileId.ToString());
+        Analytics.Instance.trackEvent(AnalyticsCategory.Profiles, "Select Profile_" + currentButton.ProfileId.ToString(), currentButton.ProfileId.ToString());
 
         SceneController.Instance.LoadScene(NextScene);
     }

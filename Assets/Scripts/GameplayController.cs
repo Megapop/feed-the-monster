@@ -524,7 +524,7 @@ public class GameplayController : MonoBehaviour
             ltrPrefab = LetterPrefab_1[Random.Range(0, LetterPrefab_1.Length)];
         }
 
-        Analitics.TreckScreen("Level " + (levelId + 1) + " - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScreen("Level " + (levelId + 1) + " - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
 
@@ -780,7 +780,7 @@ public class GameplayController : MonoBehaviour
                 }
         */
         startButton.StartLevel();
-        Analitics.Instance.treckEvent(AnaliticsCategory.GamePlay, AnaliticsAction.SegmentStart + "_Level_" + (CurrentLevelIndex + 1), "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalitics);
+        Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.SegmentStart + "_Level_" + (CurrentLevelIndex + 1), "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalytics);
     }
 
     void DestroyLetters()
@@ -1343,10 +1343,10 @@ public class GameplayController : MonoBehaviour
     {
         CancelInvoke("EndSegment");
 
-        Analitics.Instance.treckEvent(
-            AnaliticsCategory.GamePlay,
-            ((State == GameState.SegmentWinAnimation) ? AnaliticsAction.SegmentSuccess : AnaliticsAction.SegmentFail) + "_Level_" + (CurrentLevelIndex + 1),
-            "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalitics
+        Analytics.Instance.trackEvent(
+            AnalyticsCategory.GamePlay,
+            ((State == GameState.SegmentWinAnimation) ? AnalyticsAction.SegmentSuccess : AnalyticsAction.SegmentFail) + "_Level_" + (CurrentLevelIndex + 1),
+            "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalytics
         );
 
         //Debug.Log ("end segment");

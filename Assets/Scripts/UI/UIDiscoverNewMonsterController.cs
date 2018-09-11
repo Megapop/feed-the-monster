@@ -82,7 +82,7 @@ public class UIDiscoverNewMonsterController : MonoBehaviour
             UsersController.Instance.userData().addFriendToCollection(friend.MonsterType);
             AudioController.Instance.PlaySound(MonsterDiscoveredSound);
 
-            Analitics.TreckScreen("New Monster " + friend.MonsterType.ToString() + " Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.TrackScreen("New Monster " + friend.MonsterType.ToString() + " Profile: " + UsersController.Instance.CurrentProfileId);
 
             GameAssets.Instance.NewMonster = null;
             GameAssets.Instance.NextScene = string.Empty;

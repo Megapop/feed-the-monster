@@ -162,16 +162,16 @@ public class UILevelEndController : MonoBehaviour
             AudioController.Instance.PlaySound(GameWonFanfare);
             Invoke("UnPauseMusic", 1.4f);
 
-            Analitics.TreckScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Success - Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Success - Profile: " + UsersController.Instance.CurrentProfileId);
 
-            Analitics.Instance.treckEvent(AnaliticsCategory.GamePlay, AnaliticsAction.LevelSuccess + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
+            Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelSuccess + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
         }
         else
         {
             AudioController.Instance.PlaySound(GameLostFanfare);
 
-            Analitics.TreckScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Fail - Profile: " + UsersController.Instance.CurrentProfileId);
-            Analitics.Instance.treckEvent(AnaliticsCategory.GamePlay, AnaliticsAction.LevelFail + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
+            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Fail - Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelFail + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
         }
 
         UIController.Instance.ClosePopup(UIController.Instance.GamePanel);

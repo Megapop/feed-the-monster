@@ -1,6 +1,6 @@
 ﻿using System;
 
-public enum AnaliticsCategory
+public enum AnalyticsCategory
 {
     GamePlay,
     Sel,

@@ -51,7 +51,7 @@ public class MonsterPettingGame : BaseMiniGame
         //animController.SetBool ("IsSad", true);
         animController.SetInteger("EmotionState", 0);
 
-        Analitics.TreckScreen("Monster Petting - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScreen("Monster Petting - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
     // Update is called once per frame
@@ -100,7 +100,7 @@ public class MonsterPettingGame : BaseMiniGame
                 animController.SetBool("IsSad", false);
                 MiniGameController.Instance.ResetEmotion();
 
-                Analitics.TreckScreen("Monster Petting Done - Profile: " + UsersController.Instance.CurrentProfileId);
+                Analytics.TrackScreen("Monster Petting Done - Profile: " + UsersController.Instance.CurrentProfileId);
             }
             else if (count == PatsToClose)
             {

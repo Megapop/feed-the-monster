@@ -40,9 +40,9 @@ public class SingletonLoader : MonoBehaviour
         {
             gameObject.AddComponent<Timer>();
         }
-        if (Analitics.Instance == null)
+        if (Analytics.Instance == null)
         {
-            gameObject.AddComponent<Analitics>();
+            gameObject.AddComponent<Analytics>();
         }
         if (AudioController.Instance == null)
         {
@@ -90,7 +90,7 @@ public class SingletonLoader : MonoBehaviour
             &&
             Timer.Instance != null
             &&
-            Analitics.Instance != null
+            Analytics.Instance != null
             &&
             AudioController.Instance != null
             &&
@@ -109,7 +109,7 @@ public class SingletonLoader : MonoBehaviour
             SaveStatConnector.Instance.init();
             GameAssets.Instance.init();
             Timer.Instance.init();
-            Analitics.Instance.init();
+            Analytics.Instance.init();
             AudioController.Instance.init();
             UsersController.Instance.init();
             DressingController.Instance.init();
