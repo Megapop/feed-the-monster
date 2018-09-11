@@ -54,71 +54,74 @@ public class NeededLettersAnimation
         string richTextForUI = "";
         string letter;
         int currentIndex;
-        switch (GameplayController.Instance.CurrentLevel.monsterInputType)
+        if (GameplayController.Instance.CurrentLevel != null)
         {
-            case MonsterInputType.Letter:
-            case MonsterInputType.LetterName:
-                //letter = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [0];
-                letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(0);
-                //letter = ArabicSupport.ArabicFixer.Fix(letter, true, true);
-                //letter = RTL.Fix(letter);
-
-                richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorLetter);
-                break;
-            case MonsterInputType.LetterInWord:
-                for (int i = GameplayController.Instance.CurrentSegment.MonsterAllLetters.Length - 1; i >= 0; i--)
-                {
-                    //letter = GameplayController.Instance.CurrentSegment.MonsterAllLetters [i];
-                    letter = GameplayController.Instance.CurrentSegment.GetFixAllLetters(i);
-
-                    if (letter == "X")
-                    {
-                        //letter = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [0];
-                        letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(0);
-                    }
-
+            switch (GameplayController.Instance.CurrentLevel.monsterInputType)
+            {
+                case MonsterInputType.Letter:
+                case MonsterInputType.LetterName:
+                    //letter = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [0];
+                    letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(0);
                     //letter = ArabicSupport.ArabicFixer.Fix(letter, true, true);
                     //letter = RTL.Fix(letter);
-                    if (GameplayController.Instance.CurrentSegment.MonsterAllLetters[i] == "X")
-                    {
-                        richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorWordBold);
-                    }
-                    else
-                    {
-                        richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, mDefaultSize)), mController.FontColorWordDefault);
-                    }
-                }
-                break;
 
-            case MonsterInputType.Word:
-                currentIndex = (int)(((Time.time - mTimeStarted) / mLength) * (float)GameplayController.Instance.CurrentSegment.MonsterRequiredLetters.Length);
-
-                if (currentIndex > mLastIndex)
-                {
-                    mLastTimeSine = Time.time;
-                }
-
-                for (int i = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters.Length - 1; i >= 0; i--)
-                {
-                    //letter = ArabicSupport.ArabicFixer.Fix(GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [i], true, true);
-                    letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(i);
-                    //letter = RTL.Fix(GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [i]);
-
-                    if (i == currentIndex)
+                    richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorLetter);
+                    break;
+                case MonsterInputType.LetterInWord:
+                    for (int i = GameplayController.Instance.CurrentSegment.MonsterAllLetters.Length - 1; i >= 0; i--)
                     {
-                        richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorWordBold);
+                        //letter = GameplayController.Instance.CurrentSegment.MonsterAllLetters [i];
+                        letter = GameplayController.Instance.CurrentSegment.GetFixAllLetters(i);
+
+                        if (letter == "X")
+                        {
+                            //letter = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [0];
+                            letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(0);
+                        }
+
+                        //letter = ArabicSupport.ArabicFixer.Fix(letter, true, true);
+                        //letter = RTL.Fix(letter);
+                        if (GameplayController.Instance.CurrentSegment.MonsterAllLetters[i] == "X")
+                        {
+                            richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorWordBold);
+                        }
+                        else
+                        {
+                            richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, mDefaultSize)), mController.FontColorWordDefault);
+                        }
                     }
-                    else if (i <= mLastIndex)
+                    break;
+
+                case MonsterInputType.Word:
+                    currentIndex = (int)(((Time.time - mTimeStarted) / mLength) * (float)GameplayController.Instance.CurrentSegment.MonsterRequiredLetters.Length);
+
+                    if (currentIndex > mLastIndex)
                     {
-                        richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, mDefaultSize)), mController.FontColorWordBold);
+                        mLastTimeSine = Time.time;
                     }
-                    else if (i > mLastIndex)
+
+                    for (int i = GameplayController.Instance.CurrentSegment.MonsterRequiredLetters.Length - 1; i >= 0; i--)
                     {
-                        richTextForUI += StringWithColorTags(StringWithSizeTags(letter, mDefaultSize), mController.FontColorWordDefault);
+                        //letter = ArabicSupport.ArabicFixer.Fix(GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [i], true, true);
+                        letter = GameplayController.Instance.CurrentSegment.GetFixRequiredLetters(i);
+                        //letter = RTL.Fix(GameplayController.Instance.CurrentSegment.MonsterRequiredLetters [i]);
+
+                        if (i == currentIndex)
+                        {
+                            richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, sizeForNeededLetters)), mController.FontColorWordBold);
+                        }
+                        else if (i <= mLastIndex)
+                        {
+                            richTextForUI += StringWithColorTags(StringWithBoldTags(StringWithSizeTags(letter, mDefaultSize)), mController.FontColorWordBold);
+                        }
+                        else if (i > mLastIndex)
+                        {
+                            richTextForUI += StringWithColorTags(StringWithSizeTags(letter, mDefaultSize), mController.FontColorWordDefault);
+                        }
                     }
-                }
-                mLastIndex = currentIndex;
-                break;
+                    mLastIndex = currentIndex;
+                    break;
+            }
         }
 
         if (mTarget != null)
