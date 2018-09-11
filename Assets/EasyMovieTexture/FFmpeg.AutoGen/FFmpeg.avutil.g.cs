@@ -9,24 +9,23 @@ namespace FFmpeg.AutoGen
         public int @num;
         public int @den;
     }
-
+    
     public unsafe partial struct av_intfloat32
     {
         public uint @i;
         public float @f;
     }
-
+    
     public unsafe partial struct av_intfloat64
     {
         public ulong @i;
         public double @f;
     }
-
+    
     public unsafe partial struct AVOptionRanges
     {
-
     }
-
+    
     public unsafe partial struct AVClass
     {
         public sbyte* @class_name;
@@ -41,17 +40,15 @@ namespace FFmpeg.AutoGen
         public IntPtr @get_category;
         public IntPtr @query_ranges;
     }
-
+    
     public unsafe partial struct AVOption
     {
-
     }
-
+    
     public unsafe partial struct AVOptionRanges
     {
-
     }
-
+    
     public unsafe partial struct AVFifoBuffer
     {
         public sbyte* @buffer;
@@ -61,50 +58,44 @@ namespace FFmpeg.AutoGen
         public uint @rndx;
         public uint @wndx;
     }
-
+    
     public unsafe partial struct AVAudioFifo
     {
-
     }
-
+    
     public unsafe partial struct AVBPrint
     {
-
     }
-
+    
     public unsafe partial struct AVOptionRanges
     {
-
     }
-
+    
     public unsafe partial struct AVBuffer
     {
-
     }
-
+    
     public unsafe partial struct AVBufferRef
     {
         public AVBuffer* @buffer;
         public sbyte* @data;
         public int @size;
     }
-
+    
     public unsafe partial struct AVBufferPool
     {
-
     }
-
+    
     public unsafe partial struct AVDictionaryEntry
     {
         public sbyte* @key;
         public sbyte* @value;
     }
-
+    
     public unsafe partial struct AVDictionary
     {
-
     }
-
+    
     public unsafe partial struct AVFrameSideData
     {
         public AVFrameSideDataType @type;
@@ -113,11 +104,11 @@ namespace FFmpeg.AutoGen
         public AVDictionary* @metadata;
         public AVBufferRef* @buf;
     }
-
+    
     public unsafe partial struct AVFrame
     {
-        public sbyte* @data0; public sbyte* @data1; public sbyte* @data2; public sbyte* @data3; public sbyte* @data4; public sbyte* @data5; public sbyte* @data6; public sbyte* @data7;
-        public fixed int @linesize[8];
+        public sbyte* @data0; public sbyte* @data1; public sbyte* @data2; public sbyte* @data3; public sbyte* @data4; public sbyte* @data5; public sbyte* @data6; public sbyte* @data7; 
+        public fixed int @linesize[8]; 
         public sbyte** @extended_data;
         public int @width;
         public int @height;
@@ -133,7 +124,7 @@ namespace FFmpeg.AutoGen
         public int @display_picture_number;
         public int @quality;
         public void* @opaque;
-        public fixed ulong @error[8];
+        public fixed ulong @error[8]; 
         public int @repeat_pict;
         public int @interlaced_frame;
         public int @top_field_first;
@@ -141,7 +132,7 @@ namespace FFmpeg.AutoGen
         public long @reordered_opaque;
         public int @sample_rate;
         public ulong @channel_layout;
-        public AVBufferRef* @buf0; public AVBufferRef* @buf1; public AVBufferRef* @buf2; public AVBufferRef* @buf3; public AVBufferRef* @buf4; public AVBufferRef* @buf5; public AVBufferRef* @buf6; public AVBufferRef* @buf7;
+        public AVBufferRef* @buf0; public AVBufferRef* @buf1; public AVBufferRef* @buf2; public AVBufferRef* @buf3; public AVBufferRef* @buf4; public AVBufferRef* @buf5; public AVBufferRef* @buf6; public AVBufferRef* @buf7; 
         public AVBufferRef** @extended_buf;
         public int @nb_extended_buf;
         public AVFrameSideData** @side_data;
@@ -164,17 +155,15 @@ namespace FFmpeg.AutoGen
         public int @qscale_type;
         public AVBufferRef* @qp_table_buf;
     }
-
+    
     public unsafe partial struct AVOptionRanges
     {
-
     }
-
+    
     public unsafe partial struct AVDictionary
     {
-
     }
-
+    
     public unsafe partial struct AVOption
     {
         public sbyte* @name;
@@ -187,7 +176,7 @@ namespace FFmpeg.AutoGen
         public int @flags;
         public sbyte* @unit;
     }
-
+    
     public unsafe partial struct default_val
     {
         public long @i64;
@@ -195,7 +184,7 @@ namespace FFmpeg.AutoGen
         public sbyte* @str;
         public AVRational @q;
     }
-
+    
     public unsafe partial struct AVOptionRange
     {
         public sbyte* @str;
@@ -205,14 +194,14 @@ namespace FFmpeg.AutoGen
         public double @component_max;
         public int @is_range;
     }
-
+    
     public unsafe partial struct AVOptionRanges
     {
         public AVOptionRange** @range;
         public int @nb_ranges;
         public int @nb_components;
     }
-
+    
     public unsafe partial struct AVComponentDescriptor
     {
         public int @plane;
@@ -224,7 +213,7 @@ namespace FFmpeg.AutoGen
         public int @depth_minus1;
         public int @offset_plus1;
     }
-
+    
     public unsafe partial struct AVPixFmtDescriptor
     {
         public sbyte* @name;
@@ -232,10 +221,10 @@ namespace FFmpeg.AutoGen
         public sbyte @log2_chroma_w;
         public sbyte @log2_chroma_h;
         public ulong @flags;
-        public AVComponentDescriptor @comp0; public AVComponentDescriptor @comp1; public AVComponentDescriptor @comp2; public AVComponentDescriptor @comp3;
+        public AVComponentDescriptor @comp0; public AVComponentDescriptor @comp1; public AVComponentDescriptor @comp2; public AVComponentDescriptor @comp3; 
         public sbyte* @alias;
     }
-
+    
     public enum AVMediaType : int
     {
         @AVMEDIA_TYPE_UNKNOWN = -1,
@@ -246,7 +235,7 @@ namespace FFmpeg.AutoGen
         @AVMEDIA_TYPE_ATTACHMENT = 4,
         @AVMEDIA_TYPE_NB = 5,
     }
-
+    
     public enum AVPictureType : int
     {
         @AV_PICTURE_TYPE_NONE = 0,
@@ -258,7 +247,7 @@ namespace FFmpeg.AutoGen
         @AV_PICTURE_TYPE_SP = 6,
         @AV_PICTURE_TYPE_BI = 7,
     }
-
+    
     public enum AVRounding : int
     {
         @AV_ROUND_ZERO = 0,
@@ -268,7 +257,7 @@ namespace FFmpeg.AutoGen
         @AV_ROUND_NEAR_INF = 5,
         @AV_ROUND_PASS_MINMAX = 8192,
     }
-
+    
     public enum AVClassCategory : int
     {
         @AV_CLASS_CATEGORY_NA = 0,
@@ -290,7 +279,7 @@ namespace FFmpeg.AutoGen
         @AV_CLASS_CATEGORY_DEVICE_INPUT = 45,
         @AV_CLASS_CATEGORY_NB = 46,
     }
-
+    
     public enum AVPixelFormat : int
     {
         @AV_PIX_FMT_NONE = -1,
@@ -470,7 +459,7 @@ namespace FFmpeg.AutoGen
         @AV_PIX_FMT_P010BE = 336,
         @AV_PIX_FMT_NB = 337,
     }
-
+    
     public enum AVColorPrimaries : int
     {
         @AVCOL_PRI_RESERVED0 = 0,
@@ -486,7 +475,7 @@ namespace FFmpeg.AutoGen
         @AVCOL_PRI_SMPTEST428_1 = 10,
         @AVCOL_PRI_NB = 11,
     }
-
+    
     public enum AVColorTransferCharacteristic : int
     {
         @AVCOL_TRC_RESERVED0 = 0,
@@ -509,7 +498,7 @@ namespace FFmpeg.AutoGen
         @AVCOL_TRC_SMPTEST428_1 = 17,
         @AVCOL_TRC_NB = 18,
     }
-
+    
     public enum AVColorSpace : int
     {
         @AVCOL_SPC_RGB = 0,
@@ -525,7 +514,7 @@ namespace FFmpeg.AutoGen
         @AVCOL_SPC_BT2020_CL = 10,
         @AVCOL_SPC_NB = 11,
     }
-
+    
     public enum AVColorRange : int
     {
         @AVCOL_RANGE_UNSPECIFIED = 0,
@@ -533,7 +522,7 @@ namespace FFmpeg.AutoGen
         @AVCOL_RANGE_JPEG = 2,
         @AVCOL_RANGE_NB = 3,
     }
-
+    
     public enum AVChromaLocation : int
     {
         @AVCHROMA_LOC_UNSPECIFIED = 0,
@@ -545,7 +534,7 @@ namespace FFmpeg.AutoGen
         @AVCHROMA_LOC_BOTTOM = 6,
         @AVCHROMA_LOC_NB = 7,
     }
-
+    
     public enum AVSampleFormat : int
     {
         @AV_SAMPLE_FMT_NONE = -1,
@@ -561,7 +550,7 @@ namespace FFmpeg.AutoGen
         @AV_SAMPLE_FMT_DBLP = 9,
         @AV_SAMPLE_FMT_NB = 10,
     }
-
+    
     public enum AVMatrixEncoding : int
     {
         @AV_MATRIX_ENCODING_NONE = 0,
@@ -573,7 +562,7 @@ namespace FFmpeg.AutoGen
         @AV_MATRIX_ENCODING_DOLBYHEADPHONE = 6,
         @AV_MATRIX_ENCODING_NB = 7,
     }
-
+    
     public enum AVFrameSideDataType : int
     {
         @AV_FRAME_DATA_PANSCAN = 0,
@@ -590,7 +579,7 @@ namespace FFmpeg.AutoGen
         @AV_FRAME_DATA_MASTERING_DISPLAY_METADATA = 11,
         @AV_FRAME_DATA_GOP_TIMECODE = 12,
     }
-
+    
     public enum AVActiveFormatDescription : int
     {
         @AV_AFD_SAME = 8,
@@ -601,7 +590,7 @@ namespace FFmpeg.AutoGen
         @AV_AFD_16_9_SP_14_9 = 14,
         @AV_AFD_SP_4_3 = 15,
     }
-
+    
     public enum AVOptionType : int
     {
         @AV_OPT_TYPE_FLAGS = 0,
@@ -623,33 +612,33 @@ namespace FFmpeg.AutoGen
         @AV_OPT_TYPE_CHANNEL_LAYOUT = 1128811585,
         @AV_OPT_TYPE_BOOL = 1112493900,
     }
-
+    
     public enum av_opt_eval_flags : int
     {
         @AV_OPT_FLAG_IMPLICIT_KEY = 1,
     }
-
+    
     public unsafe static partial class ffmpeg
     {
         public const int FF_LAMBDA_SHIFT = 7;
-        public const int FF_LAMBDA_SCALE = (1 << FF_LAMBDA_SHIFT);
+        public const int FF_LAMBDA_SCALE = (1<<FF_LAMBDA_SHIFT);
         public const int FF_QP2LAMBDA = 118;
-        public const int FF_LAMBDA_MAX = (256 * 128 - 1);
+        public const int FF_LAMBDA_MAX = (256*128-1);
         public const int FF_QUALITY_SCALE = FF_LAMBDA_SCALE;
         public const ulong AV_NOPTS_VALUE = 0x8000000000000000;
         public const int AV_TIME_BASE = 1000000;
         public const int LIBAVUTIL_VERSION_MAJOR = 55;
         public const int LIBAVUTIL_VERSION_MINOR = 17;
         public const int LIBAVUTIL_VERSION_MICRO = 103;
-        public const bool FF_API_VDPAU = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_XVMC = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_OPT_TYPE_METADATA = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_DLOG = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_VAAPI = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_FRAME_QP = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_PLUS1_MINUS1 = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_ERROR_FRAME = (LIBAVUTIL_VERSION_MAJOR < 56);
-        public const bool FF_API_CRC_BIG_TABLE = (LIBAVUTIL_VERSION_MAJOR < 56);
+        public const bool FF_API_VDPAU = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_XVMC = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_OPT_TYPE_METADATA = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_DLOG = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_VAAPI = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_FRAME_QP = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_PLUS1_MINUS1 = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_ERROR_FRAME = (LIBAVUTIL_VERSION_MAJOR<56);
+        public const bool FF_API_CRC_BIG_TABLE = (LIBAVUTIL_VERSION_MAJOR<56);
         public const int AV_HAVE_BIGENDIAN = 0;
         public const int AV_HAVE_FAST_UNALIGNED = 1;
         public const int AV_HAVE_INCOMPATIBLE_LIBAV_ABI = 0;
@@ -675,7 +664,7 @@ namespace FFmpeg.AutoGen
         public const int AV_LOG_VERBOSE = 40;
         public const int AV_LOG_DEBUG = 48;
         public const int AV_LOG_TRACE = 56;
-        public const int AV_LOG_MAX_OFFSET = (AV_LOG_TRACE - AV_LOG_QUIET);
+        public const int AV_LOG_MAX_OFFSET = (AV_LOG_TRACE-AV_LOG_QUIET);
         public const int AV_LOG_SKIP_REPEATED = 1;
         public const int AV_LOG_PRINT_LEVEL = 2;
         public const int AVPALETTE_SIZE = 1024;
@@ -707,33 +696,33 @@ namespace FFmpeg.AutoGen
         public const ulong AV_CH_LOW_FREQUENCY_2 = 0x0000000800000000UL;
         public const ulong AV_CH_LAYOUT_NATIVE = 0x8000000000000000UL;
         public const int AV_CH_LAYOUT_MONO = (AV_CH_FRONT_CENTER);
-        public const int AV_CH_LAYOUT_STEREO = (AV_CH_FRONT_LEFT | AV_CH_FRONT_RIGHT);
-        public const int AV_CH_LAYOUT_2POINT1 = (AV_CH_LAYOUT_STEREO | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_2_1 = (AV_CH_LAYOUT_STEREO | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_SURROUND = (AV_CH_LAYOUT_STEREO | AV_CH_FRONT_CENTER);
-        public const int AV_CH_LAYOUT_3POINT1 = (AV_CH_LAYOUT_SURROUND | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_4POINT0 = (AV_CH_LAYOUT_SURROUND | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_4POINT1 = (AV_CH_LAYOUT_4POINT0 | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_2_2 = (AV_CH_LAYOUT_STEREO | AV_CH_SIDE_LEFT | AV_CH_SIDE_RIGHT);
-        public const int AV_CH_LAYOUT_QUAD = (AV_CH_LAYOUT_STEREO | AV_CH_BACK_LEFT | AV_CH_BACK_RIGHT);
-        public const int AV_CH_LAYOUT_5POINT0 = (AV_CH_LAYOUT_SURROUND | AV_CH_SIDE_LEFT | AV_CH_SIDE_RIGHT);
-        public const int AV_CH_LAYOUT_5POINT1 = (AV_CH_LAYOUT_5POINT0 | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_5POINT0_BACK = (AV_CH_LAYOUT_SURROUND | AV_CH_BACK_LEFT | AV_CH_BACK_RIGHT);
-        public const int AV_CH_LAYOUT_5POINT1_BACK = (AV_CH_LAYOUT_5POINT0_BACK | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_6POINT0 = (AV_CH_LAYOUT_5POINT0 | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_6POINT0_FRONT = (AV_CH_LAYOUT_2_2 | AV_CH_FRONT_LEFT_OF_CENTER | AV_CH_FRONT_RIGHT_OF_CENTER);
-        public const int AV_CH_LAYOUT_HEXAGONAL = (AV_CH_LAYOUT_5POINT0_BACK | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_6POINT1 = (AV_CH_LAYOUT_5POINT1 | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_6POINT1_BACK = (AV_CH_LAYOUT_5POINT1_BACK | AV_CH_BACK_CENTER);
-        public const int AV_CH_LAYOUT_6POINT1_FRONT = (AV_CH_LAYOUT_6POINT0_FRONT | AV_CH_LOW_FREQUENCY);
-        public const int AV_CH_LAYOUT_7POINT0 = (AV_CH_LAYOUT_5POINT0 | AV_CH_BACK_LEFT | AV_CH_BACK_RIGHT);
-        public const int AV_CH_LAYOUT_7POINT0_FRONT = (AV_CH_LAYOUT_5POINT0 | AV_CH_FRONT_LEFT_OF_CENTER | AV_CH_FRONT_RIGHT_OF_CENTER);
-        public const int AV_CH_LAYOUT_7POINT1 = (AV_CH_LAYOUT_5POINT1 | AV_CH_BACK_LEFT | AV_CH_BACK_RIGHT);
-        public const int AV_CH_LAYOUT_7POINT1_WIDE = (AV_CH_LAYOUT_5POINT1 | AV_CH_FRONT_LEFT_OF_CENTER | AV_CH_FRONT_RIGHT_OF_CENTER);
-        public const int AV_CH_LAYOUT_7POINT1_WIDE_BACK = (AV_CH_LAYOUT_5POINT1_BACK | AV_CH_FRONT_LEFT_OF_CENTER | AV_CH_FRONT_RIGHT_OF_CENTER);
-        public const int AV_CH_LAYOUT_OCTAGONAL = (AV_CH_LAYOUT_5POINT0 | AV_CH_BACK_LEFT | AV_CH_BACK_CENTER | AV_CH_BACK_RIGHT);
-        public const ulong AV_CH_LAYOUT_HEXADECAGONAL = (AV_CH_LAYOUT_OCTAGONAL | AV_CH_WIDE_LEFT | AV_CH_WIDE_RIGHT | AV_CH_TOP_BACK_LEFT | AV_CH_TOP_BACK_RIGHT | AV_CH_TOP_BACK_CENTER | AV_CH_TOP_FRONT_CENTER | AV_CH_TOP_FRONT_LEFT | AV_CH_TOP_FRONT_RIGHT);
-        public const int AV_CH_LAYOUT_STEREO_DOWNMIX = (AV_CH_STEREO_LEFT | AV_CH_STEREO_RIGHT);
+        public const int AV_CH_LAYOUT_STEREO = (AV_CH_FRONT_LEFT|AV_CH_FRONT_RIGHT);
+        public const int AV_CH_LAYOUT_2POINT1 = (AV_CH_LAYOUT_STEREO|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_2_1 = (AV_CH_LAYOUT_STEREO|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_SURROUND = (AV_CH_LAYOUT_STEREO|AV_CH_FRONT_CENTER);
+        public const int AV_CH_LAYOUT_3POINT1 = (AV_CH_LAYOUT_SURROUND|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_4POINT0 = (AV_CH_LAYOUT_SURROUND|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_4POINT1 = (AV_CH_LAYOUT_4POINT0|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_2_2 = (AV_CH_LAYOUT_STEREO|AV_CH_SIDE_LEFT|AV_CH_SIDE_RIGHT);
+        public const int AV_CH_LAYOUT_QUAD = (AV_CH_LAYOUT_STEREO|AV_CH_BACK_LEFT|AV_CH_BACK_RIGHT);
+        public const int AV_CH_LAYOUT_5POINT0 = (AV_CH_LAYOUT_SURROUND|AV_CH_SIDE_LEFT|AV_CH_SIDE_RIGHT);
+        public const int AV_CH_LAYOUT_5POINT1 = (AV_CH_LAYOUT_5POINT0|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_5POINT0_BACK = (AV_CH_LAYOUT_SURROUND|AV_CH_BACK_LEFT|AV_CH_BACK_RIGHT);
+        public const int AV_CH_LAYOUT_5POINT1_BACK = (AV_CH_LAYOUT_5POINT0_BACK|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_6POINT0 = (AV_CH_LAYOUT_5POINT0|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_6POINT0_FRONT = (AV_CH_LAYOUT_2_2|AV_CH_FRONT_LEFT_OF_CENTER|AV_CH_FRONT_RIGHT_OF_CENTER);
+        public const int AV_CH_LAYOUT_HEXAGONAL = (AV_CH_LAYOUT_5POINT0_BACK|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_6POINT1 = (AV_CH_LAYOUT_5POINT1|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_6POINT1_BACK = (AV_CH_LAYOUT_5POINT1_BACK|AV_CH_BACK_CENTER);
+        public const int AV_CH_LAYOUT_6POINT1_FRONT = (AV_CH_LAYOUT_6POINT0_FRONT|AV_CH_LOW_FREQUENCY);
+        public const int AV_CH_LAYOUT_7POINT0 = (AV_CH_LAYOUT_5POINT0|AV_CH_BACK_LEFT|AV_CH_BACK_RIGHT);
+        public const int AV_CH_LAYOUT_7POINT0_FRONT = (AV_CH_LAYOUT_5POINT0|AV_CH_FRONT_LEFT_OF_CENTER|AV_CH_FRONT_RIGHT_OF_CENTER);
+        public const int AV_CH_LAYOUT_7POINT1 = (AV_CH_LAYOUT_5POINT1|AV_CH_BACK_LEFT|AV_CH_BACK_RIGHT);
+        public const int AV_CH_LAYOUT_7POINT1_WIDE = (AV_CH_LAYOUT_5POINT1|AV_CH_FRONT_LEFT_OF_CENTER|AV_CH_FRONT_RIGHT_OF_CENTER);
+        public const int AV_CH_LAYOUT_7POINT1_WIDE_BACK = (AV_CH_LAYOUT_5POINT1_BACK|AV_CH_FRONT_LEFT_OF_CENTER|AV_CH_FRONT_RIGHT_OF_CENTER);
+        public const int AV_CH_LAYOUT_OCTAGONAL = (AV_CH_LAYOUT_5POINT0|AV_CH_BACK_LEFT|AV_CH_BACK_CENTER|AV_CH_BACK_RIGHT);
+        public const ulong AV_CH_LAYOUT_HEXADECAGONAL = (AV_CH_LAYOUT_OCTAGONAL|AV_CH_WIDE_LEFT|AV_CH_WIDE_RIGHT|AV_CH_TOP_BACK_LEFT|AV_CH_TOP_BACK_RIGHT|AV_CH_TOP_BACK_CENTER|AV_CH_TOP_FRONT_CENTER|AV_CH_TOP_FRONT_LEFT|AV_CH_TOP_FRONT_RIGHT);
+        public const int AV_CH_LAYOUT_STEREO_DOWNMIX = (AV_CH_STEREO_LEFT|AV_CH_STEREO_RIGHT);
         public const uint AV_CPU_FLAG_FORCE = 0x80000000;
         public const int AV_CPU_FLAG_MMX = 0x0001;
         public const int AV_CPU_FLAG_MMXEXT = 0x0002;
@@ -762,16 +751,16 @@ namespace FFmpeg.AutoGen
         public const int AV_CPU_FLAG_ALTIVEC = 0x0001;
         public const int AV_CPU_FLAG_VSX = 0x0002;
         public const int AV_CPU_FLAG_POWER8 = 0x0004;
-        public const int AV_CPU_FLAG_ARMV5TE = (1 << 0);
-        public const int AV_CPU_FLAG_ARMV6 = (1 << 1);
-        public const int AV_CPU_FLAG_ARMV6T2 = (1 << 2);
-        public const int AV_CPU_FLAG_VFP = (1 << 3);
-        public const int AV_CPU_FLAG_VFPV3 = (1 << 4);
-        public const int AV_CPU_FLAG_NEON = (1 << 5);
-        public const int AV_CPU_FLAG_ARMV8 = (1 << 6);
-        public const int AV_CPU_FLAG_VFP_VM = (1 << 7);
-        public const int AV_CPU_FLAG_SETEND = (1 << 16);
-        public const int AV_BUFFER_FLAG_READONLY = (1 << 0);
+        public const int AV_CPU_FLAG_ARMV5TE = (1<<0);
+        public const int AV_CPU_FLAG_ARMV6 = (1<<1);
+        public const int AV_CPU_FLAG_ARMV6T2 = (1<<2);
+        public const int AV_CPU_FLAG_VFP = (1<<3);
+        public const int AV_CPU_FLAG_VFPV3 = (1<<4);
+        public const int AV_CPU_FLAG_NEON = (1<<5);
+        public const int AV_CPU_FLAG_ARMV8 = (1<<6);
+        public const int AV_CPU_FLAG_VFP_VM = (1<<7);
+        public const int AV_CPU_FLAG_SETEND = (1<<16);
+        public const int AV_BUFFER_FLAG_READONLY = (1<<0);
         public const int AV_DICT_MATCH_CASE = 1;
         public const int AV_DICT_IGNORE_SUFFIX = 2;
         public const int AV_DICT_DONT_STRDUP_KEY = 4;
@@ -779,7 +768,7 @@ namespace FFmpeg.AutoGen
         public const int AV_DICT_DONT_OVERWRITE = 16;
         public const int AV_DICT_APPEND = 32;
         public const int AV_NUM_DATA_POINTERS = 8;
-        public const int AV_FRAME_FLAG_CORRUPT = (1 << 0);
+        public const int AV_FRAME_FLAG_CORRUPT = (1<<0);
         public const int FF_DECODE_ERROR_INVALID_BITSTREAM = 1;
         public const int FF_DECODE_ERROR_MISSING_REFERENCE = 2;
         public const int AV_OPT_FLAG_ENCODING_PARAM = 1;
@@ -790,21 +779,21 @@ namespace FFmpeg.AutoGen
         public const int AV_OPT_FLAG_SUBTITLE_PARAM = 32;
         public const int AV_OPT_FLAG_EXPORT = 64;
         public const int AV_OPT_FLAG_READONLY = 128;
-        public const int AV_OPT_FLAG_FILTERING_PARAM = (1 << 16);
-        public const int AV_OPT_SEARCH_CHILDREN = (1 << 0);
-        public const int AV_OPT_SEARCH_FAKE_OBJ = (1 << 1);
-        public const int AV_OPT_ALLOW_NULL = (1 << 2);
-        public const int AV_OPT_MULTI_COMPONENT_RANGE = (1 << 12);
+        public const int AV_OPT_FLAG_FILTERING_PARAM = (1<<16);
+        public const int AV_OPT_SEARCH_CHILDREN = (1<<0);
+        public const int AV_OPT_SEARCH_FAKE_OBJ = (1<<1);
+        public const int AV_OPT_ALLOW_NULL = (1<<2);
+        public const int AV_OPT_MULTI_COMPONENT_RANGE = (1<<12);
         public const int AV_OPT_SERIALIZE_SKIP_DEFAULTS = 0x00000001;
         public const int AV_OPT_SERIALIZE_OPT_FLAGS_EXACT = 0x00000002;
-        public const int AV_PIX_FMT_FLAG_BE = (1 << 0);
-        public const int AV_PIX_FMT_FLAG_PAL = (1 << 1);
-        public const int AV_PIX_FMT_FLAG_BITSTREAM = (1 << 2);
-        public const int AV_PIX_FMT_FLAG_HWACCEL = (1 << 3);
-        public const int AV_PIX_FMT_FLAG_PLANAR = (1 << 4);
-        public const int AV_PIX_FMT_FLAG_RGB = (1 << 5);
-        public const int AV_PIX_FMT_FLAG_PSEUDOPAL = (1 << 6);
-        public const int AV_PIX_FMT_FLAG_ALPHA = (1 << 7);
+        public const int AV_PIX_FMT_FLAG_BE = (1<<0);
+        public const int AV_PIX_FMT_FLAG_PAL = (1<<1);
+        public const int AV_PIX_FMT_FLAG_BITSTREAM = (1<<2);
+        public const int AV_PIX_FMT_FLAG_HWACCEL = (1<<3);
+        public const int AV_PIX_FMT_FLAG_PLANAR = (1<<4);
+        public const int AV_PIX_FMT_FLAG_RGB = (1<<5);
+        public const int AV_PIX_FMT_FLAG_PSEUDOPAL = (1<<6);
+        public const int AV_PIX_FMT_FLAG_ALPHA = (1<<7);
         public const int FF_LOSS_RESOLUTION = 0x0001;
         public const int FF_LOSS_DEPTH = 0x0002;
         public const int FF_LOSS_COLORSPACE = 0x0004;
@@ -816,792 +805,793 @@ namespace FFmpeg.AutoGen
 #else
         private const string libavutil = "avutil-55";
 #endif
-
+        
         [DllImport(libavutil, EntryPoint = "avutil_version", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint avutil_version();
-
+        
         [DllImport(libavutil, EntryPoint = "av_version_info", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_version_info();
-
+        
         [DllImport(libavutil, EntryPoint = "avutil_configuration", CallingConvention = CallingConvention.Cdecl)]
         public static extern string avutil_configuration();
-
+        
         [DllImport(libavutil, EntryPoint = "avutil_license", CallingConvention = CallingConvention.Cdecl)]
         public static extern string avutil_license();
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_media_type_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_media_type_string(AVMediaType @media_type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_picture_type_char", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte av_get_picture_type_char(AVPictureType @pict_type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log2", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_log2(uint @v);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log2_16bit", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_log2_16bit(uint @v);
-
+        
         [DllImport(libavutil, EntryPoint = "av_strerror", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_strerror(int @errnum, IntPtr @errbuf, ulong @errbuf_size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_malloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_malloc(ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_realloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_realloc(void* @ptr, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_realloc_f", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_realloc_f(void* @ptr, ulong @nelem, ulong @elsize);
-
+        
         [DllImport(libavutil, EntryPoint = "av_reallocp", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_reallocp(void* @ptr, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_realloc_array", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_realloc_array(void* @ptr, ulong @nmemb, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_reallocp_array", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_reallocp_array(void* @ptr, ulong @nmemb, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_free(void* @ptr);
-
+        
         [DllImport(libavutil, EntryPoint = "av_mallocz", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_mallocz(ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_calloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_calloc(ulong @nmemb, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_strdup", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte* av_strdup([MarshalAs(UnmanagedType.LPStr)] string @s);
-
+        
         [DllImport(libavutil, EntryPoint = "av_strndup", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte* av_strndup([MarshalAs(UnmanagedType.LPStr)] string @s, ulong @len);
-
+        
         [DllImport(libavutil, EntryPoint = "av_memdup", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_memdup(void* @p, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_freep", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_freep(void* @ptr);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dynarray_add", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_dynarray_add(void* @tab_ptr, int* @nb_ptr, void* @elem);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dynarray_add_nofree", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dynarray_add_nofree(void* @tab_ptr, int* @nb_ptr, void* @elem);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dynarray2_add", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_dynarray2_add(void** @tab_ptr, int* @nb_ptr, ulong @elem_size, sbyte* @elem_data);
-
+        
         [DllImport(libavutil, EntryPoint = "av_max_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_max_alloc(ulong @max);
-
+        
         [DllImport(libavutil, EntryPoint = "av_memcpy_backptr", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_memcpy_backptr(sbyte* @dst, int @back, int @cnt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fast_realloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_fast_realloc(void* @ptr, uint* @size, ulong @min_size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fast_malloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fast_malloc(void* @ptr, uint* @size, ulong @min_size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fast_mallocz", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fast_mallocz(void* @ptr, uint* @size, ulong @min_size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_reduce", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_reduce(int* @dst_num, int* @dst_den, long @num, long @den, long @max);
-
+        
         [DllImport(libavutil, EntryPoint = "av_mul_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_mul_q(AVRational @b, AVRational @c);
-
+        
         [DllImport(libavutil, EntryPoint = "av_div_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_div_q(AVRational @b, AVRational @c);
-
+        
         [DllImport(libavutil, EntryPoint = "av_add_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_add_q(AVRational @b, AVRational @c);
-
+        
         [DllImport(libavutil, EntryPoint = "av_sub_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_sub_q(AVRational @b, AVRational @c);
-
+        
         [DllImport(libavutil, EntryPoint = "av_d2q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_d2q(double @d, int @max);
-
+        
         [DllImport(libavutil, EntryPoint = "av_nearer_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_nearer_q(AVRational @q, AVRational @q1, AVRational @q2);
-
+        
         [DllImport(libavutil, EntryPoint = "av_find_nearest_q_idx", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_find_nearest_q_idx(AVRational @q, AVRational* @q_list);
-
+        
         [DllImport(libavutil, EntryPoint = "av_q2intfloat", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint av_q2intfloat(AVRational @q);
-
+        
         [DllImport(libavutil, EntryPoint = "av_gcd", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_gcd(long @a, long @b);
-
+        
         [DllImport(libavutil, EntryPoint = "av_rescale", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_rescale(long @a, long @b, long @c);
-
+        
         [DllImport(libavutil, EntryPoint = "av_rescale_rnd", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_rescale_rnd(long @a, long @b, long @c, AVRounding @param3);
-
+        
         [DllImport(libavutil, EntryPoint = "av_rescale_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_rescale_q(long @a, AVRational @bq, AVRational @cq);
-
+        
         [DllImport(libavutil, EntryPoint = "av_rescale_q_rnd", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_rescale_q_rnd(long @a, AVRational @bq, AVRational @cq, AVRounding @param3);
-
+        
         [DllImport(libavutil, EntryPoint = "av_compare_ts", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_compare_ts(long @ts_a, AVRational @tb_a, long @ts_b, AVRational @tb_b);
-
+        
         [DllImport(libavutil, EntryPoint = "av_compare_mod", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_compare_mod(ulong @a, ulong @b, ulong @mod);
-
+        
         [DllImport(libavutil, EntryPoint = "av_rescale_delta", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_rescale_delta(AVRational @in_tb, long @in_ts, AVRational @fs_tb, int @duration, long* @last, AVRational @out_tb);
-
+        
         [DllImport(libavutil, EntryPoint = "av_add_stable", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_add_stable(AVRational @ts_tb, long @ts, AVRational @inc_tb, long @inc);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log(void* @avcl, int @level, [MarshalAs(UnmanagedType.LPStr)] string @fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_vlog", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_vlog(void* @avcl, int @level, [MarshalAs(UnmanagedType.LPStr)] string @fmt, sbyte* @vl);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_get_level", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_log_get_level();
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_set_level", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log_set_level(int @level);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_set_callback", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log_set_callback(IntPtr* @callback);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_default_callback", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log_default_callback(void* @avcl, int @level, [MarshalAs(UnmanagedType.LPStr)] string @fmt, sbyte* @vl);
-
+        
         [DllImport(libavutil, EntryPoint = "av_default_item_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_default_item_name(void* @ctx);
-
+        
         [DllImport(libavutil, EntryPoint = "av_default_get_category", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVClassCategory av_default_get_category(void* @ptr);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_format_line", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log_format_line(void* @ptr, int @level, [MarshalAs(UnmanagedType.LPStr)] string @fmt, sbyte* @vl, IntPtr @line, int @line_size, int* @print_prefix);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_set_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_log_set_flags(int @arg);
-
+        
         [DllImport(libavutil, EntryPoint = "av_log_get_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_log_get_flags();
-
+        
         [DllImport(libavutil, EntryPoint = "av_int_list_length_for_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint av_int_list_length_for_size(uint @elsize, void* @list, ulong @term);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fopen_utf8", CallingConvention = CallingConvention.Cdecl)]
         public static extern _iobuf* av_fopen_utf8([MarshalAs(UnmanagedType.LPStr)] string @path, [MarshalAs(UnmanagedType.LPStr)] string @mode);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_time_base_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVRational av_get_time_base_q();
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFifoBuffer* av_fifo_alloc(uint @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_alloc_array", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFifoBuffer* av_fifo_alloc_array(ulong @nmemb, ulong @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fifo_free(AVFifoBuffer* @f);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_freep", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fifo_freep(AVFifoBuffer** @f);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_reset", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fifo_reset(AVFifoBuffer* @f);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_size(AVFifoBuffer* @f);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_space", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_space(AVFifoBuffer* @f);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_generic_peek_at", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_generic_peek_at(AVFifoBuffer* @f, void* @dest, int @offset, int @buf_size, IntPtr* @func);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_generic_peek", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_generic_peek(AVFifoBuffer* @f, void* @dest, int @buf_size, IntPtr* @func);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_generic_read", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_generic_read(AVFifoBuffer* @f, void* @dest, int @buf_size, IntPtr* @func);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_generic_write", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_generic_write(AVFifoBuffer* @f, void* @src, int @size, IntPtr* @func);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_realloc2", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_realloc2(AVFifoBuffer* @f, uint @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_grow", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_fifo_grow(AVFifoBuffer* @f, uint @additional_space);
-
+        
         [DllImport(libavutil, EntryPoint = "av_fifo_drain", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_fifo_drain(AVFifoBuffer* @f, int @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_sample_fmt_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_sample_fmt_name(AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVSampleFormat av_get_sample_fmt([MarshalAs(UnmanagedType.LPStr)] string @name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_alt_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVSampleFormat av_get_alt_sample_fmt(AVSampleFormat @sample_fmt, int @planar);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_packed_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVSampleFormat av_get_packed_sample_fmt(AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_planar_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVSampleFormat av_get_planar_sample_fmt(AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_sample_fmt_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte* av_get_sample_fmt_string(IntPtr @buf, int @buf_size, AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_bytes_per_sample", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_bytes_per_sample(AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_sample_fmt_is_planar", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_sample_fmt_is_planar(AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_get_buffer_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_get_buffer_size(int* @linesize, int @nb_channels, int @nb_samples, AVSampleFormat @sample_fmt, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_fill_arrays", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_fill_arrays(sbyte** @audio_data, int* @linesize, sbyte* @buf, int @nb_channels, int @nb_samples, AVSampleFormat @sample_fmt, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_alloc(sbyte** @audio_data, int* @linesize, int @nb_channels, int @nb_samples, AVSampleFormat @sample_fmt, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_alloc_array_and_samples", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_alloc_array_and_samples(sbyte*** @audio_data, int* @linesize, int @nb_channels, int @nb_samples, AVSampleFormat @sample_fmt, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_copy", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_copy(sbyte** @dst, sbyte** @src, int @dst_offset, int @src_offset, int @nb_samples, int @nb_channels, AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_samples_set_silence", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_samples_set_silence(sbyte** @audio_data, int @offset, int @nb_samples, int @nb_channels, AVSampleFormat @sample_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_audio_fifo_free(AVAudioFifo* @af);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVAudioFifo* av_audio_fifo_alloc(AVSampleFormat @sample_fmt, int @channels, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_realloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_realloc(AVAudioFifo* @af, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_write", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_write(AVAudioFifo* @af, void** @data, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_peek", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_peek(AVAudioFifo* @af, void** @data, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_read", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_read(AVAudioFifo* @af, void** @data, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_drain", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_drain(AVAudioFifo* @af, int @nb_samples);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_reset", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_audio_fifo_reset(AVAudioFifo* @af);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_size(AVAudioFifo* @af);
-
+        
         [DllImport(libavutil, EntryPoint = "av_audio_fifo_space", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_audio_fifo_space(AVAudioFifo* @af);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern ulong av_get_channel_layout([MarshalAs(UnmanagedType.LPStr)] string @name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_layout_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_get_channel_layout_string(IntPtr @buf, int @buf_size, int @nb_channels, ulong @channel_layout);
-
+        
         [DllImport(libavutil, EntryPoint = "av_bprint_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_bprint_channel_layout(AVBPrint* @bp, int @nb_channels, ulong @channel_layout);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_layout_nb_channels", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_channel_layout_nb_channels(ulong @channel_layout);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_default_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_get_default_channel_layout(int @nb_channels);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_layout_channel_index", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_channel_layout_channel_index(ulong @channel_layout, ulong @channel);
-
+        
         [DllImport(libavutil, EntryPoint = "av_channel_layout_extract_channel", CallingConvention = CallingConvention.Cdecl)]
         public static extern ulong av_channel_layout_extract_channel(ulong @channel_layout, int @index);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_channel_name(ulong @channel);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_channel_description", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_channel_description(ulong @channel);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_standard_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_standard_channel_layout(uint @index, ulong* @layout, sbyte** @name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_cpu_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_cpu_flags();
-
+        
         [DllImport(libavutil, EntryPoint = "av_force_cpu_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_force_cpu_flags(int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_set_cpu_flags_mask", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_set_cpu_flags_mask(int @mask);
-
+        
         [DllImport(libavutil, EntryPoint = "av_parse_cpu_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_parse_cpu_flags([MarshalAs(UnmanagedType.LPStr)] string @s);
-
+        
         [DllImport(libavutil, EntryPoint = "av_parse_cpu_caps", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_parse_cpu_caps(uint* @flags, [MarshalAs(UnmanagedType.LPStr)] string @s);
-
+        
         [DllImport(libavutil, EntryPoint = "av_cpu_count", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_cpu_count();
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_buffer_alloc(int @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_allocz", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_buffer_allocz(int @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_create", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_buffer_create(sbyte* @data, int @size, IntPtr* @free, void* @opaque, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_default_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_buffer_default_free(void* @opaque, sbyte* @data);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_ref", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_buffer_ref(AVBufferRef* @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_unref", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_buffer_unref(AVBufferRef** @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_is_writable", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_buffer_is_writable(AVBufferRef* @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_get_opaque", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_buffer_get_opaque(AVBufferRef* @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_get_ref_count", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_buffer_get_ref_count(AVBufferRef* @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_make_writable", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_buffer_make_writable(AVBufferRef** @buf);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_realloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_buffer_realloc(AVBufferRef** @buf, int @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_pool_init", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferPool* av_buffer_pool_init(int @size, IntPtr* @alloc);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_pool_uninit", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_buffer_pool_uninit(AVBufferPool** @pool);
-
+        
         [DllImport(libavutil, EntryPoint = "av_buffer_pool_get", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_buffer_pool_get(AVBufferPool* @pool);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_get", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVDictionaryEntry* av_dict_get(AVDictionary* @m, [MarshalAs(UnmanagedType.LPStr)] string @key, AVDictionaryEntry* @prev, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_count", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_count(AVDictionary* @m);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_set", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_set(AVDictionary** @pm, [MarshalAs(UnmanagedType.LPStr)] string @key, [MarshalAs(UnmanagedType.LPStr)] string @value, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_set_int", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_set_int(AVDictionary** @pm, [MarshalAs(UnmanagedType.LPStr)] string @key, long @value, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_parse_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_parse_string(AVDictionary** @pm, [MarshalAs(UnmanagedType.LPStr)] string @str, [MarshalAs(UnmanagedType.LPStr)] string @key_val_sep, [MarshalAs(UnmanagedType.LPStr)] string @pairs_sep, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_copy", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_copy(AVDictionary** @dst, AVDictionary* @src, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_dict_free(AVDictionary** @m);
-
+        
         [DllImport(libavutil, EntryPoint = "av_dict_get_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_dict_get_string(AVDictionary* @m, sbyte** @buffer, sbyte @key_val_sep, sbyte @pairs_sep);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_best_effort_timestamp", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_frame_get_best_effort_timestamp(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_best_effort_timestamp", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_best_effort_timestamp(AVFrame* @frame, long @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_pkt_duration", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_frame_get_pkt_duration(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_pkt_duration", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_pkt_duration(AVFrame* @frame, long @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_pkt_pos", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_frame_get_pkt_pos(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_pkt_pos", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_pkt_pos(AVFrame* @frame, long @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern long av_frame_get_channel_layout(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_channel_layout(AVFrame* @frame, long @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_channels", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_get_channels(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_channels", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_channels(AVFrame* @frame, int @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_sample_rate", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_get_sample_rate(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_sample_rate", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_sample_rate(AVFrame* @frame, int @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_metadata", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVDictionary* av_frame_get_metadata(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_metadata", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_metadata(AVFrame* @frame, AVDictionary* @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_decode_error_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_get_decode_error_flags(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_decode_error_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_decode_error_flags(AVFrame* @frame, int @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_pkt_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_get_pkt_size(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_pkt_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_pkt_size(AVFrame* @frame, int @val);
-
+        
         [DllImport(libavutil, EntryPoint = "avpriv_frame_get_metadatap", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVDictionary** avpriv_frame_get_metadatap(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_qp_table", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte* av_frame_get_qp_table(AVFrame* @f, int* @stride, int* @type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_qp_table", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_set_qp_table(AVFrame* @f, AVBufferRef* @buf, int @stride, int @type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_colorspace", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVColorSpace av_frame_get_colorspace(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_colorspace", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_colorspace(AVFrame* @frame, AVColorSpace @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_color_range", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVColorRange av_frame_get_color_range(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_set_color_range", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_set_color_range(AVFrame* @frame, AVColorRange @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_colorspace_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_colorspace_name(AVColorSpace @val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_alloc", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFrame* av_frame_alloc();
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_free(AVFrame** @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_ref", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_ref(AVFrame* @dst, AVFrame* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_clone", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFrame* av_frame_clone(AVFrame* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_unref", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_unref(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_move_ref", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_move_ref(AVFrame* @dst, AVFrame* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_buffer", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_get_buffer(AVFrame* @frame, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_is_writable", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_is_writable(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_make_writable", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_make_writable(AVFrame* @frame);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_copy", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_copy(AVFrame* @dst, AVFrame* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_copy_props", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_frame_copy_props(AVFrame* @dst, AVFrame* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_plane_buffer", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVBufferRef* av_frame_get_plane_buffer(AVFrame* @frame, int @plane);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_new_side_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFrameSideData* av_frame_new_side_data(AVFrame* @frame, AVFrameSideDataType @type, int @size);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_get_side_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVFrameSideData* av_frame_get_side_data(AVFrame* @frame, AVFrameSideDataType @type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_remove_side_data", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_frame_remove_side_data(AVFrame* @frame, AVFrameSideDataType @type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_frame_side_data_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_frame_side_data_name(AVFrameSideDataType @type);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_show2", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_show2(void* @obj, void* @av_log_obj, int @req_flags, int @rej_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_defaults", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_opt_set_defaults(void* @s);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_defaults2", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_opt_set_defaults2(void* @s, int @mask, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_set_options_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_set_options_string(void* @ctx, [MarshalAs(UnmanagedType.LPStr)] string @opts, [MarshalAs(UnmanagedType.LPStr)] string @key_val_sep, [MarshalAs(UnmanagedType.LPStr)] string @pairs_sep);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_from_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_from_string(void* @ctx, [MarshalAs(UnmanagedType.LPStr)] string @opts, string[] @shorthand, [MarshalAs(UnmanagedType.LPStr)] string @key_val_sep, [MarshalAs(UnmanagedType.LPStr)] string @pairs_sep);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_free", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_opt_free(void* @obj);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_flag_is_set", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_flag_is_set(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @field_name, [MarshalAs(UnmanagedType.LPStr)] string @flag_name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_dict", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_dict(void* @obj, AVDictionary** @options);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_dict2", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_dict2(void* @obj, AVDictionary** @options, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_key_value", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_key_value(sbyte** @ropts, [MarshalAs(UnmanagedType.LPStr)] string @key_val_sep, [MarshalAs(UnmanagedType.LPStr)] string @pairs_sep, uint @flags, sbyte** @rkey, sbyte** @rval);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_flags", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_flags(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, int* @flags_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_int", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_int(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, int* @int_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_int64", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_int64(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, long* @int64_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_float", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_float(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, float* @float_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_double", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_double(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, double* @double_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_eval_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_eval_q(void* @obj, AVOption* @o, [MarshalAs(UnmanagedType.LPStr)] string @val, AVRational* @q_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_find", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVOption* av_opt_find(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, [MarshalAs(UnmanagedType.LPStr)] string @unit, int @opt_flags, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_find2", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVOption* av_opt_find2(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, [MarshalAs(UnmanagedType.LPStr)] string @unit, int @opt_flags, int @search_flags, void** @target_obj);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_next", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVOption* av_opt_next(void* @obj, AVOption* @prev);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_child_next", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_opt_child_next(void* @obj, void* @prev);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_child_class_next", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVClass* av_opt_child_class_next(AVClass* @parent, AVClass* @prev);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, [MarshalAs(UnmanagedType.LPStr)] string @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_int", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_int(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, long @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_double", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_double(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, double @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_q(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, AVRational @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_bin", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_bin(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, sbyte* @val, int @size, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_image_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_image_size(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @w, int @h, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_pixel_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_pixel_fmt(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, AVPixelFormat @fmt, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_sample_fmt(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, AVSampleFormat @fmt, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_video_rate", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_video_rate(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, AVRational @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_channel_layout(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, long @ch_layout, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_set_dict_val", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_set_dict_val(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, AVDictionary* @val, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, sbyte** @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_int", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_int(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, long* @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_double", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_double(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, double* @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_q", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_q(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, AVRational* @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_image_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_image_size(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, int* @w_out, int* @h_out);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_pixel_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_pixel_fmt(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, AVPixelFormat* @out_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_sample_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_sample_fmt(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, AVSampleFormat* @out_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_video_rate", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_video_rate(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, AVRational* @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_channel_layout", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_channel_layout(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, long* @ch_layout);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_get_dict_val", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_get_dict_val(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags, AVDictionary** @out_val);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_ptr", CallingConvention = CallingConvention.Cdecl)]
         public static extern void* av_opt_ptr(AVClass* @avclass, void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_freep_ranges", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_opt_freep_ranges(AVOptionRanges** @ranges);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_query_ranges", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_query_ranges(AVOptionRanges** @param0, void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @key, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_copy", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_copy(void* @dest, void* @src);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_query_ranges_default", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_query_ranges_default(AVOptionRanges** @param0, void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @key, int @flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_is_set_to_default", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_is_set_to_default(void* @obj, AVOption* @o);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_is_set_to_default_by_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_is_set_to_default_by_name(void* @obj, [MarshalAs(UnmanagedType.LPStr)] string @name, int @search_flags);
-
+        
         [DllImport(libavutil, EntryPoint = "av_opt_serialize", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_opt_serialize(void* @obj, int @opt_flags, int @flags, sbyte** @buffer, sbyte @key_val_sep, sbyte @pairs_sep);
-
+        
         [DllImport(libavutil, EntryPoint = "av_read_image_line", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void av_read_image_line(ushort* @dst, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @linesize, AVPixFmtDescriptor* @desc, int @x, int @y, int @c, int @w, int @read_pal_component);
-
+        public static extern void av_read_image_line(ushort* @dst, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @linesize, AVPixFmtDescriptor* @desc, int @x, int @y, int @c, int @w, int @read_pal_component);
+        
         [DllImport(libavutil, EntryPoint = "av_write_image_line", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void av_write_image_line(ushort* @src, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @linesize, AVPixFmtDescriptor* @desc, int @x, int @y, int @c, int @w);
-
+        public static extern void av_write_image_line(ushort* @src, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @linesize, AVPixFmtDescriptor* @desc, int @x, int @y, int @c, int @w);
+        
         [DllImport(libavutil, EntryPoint = "av_get_pix_fmt", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixelFormat av_get_pix_fmt([MarshalAs(UnmanagedType.LPStr)] string @name);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_pix_fmt_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_get_pix_fmt_name(AVPixelFormat @pix_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_pix_fmt_string", CallingConvention = CallingConvention.Cdecl)]
         public static extern sbyte* av_get_pix_fmt_string(IntPtr @buf, int @buf_size, AVPixelFormat @pix_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_bits_per_pixel", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_bits_per_pixel(AVPixFmtDescriptor* @pixdesc);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_padded_bits_per_pixel", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_padded_bits_per_pixel(AVPixFmtDescriptor* @pixdesc);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_desc_get", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixFmtDescriptor* av_pix_fmt_desc_get(AVPixelFormat @pix_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_desc_next", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixFmtDescriptor* av_pix_fmt_desc_next(AVPixFmtDescriptor* @prev);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_desc_get_id", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixelFormat av_pix_fmt_desc_get_id(AVPixFmtDescriptor* @desc);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_get_chroma_sub_sample", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_pix_fmt_get_chroma_sub_sample(AVPixelFormat @pix_fmt, int* @h_shift, int* @v_shift);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_count_planes", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_pix_fmt_count_planes(AVPixelFormat @pix_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_pix_fmt_swap_endianness", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixelFormat av_pix_fmt_swap_endianness(AVPixelFormat @pix_fmt);
-
+        
         [DllImport(libavutil, EntryPoint = "av_get_pix_fmt_loss", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_get_pix_fmt_loss(AVPixelFormat @dst_pix_fmt, AVPixelFormat @src_pix_fmt, int @has_alpha);
-
+        
         [DllImport(libavutil, EntryPoint = "av_find_best_pix_fmt_of_2", CallingConvention = CallingConvention.Cdecl)]
         public static extern AVPixelFormat av_find_best_pix_fmt_of_2(AVPixelFormat @dst_pix_fmt1, AVPixelFormat @dst_pix_fmt2, AVPixelFormat @src_pix_fmt, int @has_alpha, int* @loss_ptr);
-
+        
         [DllImport(libavutil, EntryPoint = "av_color_range_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_color_range_name(AVColorRange @range);
-
+        
         [DllImport(libavutil, EntryPoint = "av_color_primaries_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_color_primaries_name(AVColorPrimaries @primaries);
-
+        
         [DllImport(libavutil, EntryPoint = "av_color_transfer_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_color_transfer_name(AVColorTransferCharacteristic @transfer);
-
+        
         [DllImport(libavutil, EntryPoint = "av_color_space_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_color_space_name(AVColorSpace @space);
-
+        
         [DllImport(libavutil, EntryPoint = "av_chroma_location_name", CallingConvention = CallingConvention.Cdecl)]
         public static extern string av_chroma_location_name(AVChromaLocation @location);
-
+        
         [DllImport(libavutil, EntryPoint = "av_image_fill_max_pixsteps", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void av_image_fill_max_pixsteps([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @max_pixsteps, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @max_pixstep_comps, AVPixFmtDescriptor* @pixdesc);
-
+        public static extern void av_image_fill_max_pixsteps([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @max_pixsteps, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @max_pixstep_comps, AVPixFmtDescriptor* @pixdesc);
+        
         [DllImport(libavutil, EntryPoint = "av_image_get_linesize", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_image_get_linesize(AVPixelFormat @pix_fmt, int @width, int @plane);
-
+        
         [DllImport(libavutil, EntryPoint = "av_image_fill_linesizes", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int av_image_fill_linesizes([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @linesizes, AVPixelFormat @pix_fmt, int @width);
-
+        public static extern int av_image_fill_linesizes([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @linesizes, AVPixelFormat @pix_fmt, int @width);
+        
         [DllImport(libavutil, EntryPoint = "av_image_fill_pointers", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int av_image_fill_pointers([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @data, AVPixelFormat @pix_fmt, int @height, sbyte* @ptr, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @linesizes);
-
+        public static extern int av_image_fill_pointers([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @data, AVPixelFormat @pix_fmt, int @height, sbyte* @ptr, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @linesizes);
+        
         [DllImport(libavutil, EntryPoint = "av_image_alloc", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int av_image_alloc([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @pointers, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @linesizes, int @w, int @h, AVPixelFormat @pix_fmt, int @align);
-
+        public static extern int av_image_alloc([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @pointers, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @linesizes, int @w, int @h, AVPixelFormat @pix_fmt, int @align);
+        
         [DllImport(libavutil, EntryPoint = "av_image_copy_plane", CallingConvention = CallingConvention.Cdecl)]
         public static extern void av_image_copy_plane(sbyte* @dst, int @dst_linesize, sbyte* @src, int @src_linesize, int @bytewidth, int @height);
-
+        
         [DllImport(libavutil, EntryPoint = "av_image_copy", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void av_image_copy([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @dst_data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @dst_linesizes, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @src_data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @src_linesizes, AVPixelFormat @pix_fmt, int @width, int @height);
-
+        public static extern void av_image_copy([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @dst_data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @dst_linesizes, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @src_data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @src_linesizes, AVPixelFormat @pix_fmt, int @width, int @height);
+        
         [DllImport(libavutil, EntryPoint = "av_image_fill_arrays", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int av_image_fill_arrays([MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @dst_data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @dst_linesize, sbyte* @src, AVPixelFormat @pix_fmt, int @width, int @height, int @align);
-
+        public static extern int av_image_fill_arrays([MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @dst_data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @dst_linesize, sbyte* @src, AVPixelFormat @pix_fmt, int @width, int @height, int @align);
+        
         [DllImport(libavutil, EntryPoint = "av_image_get_buffer_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_image_get_buffer_size(AVPixelFormat @pix_fmt, int @width, int @height, int @align);
-
+        
         [DllImport(libavutil, EntryPoint = "av_image_copy_to_buffer", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int av_image_copy_to_buffer(sbyte* @dst, int @dst_size, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] sbyte*[] @src_data, [MarshalAs(UnmanagedType.LPArray, SizeConst = 4)] int[] @src_linesize, AVPixelFormat @pix_fmt, int @width, int @height, int @align);
-
+        public static extern int av_image_copy_to_buffer(sbyte* @dst, int @dst_size, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] sbyte*[] @src_data, [MarshalAs(UnmanagedType.LPArray, SizeConst=4)] int[] @src_linesize, AVPixelFormat @pix_fmt, int @width, int @height, int @align);
+        
         [DllImport(libavutil, EntryPoint = "av_image_check_size", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_image_check_size(uint @w, uint @h, int @log_offset, void* @log_ctx);
-
+        
         [DllImport(libavutil, EntryPoint = "av_image_check_sar", CallingConvention = CallingConvention.Cdecl)]
         public static extern int av_image_check_sar(uint @w, uint @h, AVRational @sar);
+        
     }
 }
 

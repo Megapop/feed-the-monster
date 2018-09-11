@@ -1,5 +1,6 @@
 ﻿//Shader "Unlit/Chromakey2"
 Shader "Unlit/ChromaKey2" {
+
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _thresh ("Threshold", Range (0, 16)) = 0.8
