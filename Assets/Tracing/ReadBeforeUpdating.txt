@@ -1,0 +1,3 @@
+Some files have been changed to work with Unity 2018.
+If you want to update this plugin and merge errors occur, revert to 9fefecf31c9ea0da7b7fba8416b7a6bfc1b9d725
+( git checkout 9fefecf31c9ea0da7b7fba8416b7a6bfc1b9d725 Assets/Tracing )
