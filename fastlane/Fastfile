@@ -1,0 +1,134 @@
+fastlane_version "2.102.0"
+
+default_platform :ios
+
+platform :android do
+  before_all do
+    apk = "feed-the-monster.apk"
+
+    ENV["FL_HOCKEY_APK"] = apk
+
+    ENV["SUPPLY_APK"] = apk    
+  end
+
+  desc "Deploy Feed the Monster Google Dev to HockeyApp"
+
+  lane :dev do
+    hockey(
+      public_identifier:"",
+      timeout: 3600,
+      bypass_cdn: true
+    )
+
+    slack(
+      message: "Deployed Feed the Monster Google Dev to HockeyApp.",
+      success: true
+    )    
+  end
+
+  desc "Deploy Feed the Monster Live to alpha track on Google Play"
+
+  lane :beta do
+    hockey(
+      public_identifier:"",
+      timeout: 3600,
+      bypass_cdn: true
+    )
+
+    supply(
+      apk: "feed-the-monster.apk",
+      json_key: "/Users/administrator/fastlane_google_upload_key.json",
+      package_name: "com.eduapp4syria.feedthemonster",
+      track: "alpha"
+    )
+
+    slack(
+      message: "Deployed Feed the Monster Google Live to alpha track on Google Play.",
+      success: true
+    )
+  end
+
+  error do |lane, exception|
+    slack(
+      channel: "#build",
+      message: exception.message,
+      success: false
+    )
+  end  
+end
+
+platform :ios do
+  before_all do
+    project_file = 
+    workspace_file = 
+    user_name = "" 
+
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "5"
+
+    ENV["GYM_WORKSPACE"] = 'FeedTheMonster_iOS/Unity-iPhone.xcworkspace'
+
+    ENV["PILOT_USERNAME"] = user_name
+
+    ENV["FL_SLACK_CHANNEL"] = "#build"
+  end
+
+  desc "Deploy Feed the Monster iOS Dev to HockeyApp"
+
+  lane :dev do
+    #match(type: "development")
+
+    gym(
+      export_method: "development",
+      export_options: {
+        compileBitcode: false,
+        uploadBitcode: false      
+      },
+      include_bitcode: false
+    )
+
+    # TODO set up devloyment environment
+    return
+
+    hockey(
+      public_identifier:"",
+      timeout: 3600,
+      bypass_cdn: true
+    )
+
+    slack(
+      message: "Deployed Feed the Monster iOS Dev to HockeyApp.",
+      success: true
+    )
+  end
+
+  desc "Deploy Feed the Monster Google Live to TestFlight and HockeyApp"
+
+  lane :beta do
+    #match(type: "appstore")
+
+    # https://docs.fastlane.tools/codesigning/xcode-project/#xcode-9-and-up
+
+    gym(
+      export_method: "app-store"
+    )
+
+    # TODO set up devloyment environment
+    return
+
+    hockey(
+      public_identifier:"",
+      timeout: 3600,
+      bypass_cdn: true
+    ) 
+    
+    pilot(
+      ipa: "feed-the-monster.ipa",
+      wait_for_uploaded_build: true
+    )
+
+    slack(
+      message: "Deployed Feed the Monster iOS Live to beta test on TestFlight.",
+      success: true
+    )    
+  end
+end
