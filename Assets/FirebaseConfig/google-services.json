@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "969518837783",
+    "firebase_url": "https://feed-the-monster-learn-arabic.firebaseio.com",
+    "project_id": "feed-the-monster-learn-arabic",
+    "storage_bucket": "feed-the-monster-learn-arabic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969518837783:android:7ec96d84be77d669",
+        "android_client_info": {
+          "package_name": "com.eduapp4syria.feedthemonster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969518837783-0hjpa14gicml3mt8ovo0d5a9hbm5qevp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw62XVTU6HoO51WFlHeW6kZW69ZfCXVIc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
