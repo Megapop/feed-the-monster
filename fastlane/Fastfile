@@ -18,8 +18,6 @@ platform :android do
   desc "Deploy Feed the Monster Live to alpha track on Google Play"
 
   lane :beta do
-  	return
-  	
     hockey(
       public_identifier:"10d447ce2a1b40cc80a17676187e73e0",
       timeout: 3600,
