@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-
-
 public class Analytics : MonoBehaviour
 {
     public static Analytics Instance = null;
@@ -28,7 +26,6 @@ public class Analytics : MonoBehaviour
     {
         connector.StopSession();
     }
-
 
     public void init()
     {
@@ -65,4 +62,17 @@ public class Analytics : MonoBehaviour
 
 
 
+    /* Set screen for tracking:
+    FirebaseAnalytics.SetCurrentScreen(screenName, "uipanel");
+
+    Set event for tracking:
+    LogToFirebase(FirebaseCustomEventNames.EventOnPersonalizedAdsToggled);
+
+    LogToFirebase(
+    FirebaseCustomEventNames.EventTimeFreeze,
+    new Parameter(FirebaseParameterNames.ParameterProgress, AnalyticsManager.CurrentLevelProgress),
+    new Parameter(FirebaseAnalytics.ParameterLevel, CurrentLevel),
+    new Parameter(FirebaseAnalytics.ParameterLevelName, CurrentLevelName),
+    new Parameter(FirebaseParameterNames.ParameterLevelType, CurrentLevelType)
+    );*/
 }
