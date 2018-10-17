@@ -57,7 +57,7 @@ public class UIMapController : MonoBehaviour
         }
 
 
-        Analytics.TrackScreen("Map");
+        Analytics.TrackScene("Map");
     }
 
 

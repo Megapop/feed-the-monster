@@ -151,7 +151,7 @@ public class UILevelEndController : MonoBehaviour
             AudioController.Instance.PlaySound(GameWonFanfare);
             Invoke("UnPauseMusic", 1.4f);
 
-            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Success - Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.TrackScene("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Success - Profile: " + UsersController.Instance.CurrentProfileId);
 
             Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelSuccess + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
         }
@@ -159,7 +159,7 @@ public class UILevelEndController : MonoBehaviour
         {
             AudioController.Instance.PlaySound(GameLostFanfare);
 
-            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Fail - Profile: " + UsersController.Instance.CurrentProfileId);
+            Analytics.TrackScene("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Fail - Profile: " + UsersController.Instance.CurrentProfileId);
             Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelFail + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
         }
 

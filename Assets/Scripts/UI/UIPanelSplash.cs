@@ -13,7 +13,7 @@ public class UIPanelSplash : MonoBehaviour
     void Start()
     {
         //GameplayController.Instance.LoadBackground (background);
-        Analytics.TrackScreen("Splash Screen");
+        Analytics.TrackScene("Splash Screen");
     }
 
     void OnEnable()

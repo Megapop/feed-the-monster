@@ -89,7 +89,7 @@ public class UIMonsterSelection : MonoBehaviour
             TouchController.onPointerClick += OnPointerClick;
         }
 
-        Analytics.TrackScreen("Monster Select");
+        Analytics.TrackScene("Monster Select");
     }
 
     void enableTutorialHand()

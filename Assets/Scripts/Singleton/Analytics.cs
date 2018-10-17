@@ -6,8 +6,6 @@ public class Analytics : MonoBehaviour
     public static Analytics Instance = null;
     public static Queue<string> screensQueue = new Queue<string>();
 
-    DefaultAnalytics connector;
-
     void Awake()
     {
         if (Instance == null)
@@ -22,34 +20,25 @@ public class Analytics : MonoBehaviour
         }
     }
 
-    void OnDisable()
-    {
-        connector.StopSession();
-    }
-
     public void init()
     {
-        connector = gameObject.AddComponent<DefaultAnalytics>();
-        connector.StartSession();
+        AnalyticsLogger.OnSession();
     }
 
-    public static void TrackScreen(string screenName)
+    public static void TrackScene(string sceneName)
     {
         if (Analytics.Instance == null)
         {
-            screensQueue.Enqueue(screenName);
+            screensQueue.Enqueue(sceneName);
         }
         else
         {
-            Analytics.Instance.trackScreen(screenName);
+            AnalyticsLogger.TrackScene(sceneName);
         }
     }
 
-    void trackScreen(string screenName)
-    {
-        connector.TrackScreen(screenName);
-    }
 
+    //TODO REPLACE WITH DIRECT CALLS TO APPROPRIATE EVENT IN ANALYTICS LOGGER
     public void trackEvent(AnalyticsCategory category, AnalyticsAction action, string label, long value = 0)
     {
         trackEvent(category, action.ToString(), label, value);
@@ -57,22 +46,6 @@ public class Analytics : MonoBehaviour
 
     public void trackEvent(AnalyticsCategory category, string action, string label, long value = 0)
     {
-        connector.TrackEvent(category.ToString(), action, label, value);
+
     }
-
-
-
-    /* Set screen for tracking:
-    FirebaseAnalytics.SetCurrentScreen(screenName, "uipanel");
-
-    Set event for tracking:
-    LogToFirebase(FirebaseCustomEventNames.EventOnPersonalizedAdsToggled);
-
-    LogToFirebase(
-    FirebaseCustomEventNames.EventTimeFreeze,
-    new Parameter(FirebaseParameterNames.ParameterProgress, AnalyticsManager.CurrentLevelProgress),
-    new Parameter(FirebaseAnalytics.ParameterLevel, CurrentLevel),
-    new Parameter(FirebaseAnalytics.ParameterLevelName, CurrentLevelName),
-    new Parameter(FirebaseParameterNames.ParameterLevelType, CurrentLevelType)
-    );*/
 }
