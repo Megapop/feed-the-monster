@@ -4,7 +4,7 @@ default_platform :ios
 
 platform :android do
   before_all do
-    apk = "feed-the-monster.apk"
+    apk = "FeedTheMonster.apk"
 
     ENV["FL_HOCKEY_APK"] = apk
 	ENV["FL_HOCKEY_API_TOKEN"] = "834d997e517543058d09e13402fc5410"
@@ -25,7 +25,6 @@ platform :android do
     )
 
     supply(
-      apk: "feed-the-monster.apk",
       json_key: "/Users/administrator/fastlane_google_upload_key.json",
       package_name: "com.eduapp4syria.feedthemonster",
       track: "alpha"
@@ -82,7 +81,7 @@ platform :ios do
     ) 
     
     pilot(
-      ipa: "feed-the-monster.ipa",
+      ipa: "FeedTheMonster.ipa",
       wait_for_uploaded_build: true
     )
 
