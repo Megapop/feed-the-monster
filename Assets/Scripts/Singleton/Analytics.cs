@@ -49,8 +49,6 @@ public class Analytics : MonoBehaviour
     /// </summary>
     public void TrackScene(string sceneName)
     {
-        Debug.Log("SCENE: " + sceneName);
-
         if (Instance == null)
         {
             scenesQueue.Enqueue(sceneName);
@@ -66,8 +64,6 @@ public class Analytics : MonoBehaviour
     /// </summary>
     public void TrackEvent(string eventName, params Parameter[] parameters)
     {
-        Debug.Log("EVENT: " + eventName);
-
         if (Instance == null)
         {
             eventsQueue.Enqueue(eventName);

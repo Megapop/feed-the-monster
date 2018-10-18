@@ -10,5 +10,6 @@ public static class FirebaseCustomEventNames
     public const string EventLevelStart = "level_start";
     public const string EventLevelFinished = "level_finished";
     public const string EventLevelWin = "level_win";
+    public const string EventLevelWinNumerated = "level_win_";
     public const string EventLevelFail = "level_fail";
 }

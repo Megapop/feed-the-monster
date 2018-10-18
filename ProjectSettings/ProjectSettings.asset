@@ -259,8 +259,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: cb3985fdf6e6b7e47b6ba7e2821763ff, type: 3}
-  AndroidKeystoreName: D:/UnityProjects/FeedTheMonsterMegapop/feedthemonster.keystore
-  AndroidKeyaliasName: feedthemonster
+  AndroidKeystoreName: debug.keystore
+  AndroidKeyaliasName: debug
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

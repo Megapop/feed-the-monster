@@ -153,6 +153,7 @@ public class UILevelEndController : MonoBehaviour
             Invoke("UnPauseMusic", 1.4f);
 
             Analytics.Instance.TrackScene(FirebaseCustomSceneNames.LevelWinScene);
+            AnalyticsLogger.TrackSpecificLevelComplete(GameplayController.Instance.CurrentLevelIndex + 1);
             Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelWin,
                 new Parameter(FirebaseCustomParameterNames.ParameterLevel, GameplayController.Instance.CurrentLevelIndex + 1));
         }

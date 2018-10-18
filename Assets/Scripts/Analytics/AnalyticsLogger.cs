@@ -24,6 +24,15 @@ public static class AnalyticsLogger
         FirebaseAnalytics.LogEvent(name, parameters);
     }
 
+    /// <summary>
+    /// Track a specific level completed, with numerical value
+    /// </summary>
+    public static void TrackSpecificLevelComplete(int levelNum)
+    {
+        Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelWinNumerated + levelNum.ToString(), 
+            new Parameter(FirebaseCustomParameterNames.ParameterLevel, levelNum));
+    }
+
 
     public static void TrackScene([NotNull] string sceneName)
     {
