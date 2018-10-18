@@ -68,7 +68,7 @@ public class LetterTracingGame : BaseMiniGame
         FillStones();
 
         Invoke("initStones", 1.5f);
-        Analytics.TrackScene(FirebaseCustomSceneNames.DrawLetterScene);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.DrawLetterScene);
     }
 
     void initStones()

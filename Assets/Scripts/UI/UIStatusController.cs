@@ -164,8 +164,6 @@ public class UIStatusController : MonoBehaviour
 
     public void OnOKClick()
     {
-        Analytics.Instance.trackEvent(AnalyticsCategory.Sel, AnalyticsAction.Open, "Status Popup");
-
         SceneController.Instance.LoadScene("MiniGamesScreen");
 
         GameAssets.Instance.DefaultMonster = CurrentMonster.MonsterType;

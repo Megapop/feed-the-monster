@@ -65,7 +65,7 @@ public class UIDiscoverNewMonsterController : MonoBehaviour
             UsersController.Instance.userData().addFriendToCollection(friend.MonsterType);
             AudioController.Instance.PlaySound(MonsterDiscoveredSound);
 
-            Analytics.TrackScene(FirebaseCustomSceneNames.NewMonsterScene);
+            Analytics.Instance.TrackScene(FirebaseCustomSceneNames.NewMonsterScene);
 
             GameAssets.Instance.NewMonster = null;
             GameAssets.Instance.NextScene = string.Empty;

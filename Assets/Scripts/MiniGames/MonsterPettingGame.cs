@@ -43,7 +43,7 @@ public class MonsterPettingGame : BaseMiniGame
         //animController.SetBool ("IsSad", true);
         animController.SetInteger("EmotionState", 0);
 
-        Analytics.TrackScene(FirebaseCustomSceneNames.MonsterPettingScene);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.MonsterPettingScene);
     }
 
 

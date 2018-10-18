@@ -66,7 +66,7 @@ public class MemoryGame : BaseMiniGame
         hideAllCards();
         StartCoroutine(showAllCards());
 
-        Analytics.TrackScene(FirebaseCustomSceneNames.MemoryScene);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.MemoryScene);
     }
 
 

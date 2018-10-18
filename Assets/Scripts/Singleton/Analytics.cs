@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Firebase.Analytics;
 
 public class Analytics : MonoBehaviour
 {
@@ -46,8 +47,10 @@ public class Analytics : MonoBehaviour
     /// <summary>
     /// Track scene, first ensure Analytics has been init
     /// </summary>
-    public static void TrackScene(string sceneName)
+    public void TrackScene(string sceneName)
     {
+        Debug.Log("SCENE: " + sceneName);
+
         if (Instance == null)
         {
             scenesQueue.Enqueue(sceneName);
@@ -61,26 +64,17 @@ public class Analytics : MonoBehaviour
     /// <summary>
     /// Track event, first ensure Analytics has been init
     /// </summary>
-    public static void LogEvent(string eventName)
+    public void TrackEvent(string eventName, params Parameter[] parameters)
     {
+        Debug.Log("EVENT: " + eventName);
+
         if (Instance == null)
         {
             eventsQueue.Enqueue(eventName);
         }
         else
         {
-            AnalyticsLogger.TrackEvent(eventName);
+            AnalyticsLogger.TrackEvent(eventName, parameters);
         }
-    }
-
-    //TODO REPLACE WITH DIRECT CALLS TO APPROPRIATE EVENT IN ANALYTICS LOGGER
-    public void trackEvent(AnalyticsCategory category, AnalyticsAction action, string label, long value = 0)
-    {
-        trackEvent(category, action.ToString(), label, value);
-    }
-
-    public void trackEvent(AnalyticsCategory category, string action, string label, long value = 0)
-    {
-
     }
 }

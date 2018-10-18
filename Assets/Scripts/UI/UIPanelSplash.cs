@@ -13,7 +13,7 @@ public class UIPanelSplash : MonoBehaviour
     void Start()
     {
         //GameplayController.Instance.LoadBackground (background);
-        Analytics.TrackScene(FirebaseCustomSceneNames.SplashScreenScene);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.SplashScreenScene);
     }
 
     void OnEnable()

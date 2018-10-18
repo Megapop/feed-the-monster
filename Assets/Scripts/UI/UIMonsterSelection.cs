@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
+using Firebase.Analytics;
 
 public class UIMonsterSelection : MonoBehaviour
 /*
@@ -89,7 +90,7 @@ public class UIMonsterSelection : MonoBehaviour
             TouchController.onPointerClick += OnPointerClick;
         }
 
-        Analytics.TrackScene(FirebaseCustomSceneNames.MonsterSelectScene);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.MonsterSelectScene);
     }
 
     void enableTutorialHand()
@@ -178,14 +179,10 @@ public class UIMonsterSelection : MonoBehaviour
         }
         if (selectedMonster != null)
         {
-            Analytics.Instance.trackEvent(
-                AnalyticsCategory.GamePlay,
-                AnalyticsAction.SelectMonster +
-                " " + selectedMonster.name +
-                " Evolve_" + (selectedMonster.Gage + 1),
-                "Level_" + (GameplayController.Instance.CurrentLevelIndex + 1),
-                (long)selectedMonster.MonsterType
-            );
+            Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventSelectMonster,
+                new Parameter(FirebaseCustomParameterNames.ParameterLevel, GameplayController.Instance.CurrentLevelIndex + 1),
+                new Parameter(FirebaseCustomParameterNames.ParameterMonsterType, selectedMonster.MonsterType.ToString()),
+                new Parameter(FirebaseCustomParameterNames.ParameterMonsterEvolution, selectedMonster.Gage + 1));
         }
     }
 
