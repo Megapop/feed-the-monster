@@ -1,3 +1,8 @@
+username "admin@megapopgames.com" # Your Apple Developer Portal username
+
 app_identifier ["com.eduapp4syria.feedthemonster"]
+git_full_name "Megapop Jenkins"
+git_user_email "megapopgamesdev@gmail.com"
+git_url "git@github.com:Megapop/fastlane-match.git"
 shallow_clone "true"
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
