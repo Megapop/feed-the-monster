@@ -25,7 +25,7 @@ platform :android do
     )
 
     supply(
-      json_key: "/Users/administrator/fastlane_google_upload_key.json",
+      json_key: "/Users/administrator/fastlane_feedthemonster_upload_key.json",
       package_name: "com.eduapp4syria.feedthemonster",
       track: "alpha"
     )
