@@ -515,7 +515,7 @@ public class GameplayController : MonoBehaviour
             ltrPrefab = LetterPrefab_1[Random.Range(0, LetterPrefab_1.Length)];
         }
 
-        Analytics.TrackScene("Level " + (levelId + 1) + " - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScene(FirebaseCustomSceneNames.GameLevelScene);
     }
 
 

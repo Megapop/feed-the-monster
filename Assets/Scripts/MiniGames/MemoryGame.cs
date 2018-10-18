@@ -66,7 +66,7 @@ public class MemoryGame : BaseMiniGame
         hideAllCards();
         StartCoroutine(showAllCards());
 
-        Analytics.TrackScene("Memory Game - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.TrackScene(FirebaseCustomSceneNames.MemoryScene);
     }
 
 
@@ -267,8 +267,6 @@ public class MemoryGame : BaseMiniGame
         animController.SetBool("IsSad", false);
         MiniGameController.Instance.ResetEmotion();
         EndMiniGame();
-
-        Analytics.TrackScene("Memory Game Done - Profile: " + UsersController.Instance.CurrentProfileId);
     }
 
     void UpdateLettersFroGroup()

@@ -12,14 +12,14 @@ public static class AnalyticsLogger
     /// </summary>
     public static void OnSession()
     {
-        LogToFirebase(FirebaseCustomEventNames.EventSessionInit);
+        TrackEvent(FirebaseCustomEventNames.EventSessionInit);
     }
 
 
     /// <summary>
     /// Log an event to Firebase Analytics.
     /// </summary>
-    private static void LogToFirebase(string name, params Parameter[] parameters)
+    public static void TrackEvent(string name, params Parameter[] parameters)
     {
         FirebaseAnalytics.LogEvent(name, parameters);
     }
@@ -34,13 +34,4 @@ public static class AnalyticsLogger
 
         FirebaseAnalytics.SetCurrentScreen(sceneName, "scene");
     }
-
-    /*
-    LogToFirebase(
-        FirebaseCustomEventNames.EventTimeFreeze,
-            new Parameter(FirebaseParameterNames.ParameterProgress, AnalyticsManager.CurrentLevelProgress),
-            new Parameter(FirebaseAnalytics.ParameterLevel, CurrentLevel),
-            new Parameter(FirebaseAnalytics.ParameterLevelName, CurrentLevelName),
-            new Parameter(FirebaseParameterNames.ParameterLevelType, CurrentLevelType)
-    );*/
 }

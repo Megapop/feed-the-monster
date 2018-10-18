@@ -57,7 +57,7 @@ public class UIMapController : MonoBehaviour
         }
 
 
-        Analytics.TrackScene("Map");
+        Analytics.TrackScene(FirebaseCustomSceneNames.MapScene);
     }
 
 
