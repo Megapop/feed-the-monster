@@ -1,4 +1,4 @@
-username "admin@megapopgames.com" # Your Apple Developer Portal username
+username "eduapp4syria@gmail.com" # Your Apple Developer Portal username
 
 app_identifier ["com.eduapp4syria.feedthemonster"]
 git_full_name "Megapop Jenkins"

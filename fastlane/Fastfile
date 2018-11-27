@@ -25,7 +25,7 @@ platform :android do
     )
 
     supply(
-      json_key: "/Users/administrator/fastlane_feedthemonster_upload_key.json",
+      json_key: ""/Users/administrator/fastlane_google_upload_key.json"",
       package_name: "com.eduapp4syria.feedthemonster",
       track: "alpha"
     )
@@ -49,7 +49,7 @@ platform :ios do
   before_all do
     project_file = 
     workspace_file = 
-    user_name = "" "admin@megapopgames.com" 
+    user_name = "eduapp4syria@gmail.com" 
 
     ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "5"
 
@@ -74,7 +74,9 @@ platform :ios do
   desc "Deploy Feed the Monster Google Live to TestFlight and HockeyApp"
 
   lane :beta do
-    #match(type: "appstore")
+    match(
+      type: "appstore"
+    )
 
     # https://docs.fastlane.tools/codesigning/xcode-project/#xcode-9-and-up
 
@@ -82,11 +84,8 @@ platform :ios do
       export_method: "app-store"
     )
 
-    # TODO set up devloyment environment
-    return
-
     hockey(
-      public_identifier:"10d447ce2a1b40cc80a17676187e73e0",
+      public_identifier:"2c76e9aae9774eedb14827e43428f744",
       timeout: 3600,
       bypass_cdn: true
     ) 

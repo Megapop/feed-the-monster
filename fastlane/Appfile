@@ -1,1 +1,4 @@
 app_identifier "com.eduapp4syria.feedthemonster" # The bundle identifier of your app
+apple_id "eduapp4syria@gmail.com" # Your Apple email address
+
+team_id "3H276S8W2T" # Developer Portal Team ID
