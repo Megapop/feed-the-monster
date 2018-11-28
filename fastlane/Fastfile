@@ -25,7 +25,8 @@ platform :android do
     )
 
     supply(
-      json_key: "/Users/administrator/fastlane_google_upload_key.json",
+	  apk: "FeedTheMonster.apk",
+      json_key: "/Users/administrator/fastlane_feedthemonster_upload_key.json",
       package_name: "com.eduapp4syria.feedthemonster",
       track: "alpha"
     )
@@ -52,8 +53,7 @@ platform :ios do
     user_name = "eduapp4syria@gmail.com" 
 
     ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "5"
-
-	ENV["FL_HOCKEY_APK"] = apk   
+  
 	ENV["FL_HOCKEY_API_TOKEN"] = "dfc2a768618e417787cfcc7be7a631bd"
 
     ENV["GYM_WORKSPACE"] = 'FeedTheMonster_iOS/Unity-iPhone.xcworkspace'
