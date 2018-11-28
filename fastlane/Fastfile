@@ -61,7 +61,7 @@ platform :ios do
     ENV["PILOT_USERNAME"] = user_name
 
 	ENV["FASTLANE_USER"] = user_name
-	ENV["FASTLANE_PASSWORD"] = "Gaziantep671"
+	#ENV["FASTLANE_PASSWORD"] = "Gaziantep671"
 	ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nlfv-xjkt-zwde-dcnr"
 
     ENV["FL_SLACK_CHANNEL"] = "#build"
