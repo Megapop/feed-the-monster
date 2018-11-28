@@ -62,6 +62,7 @@ platform :ios do
 
 	ENV["FASTLANE_USER"] = user_name
 	ENV["FASTLANE_PASSWORD"] = "Gaziantep671"
+	ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nlfv-xjkt-zwde-dcnr"
 
     ENV["FL_SLACK_CHANNEL"] = "#build"
 	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
