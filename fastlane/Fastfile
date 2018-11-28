@@ -74,6 +74,10 @@ platform :ios do
   desc "Deploy Feed the Monster Google Live to TestFlight and HockeyApp"
 
   lane :beta do
+
+    get_certificates           # invokes cert
+	get_provisioning_profile   # invokes sigh
+
     match(
       type: "appstore"
     )
