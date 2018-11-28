@@ -60,6 +60,9 @@ platform :ios do
 
     ENV["PILOT_USERNAME"] = user_name
 
+	ENV["FASTLANE_USER"] = user_name
+	ENV["FASTLANE_PASSWORD"] = "Gaziantep671"
+
     ENV["FL_SLACK_CHANNEL"] = "#build"
 	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
@@ -78,9 +81,9 @@ platform :ios do
     get_certificates           # invokes cert
 	get_provisioning_profile   # invokes sigh
 
-    match(
-      type: "appstore"
-    )
+    #match(
+    #  type: "appstore"
+    #)
 
     # https://docs.fastlane.tools/codesigning/xcode-project/#xcode-9-and-up
 
