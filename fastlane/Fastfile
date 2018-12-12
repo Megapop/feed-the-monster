@@ -60,28 +60,25 @@ platform :ios do
 
     ENV["PILOT_USERNAME"] = user_name
 
-	ENV["FASTLANE_USER"] = user_name
-	ENV["FASTLANE_PASSWORD"] = "Erlend97675160PASS"
-
-	ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nlfv-xjkt-zwde-dcnr"
+	#ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nlfv-xjkt-zwde-dcnr"
 
     ENV["FL_SLACK_CHANNEL"] = "#build"
 	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
   desc "Update certificates"
-  lane :certificates do
-    match(
-      type: "development"
-    )
-  end
+  #lane :certificates do
+    #match(
+      #type: "development"
+    #)
+  #end
 
   desc "Deploy Feed the Monster Google Live to TestFlight and HockeyApp"
 
   lane :beta do
 
-    get_certificates           # invokes cert
-	get_provisioning_profile   # invokes sigh
+    #get_certificates           # invokes cert
+	#get_provisioning_profile   # invokes sigh
 
     #match(
     #  type: "appstore"
