@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appID: 10d447ce2a1b40cc80a17676187e73e0
-  packageID: com.eduapp4syria.feedthemonster
+  packageID: com.eduapp4syria.feedthemonsterapp
   serverURL: your-custom-server-url
   authenticatorType: 0
   secret: 94c831cbee9b307999262f1b2f9f3e86
