@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using Firebase.Analytics;
 using UnityEngine.UI;
 
 public class UILevelEndController : MonoBehaviour
@@ -151,16 +152,18 @@ public class UILevelEndController : MonoBehaviour
             AudioController.Instance.PlaySound(GameWonFanfare);
             Invoke("UnPauseMusic", 1.4f);
 
-            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Success - Profile: " + UsersController.Instance.CurrentProfileId);
-
-            Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelSuccess + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
+            Analytics.Instance.TrackScene(FirebaseCustomSceneNames.LevelWinScene);
+            AnalyticsLogger.TrackSpecificLevelComplete(GameplayController.Instance.CurrentLevelIndex + 1);
+            Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelWin,
+                new Parameter(FirebaseCustomParameterNames.ParameterLevel, GameplayController.Instance.CurrentLevelIndex + 1));
         }
         else
         {
             AudioController.Instance.PlaySound(GameLostFanfare);
 
-            Analytics.TrackScreen("Level " + (GameplayController.Instance.CurrentLevelIndex + 1) + " Fail - Profile: " + UsersController.Instance.CurrentProfileId);
-            Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.LevelFail + "_" + (GameplayController.Instance.CurrentLevelIndex + 1).ToString(), GameplayController.Instance.SucsessSegment.ToString() + " puzzles");
+            Analytics.Instance.TrackScene(FirebaseCustomSceneNames.LevelFailScene);
+            Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelFail,
+                new Parameter(FirebaseCustomParameterNames.ParameterLevel, GameplayController.Instance.CurrentLevelIndex + 1));
         }
 
         UIController.Instance.ClosePopup(UIController.Instance.GamePanel);

@@ -47,7 +47,7 @@ public class UIParentsReportPanel : MonoBehaviour
     void OnEnable()
     {
         //GameplayController.Instance.LoadBackground (background);
-        Analytics.TrackScreen("Parents Report");
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.ParentsReportScene);
 
         initProfileId = UsersController.Instance.CurrentProfileId;
 

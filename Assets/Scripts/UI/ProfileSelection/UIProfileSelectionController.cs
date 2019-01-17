@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Firebase.Analytics;
 using UnityEngine;
 
 public class UIProfileSelectionController : MonoBehaviour
@@ -100,7 +101,8 @@ public class UIProfileSelectionController : MonoBehaviour
 
         UsersController.Instance.userData().addFirstFriendsToCollection();
 
-        Analytics.Instance.trackEvent(AnalyticsCategory.Profiles, "Select Profile_" + currentButton.ProfileId.ToString(), currentButton.ProfileId.ToString());
+        Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventSelectProfile, 
+            new Parameter(FirebaseCustomParameterNames.ParameterProfile, currentButton.ProfileId));
 
         SceneController.Instance.LoadScene(NextScene);
     }

@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:969518837783:android:7ec96d84be77d669",
+        "mobilesdk_app_id": "1:969518837783:android:d272940cd07f9be2",
         "android_client_info": {
-          "package_name": "com.eduapp4syria.feedthemonster"
+          "package_name": "com.eduapp4syria.feedthemonsterapp"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "969518837783-a4380cocpdlpdp36acouu831ns3bok7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eduapp4syria.feedthemonsterapp",
+            "certificate_hash": "158eb52d79b024010bc9f7b40d222fc451968d98"
+          }
+        },
         {
           "client_id": "969518837783-0hjpa14gicml3mt8ovo0d5a9hbm5qevp.apps.googleusercontent.com",
           "client_type": 3
@@ -29,8 +37,21 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969518837783-0hjpa14gicml3mt8ovo0d5a9hbm5qevp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "969518837783-mq3ja7ik54vp7nq3hap70jdh6fbifa8g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eduapp4syria.feedthemonster",
+                "app_store_id": "1209833253"
+              }
+            }
+          ]
         },
         "ads_service": {
           "status": 2

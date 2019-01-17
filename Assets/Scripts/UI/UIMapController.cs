@@ -57,7 +57,7 @@ public class UIMapController : MonoBehaviour
         }
 
 
-        Analytics.TrackScreen("Map");
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.MapScene);
     }
 
 
@@ -180,7 +180,6 @@ public class UIMapController : MonoBehaviour
 
     public void OnSELClick()
     {
-        Analytics.Instance.trackEvent(AnalyticsCategory.Sel, AnalyticsAction.Open, "Map");
         SceneController.Instance.LoadScene("MiniGamesScreen");
     }
 

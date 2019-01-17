@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Text;
+using Firebase.Analytics;
 
 public class GameplayController : MonoBehaviour
 {
@@ -515,7 +516,7 @@ public class GameplayController : MonoBehaviour
             ltrPrefab = LetterPrefab_1[Random.Range(0, LetterPrefab_1.Length)];
         }
 
-        Analytics.TrackScreen("Level " + (levelId + 1) + " - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.GameLevelScene);
     }
 
 
@@ -769,7 +770,9 @@ public class GameplayController : MonoBehaviour
                 }
         */
         startButton.StartLevel();
-        Analytics.Instance.trackEvent(AnalyticsCategory.GamePlay, AnalyticsAction.SegmentStart + "_Level_" + (CurrentLevelIndex + 1), "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalytics);
+
+        Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelStart,
+            new Parameter(FirebaseCustomParameterNames.ParameterLevel, Instance.CurrentLevelIndex + 1));
     }
 
     void DestroyLetters()
@@ -1326,11 +1329,8 @@ public class GameplayController : MonoBehaviour
     {
         CancelInvoke("EndSegment");
 
-        Analytics.Instance.trackEvent(
-            AnalyticsCategory.GamePlay,
-            ((State == GameState.SegmentWinAnimation) ? AnalyticsAction.SegmentSuccess : AnalyticsAction.SegmentFail) + "_Level_" + (CurrentLevelIndex + 1),
-            "Puzzle " + GameplayController.Instance.CurrentSegment.valueForAnalytics
-        );
+        Analytics.Instance.TrackEvent(FirebaseCustomEventNames.EventLevelFinished,
+            new Parameter(FirebaseCustomParameterNames.ParameterLevel, Instance.CurrentLevelIndex + 1));
 
         //Debug.Log ("end segment");
         SetState(GameState.EndSegment);

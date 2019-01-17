@@ -43,7 +43,7 @@ public class MonsterPettingGame : BaseMiniGame
         //animController.SetBool ("IsSad", true);
         animController.SetInteger("EmotionState", 0);
 
-        Analytics.TrackScreen("Monster Petting - Profile: " + UsersController.Instance.CurrentProfileId);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.MonsterPettingScene);
     }
 
 
@@ -85,8 +85,6 @@ public class MonsterPettingGame : BaseMiniGame
             {
                 animController.SetBool("IsSad", false);
                 MiniGameController.Instance.ResetEmotion();
-
-                Analytics.TrackScreen("Monster Petting Done - Profile: " + UsersController.Instance.CurrentProfileId);
             }
             else if (count == PatsToClose)
             {

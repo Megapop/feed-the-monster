@@ -40,7 +40,7 @@ public class TR_Shape : MonoBehaviour
         popOut = gameObject.AddComponent<UIPopInOut>();
         popOut.PopIn();
 
-        Analytics.TrackScreen(AnalyticsCategory.TracingGame + " " + gameObject.name);
+        Analytics.Instance.TrackScene(FirebaseCustomSceneNames.DrawLetterScene);
     }
 
     /// <summary>
