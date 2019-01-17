@@ -11,7 +11,9 @@ public static class AnalyticsLogger
     /// Custom Session tracking, backup of Firebase default (tracks when Analytics singleton inits).
     /// </summary>
     public static void OnSession()
-    {
+    {     
+        FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+
         TrackEvent(FirebaseCustomEventNames.EventSessionInit);
     }
 
