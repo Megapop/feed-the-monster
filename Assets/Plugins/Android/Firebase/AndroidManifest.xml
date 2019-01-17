@@ -10,5 +10,7 @@ needed for the plugin to be parsed correctly in the folder structure we use.
           package="com.google.firebase.unity"
           android:versionCode="1"
           android:versionName="1.0">
-  <uses-sdk android:minSdkVersion="14"/>
+  <uses-sdk
+    android:minSdkVersion="15"
+    android:targetSdkVersion="27" />
 </manifest>
