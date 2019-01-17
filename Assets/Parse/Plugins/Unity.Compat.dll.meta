@@ -3,7 +3,6 @@ guid: 015ef18e20f24535830f59eda9e70830
 labels:
 - gvh
 - gvh_dotnet-3.5
-- gvh_version-5.4.3
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -15,12 +14,12 @@ PluginImporter:
   - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
     second:
-      enabled: 0
+      enabled: 1
       settings:
         DefaultValueInitialized: true
   - first:

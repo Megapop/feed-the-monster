@@ -6,6 +6,6 @@
   <string name="project_id" translatable="false">feed-the-monster-learn-arabic</string>
   <string name="google_api_key" translatable="false">AIzaSyBw62XVTU6HoO51WFlHeW6kZW69ZfCXVIc</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBw62XVTU6HoO51WFlHeW6kZW69ZfCXVIc</string>
-  <string name="google_app_id" translatable="false">1:969518837783:android:d272940cd07f9be2</string>
+  <string name="google_app_id" translatable="false">1:969518837783:android:7ec96d84be77d669</string>
   <string name="default_web_client_id" translatable="false">969518837783-0hjpa14gicml3mt8ovo0d5a9hbm5qevp.apps.googleusercontent.com</string>
 </resources>
