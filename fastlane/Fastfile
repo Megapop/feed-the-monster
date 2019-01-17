@@ -9,9 +9,6 @@ platform :android do
     ENV["FL_HOCKEY_APK"] = apk
 	ENV["FL_HOCKEY_API_TOKEN"] = "834d997e517543058d09e13402fc5410"
 
-	ENV["FL_SLACK_CHANNEL"] = "#build"
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
-
     ENV["SUPPLY_APK"] = apk
   end
 
@@ -30,19 +27,9 @@ platform :android do
       package_name: "com.eduapp4syria.feedthemonster",
       track: "alpha"
     )
-
-    slack(
-      message: "Deployed Feed the Monster Google Live to alpha track on Google Play.",
-      success: true
-    )
   end
 
   error do |lane, exception|
-    slack(
-      channel: "#build",
-      message: exception.message,
-      success: false
-    )
   end  
 end
 
@@ -61,9 +48,6 @@ platform :ios do
     ENV["PILOT_USERNAME"] = user_name
 
 	#ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nlfv-xjkt-zwde-dcnr"
-
-    ENV["FL_SLACK_CHANNEL"] = "#build"
-	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
   desc "Update certificates"
@@ -100,10 +84,5 @@ platform :ios do
       ipa: "FeedTheMonster.ipa",
       wait_for_uploaded_build: true
     )
-
-    slack(
-      message: "Deployed Feed the Monster iOS Live to beta test on TestFlight.",
-      success: true
-    )    
   end
 end
