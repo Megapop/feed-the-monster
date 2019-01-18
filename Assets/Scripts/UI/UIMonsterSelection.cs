@@ -130,7 +130,7 @@ public class UIMonsterSelection : MonoBehaviour
         //if (GameplayController.Instance.CurrentLevelIndex == 0) {
         if (isTutorial)
         {
-            Transform to = monsterBar?.currentMonster.Find("Hand");
+            Transform to = monsterBar?.currentMonster?.Find("Hand");
             Vector2 toPos = new Vector2(0, -140);
             if (to == null)
             {

@@ -13,7 +13,7 @@ public class GameAssets : MonoBehaviour
 
     public GameObject tutorialHend;
 
-    public int NumOfLevels = 76;
+    public int NumOfLevels = 120;
 
 
     public Sprite[] ProfileSprites;
