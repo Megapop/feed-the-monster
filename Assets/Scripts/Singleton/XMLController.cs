@@ -46,11 +46,17 @@ public class XMLController : MonoBehaviour
     }
 
 
-    Level[] levels {
-        get {
+    private Level[] Levels 
+    {
+        get 
+        {
             if (_levels == null)
             {
                 _levels = new Level[GameAssets.Instance.NumOfLevels];
+                for(int i = 0; i < _levels.Length; i++)
+                {
+                    _levels[i] = ScriptableObject.CreateInstance<Level>();  //Manually create instances of scriptable object in addition to making the array
+                }
             }
             return _levels;
         }
@@ -59,20 +65,20 @@ public class XMLController : MonoBehaviour
 
     public Level[] getLevelList()
     {
-        return levels;
+        return Levels;
     }
 
     public Level getLevel(int levelId)
     {
         Level lvl = null;
 
-        if (levels.Length > levelId)
+        if (Levels.Length > levelId)
         {
-            if (levels[levelId] == null)
+            if (Levels[levelId] == null)
             {
-                levels[levelId] = XMLTool.LoadLevelXML(levelId);
+                Levels[levelId] = XMLTool.LoadLevelXML(levelId);
             }
-            lvl = levels[levelId];
+            lvl = Levels[levelId];
         }
         else
         {
@@ -138,7 +144,7 @@ public class XMLController : MonoBehaviour
     Level[] getFilteredLevels(MonsterInputType type)
     {
         List<Level> filtedLevels = new List<Level>();
-        foreach (Level lvl in levels)
+        foreach (Level lvl in Levels)
         {
             if (
                 lvl.Segments != null

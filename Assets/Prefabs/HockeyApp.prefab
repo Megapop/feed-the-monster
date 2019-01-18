@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b173252c9e4c24187d61f66dfda612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appID: ' 2c76e9aae9774eedb14827e43428f744'
+  appID: 2c76e9aae9774eedb14827e43428f744
   serverURL: your-custom-server-url
   authenticatorType: 0
   secret: 3184657747b8bfe8583f0da50b25845d
