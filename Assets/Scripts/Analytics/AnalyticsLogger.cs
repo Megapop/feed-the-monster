@@ -38,9 +38,9 @@ public static class AnalyticsLogger
 
     public static void TrackScene([NotNull] string sceneName)
     {
-        if (string.IsNullOrWhiteSpace(sceneName))
+        if (string.IsNullOrEmpty(sceneName))
         {
-            throw new ArgumentException("Screen name null or empty", nameof(sceneName));
+            throw new ArgumentException("Screen name null or empty", sceneName);
         }
 
         FirebaseAnalytics.SetCurrentScreen(sceneName, "scene");

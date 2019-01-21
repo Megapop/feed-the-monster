@@ -13,17 +13,28 @@ public class UINewAccessoriesController : MonoBehaviour
     {
         addItem();
 
-        UsersController.Instance?.userData()?.resetNewAvailableAccessories();
+        if (UsersController.Instance && UsersController.Instance.userData() != null)
+        {
+            UsersController.Instance.userData().resetNewAvailableAccessories();
+        }
 
-
-        AudioController.Instance?.PlaySound(audioClip);
+        if (AudioController.Instance)
+        {
+            AudioController.Instance.PlaySound(audioClip);
+        }
     }
 
 
     void addItem()
     {
         bool isIcon = false;
-        int itemId = UsersController.Instance?.userData()?.getNewAvailableAccessorie() ?? 0;
+        int itemId = 0;
+
+        if (UsersController.Instance && UsersController.Instance.userData() != null)
+        {
+            itemId = UsersController.Instance.userData().getNewAvailableAccessorie();
+        }
+
         if (itemId > 0)
         {
             var sprite = Resources.Load<Sprite>("Gameplay/Dressing/Items/Item_" + itemId.ToString());

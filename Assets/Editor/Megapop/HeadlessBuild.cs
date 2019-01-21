@@ -101,20 +101,37 @@ public class HeadlessBuild : MonoBehaviour
         }
     }
 
-    private static string[] Scenes => (from scene in EditorBuildSettings.scenes
-        where scene.enabled
-        select scene.path).ToArray();
+    private static string[] Scenes
+    {
+        get
+        {
+            return (from scene in EditorBuildSettings.scenes
+                where scene.enabled
+                select scene.path).ToArray();
+        }
+    }
 
     /// <summary>
     /// Get the root path of the Unity project.
     /// </summary>
-    private static string ProjectRoot => Application.dataPath.Replace("/Assets", "");
+    private static string ProjectRoot
+    {
+        get
+        {
+            return (Application.dataPath.Replace("/Assets", ""));
+        }
+    }
 
     /// <summary>
     /// Get the root path for all builds.
     /// </summary>
-    private static string OutputPath => ProjectRoot + "/build";
-
+    private static string OutputPath
+    {
+        get
+        {
+            return (ProjectRoot + "/build");
+        }
+    }
 
     /// <summary>
     /// Get the full path for the current BuildTarget.
